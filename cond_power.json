@@ -1,0 +1,71 @@
+{
+  "seeds": 3,
+  "n_surrogates": 100,
+  "rows": [
+    {
+      "coupling": 0.05,
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 22.33
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.0
+      }
+    },
+    {
+      "coupling": 0.1,
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 19.33
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.0
+      }
+    },
+    {
+      "coupling": 0.2,
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 22.0
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.0
+      }
+    },
+    {
+      "coupling": 0.4,
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 20.33
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.0
+      }
+    },
+    {
+      "coupling": 0.8,
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 17.67
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.33
+      }
+    }
+  ]
+}

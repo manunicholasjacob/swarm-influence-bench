@@ -1,0 +1,55 @@
+{
+  "k": 8,
+  "n_surrogates": 100,
+  "seeds": 3,
+  "families": {
+    "common_cause_null": {
+      "pairwise": {
+        "fired_in": 3,
+        "of": 3,
+        "mean_edges": 22.67,
+        "mean_true_positives": 0.0,
+        "planted": 0
+      },
+      "conditional": {
+        "fired_in": 3,
+        "of": 3,
+        "mean_edges": 15.33,
+        "mean_true_positives": 0.0,
+        "planted": 0
+      }
+    },
+    "pure_null": {
+      "pairwise": {
+        "fired_in": 1,
+        "of": 3,
+        "mean_edges": 0.33,
+        "mean_true_positives": 0.0,
+        "planted": 0
+      },
+      "conditional": {
+        "fired_in": 1,
+        "of": 3,
+        "mean_edges": 0.33,
+        "mean_true_positives": 0.0,
+        "planted": 0
+      }
+    },
+    "structure": {
+      "pairwise": {
+        "fired_in": 3,
+        "of": 3,
+        "mean_edges": 24.0,
+        "mean_true_positives": 4.0,
+        "planted": 4
+      },
+      "conditional": {
+        "fired_in": 3,
+        "of": 3,
+        "mean_edges": 14.67,
+        "mean_true_positives": 4.0,
+        "planted": 4
+      }
+    }
+  }
+}

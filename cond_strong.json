@@ -1,0 +1,12 @@
+{
+  "common_cause_null": {
+    "mean_edges": 0.0,
+    "mean_tp": 0.0,
+    "planted": 0
+  },
+  "structure": {
+    "mean_edges": 4.0,
+    "mean_tp": 4.0,
+    "planted": 4
+  }
+}
