@@ -1,0 +1,56 @@
+{
+  "drifts": [
+    0.0,
+    0.3,
+    0.6,
+    0.9
+  ],
+  "reps": 8,
+  "n_surrogates": 100,
+  "rows": [
+    {
+      "activity_drift": 0.0,
+      "shift": {
+        "fwer": 0.125,
+        "mean_edges": 0.12
+      },
+      "permute": {
+        "fwer": 0.0,
+        "mean_edges": 0.0
+      }
+    },
+    {
+      "activity_drift": 0.3,
+      "shift": {
+        "fwer": 0.125,
+        "mean_edges": 0.12
+      },
+      "permute": {
+        "fwer": 0.25,
+        "mean_edges": 0.25
+      }
+    },
+    {
+      "activity_drift": 0.6,
+      "shift": {
+        "fwer": 0.125,
+        "mean_edges": 0.12
+      },
+      "permute": {
+        "fwer": 0.375,
+        "mean_edges": 0.38
+      }
+    },
+    {
+      "activity_drift": 0.9,
+      "shift": {
+        "fwer": 0.625,
+        "mean_edges": 0.88
+      },
+      "permute": {
+        "fwer": 0.25,
+        "mean_edges": 0.25
+      }
+    }
+  ]
+}

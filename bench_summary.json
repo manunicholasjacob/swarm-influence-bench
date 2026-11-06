@@ -1,0 +1,54 @@
+{
+  "shift": {
+    "n_instances": 48,
+    "n_null": 18,
+    "n_signal": 30,
+    "familywise_error_pure_null": 0.0833,
+    "familywise_error_common_cause_null": 0.3333,
+    "mean_edges_on_common_cause_null": 1.17,
+    "mean_precision": 0.3601,
+    "mean_recall": 0.8667,
+    "power_by_coupling": {
+      "0.05": 1.0,
+      "0.1": 1.0,
+      "0.2": 1.0,
+      "0.4": 1.0,
+      "0.8": 1.0
+    },
+    "power_by_channel_volume": {
+      "1000": 1.0,
+      "2000": 1.0,
+      "4000": 1.0,
+      "8000": 1.0,
+      "16000": 1.0
+    },
+    "detection_floor_coupling": 0.05,
+    "detection_floor_volume": 1000
+  },
+  "permute": {
+    "n_instances": 48,
+    "n_null": 18,
+    "n_signal": 30,
+    "familywise_error_pure_null": 0.0833,
+    "familywise_error_common_cause_null": 1.0,
+    "mean_edges_on_common_cause_null": 18.83,
+    "mean_precision": 0.0867,
+    "mean_recall": 1.0,
+    "power_by_coupling": {
+      "0.05": 1.0,
+      "0.1": 1.0,
+      "0.2": 1.0,
+      "0.4": 1.0,
+      "0.8": 1.0
+    },
+    "power_by_channel_volume": {
+      "1000": 1.0,
+      "2000": 1.0,
+      "4000": 1.0,
+      "8000": 1.0,
+      "16000": 1.0
+    },
+    "detection_floor_coupling": 0.05,
+    "detection_floor_volume": 1000
+  }
+}

@@ -33,7 +33,8 @@ def _vocab(k_topics, words_per_topic=40, seed=0):
 
 def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0,
                       burstiness=1.0, drift=0.02, reaction_lag=1, mean_gap_s=25.0,
-                      volume_skew=1.4, words_per_msg=12, shared_topic=0.55):
+                      volume_skew=1.4, words_per_msg=12, shared_topic=0.55,
+                      activity_drift=0.0, n_blocks=20):
     """One channel with a known influence graph.
 
     edges: iterable of (leader, follower, coupling). `coupling` is the probability that, when the
@@ -54,8 +55,28 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
     edges = [(int(a), int(b), float(c)) for a, b, c in edges]
 
     # per-agent speaking weights: a realistic heavy head and long tail
-    w = 1.0 / np.power(np.arange(1, n_agents + 1), volume_skew)
-    w = w / w.sum()
+    w0 = 1.0 / np.power(np.arange(1, n_agents + 1), volume_skew)
+    w0 = w0 / w0.sum()
+
+    # activity_drift makes those weights NON-STATIONARY: the timeline is cut into blocks and each
+    # agent's share is resampled per block, so agents have bursts and quiet spells the way real ones
+    # do. This turned out to matter more than anything else for whether a circular-shift surrogate
+    # behaves, because shifting an agent's series slides its activity envelope against everyone
+    # else's. With stationary weights a shift is nearly harmless; with realistic bursts it is not.
+    block_w = []
+    for b in range(max(1, n_blocks)):
+        if activity_drift <= 0:
+            block_w.append(w0)
+            continue
+        # each agent may go quiet for a block, and those that speak get a heavy-tailed multiplier.
+        # This reproduces how real agents behave: bursts, idle spells, joining and leaving.
+        live = rng.random(n_agents) > (activity_drift * 0.6)
+        if not live.any():
+            live[int(rng.integers(n_agents))] = True
+        mult = np.exp(rng.normal(0.0, 1.5 * activity_drift, size=n_agents))
+        wb = w0 * live * mult
+        block_w.append(wb / wb.sum())
+    w = block_w[0]
 
     # the channel has a drifting current topic; agents mostly speak to it
     cur_topic = int(rng.integers(k_topics))
@@ -68,7 +89,8 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
     agents, times, topics = [], [], []
     t = 0.0
     pending = []          # scheduled reactions: (ticks_remaining, follower, topic)
-    for _ in range(n_messages):
+    for msg_i in range(n_messages):
+        w = block_w[min(len(block_w) - 1, int(msg_i * len(block_w) / max(1, n_messages)))]
         # burstiness: gamma inter-arrival, shape<1 is bursty, 1 is Poisson
         gap = rng.gamma(shape=max(1e-3, burstiness), scale=mean_gap_s / max(1e-3, burstiness))
         t += float(gap)
