@@ -1,0 +1,649 @@
+{
+  "rows": [
+    {
+      "name": "nullpure_a5_m2000_s0",
+      "n_agents": 5,
+      "n_messages": 2000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a5_m2000_s1",
+      "n_agents": 5,
+      "n_messages": 2000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a5_m8000_s0",
+      "n_agents": 5,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a5_m8000_s1",
+      "n_agents": 5,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a12_m2000_s0",
+      "n_agents": 12,
+      "n_messages": 2000,
+      "edges_planted": 0,
+      "edges_found": 1,
+      "true_positives": 0,
+      "precision": 0.0,
+      "recall": null,
+      "is_null": true,
+      "any_certified": true,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a12_m2000_s1",
+      "n_agents": 12,
+      "n_messages": 2000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a12_m8000_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a12_m8000_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a25_m2000_s0",
+      "n_agents": 25,
+      "n_messages": 2000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a25_m2000_s1",
+      "n_agents": 25,
+      "n_messages": 2000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a25_m8000_s0",
+      "n_agents": 25,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullpure_a25_m8000_s1",
+      "n_agents": 25,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullcommon_a5_s0",
+      "n_agents": 5,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 2,
+      "true_positives": 0,
+      "precision": 0.0,
+      "recall": null,
+      "is_null": true,
+      "any_certified": true,
+      "couplings": []
+    },
+    {
+      "name": "nullcommon_a5_s1",
+      "n_agents": 5,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 5,
+      "true_positives": 0,
+      "precision": 0.0,
+      "recall": null,
+      "is_null": true,
+      "any_certified": true,
+      "couplings": []
+    },
+    {
+      "name": "nullcommon_a12_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullcommon_a12_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullcommon_a25_s0",
+      "n_agents": 25,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "nullcommon_a25_s1",
+      "n_agents": 25,
+      "n_messages": 8000,
+      "edges_planted": 0,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": null,
+      "is_null": true,
+      "any_certified": false,
+      "couplings": []
+    },
+    {
+      "name": "coupling0.05_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 2,
+      "true_positives": 1,
+      "precision": 0.5,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.05
+      ]
+    },
+    {
+      "name": "coupling0.05_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 3,
+      "true_positives": 1,
+      "precision": 0.3333,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.05
+      ]
+    },
+    {
+      "name": "coupling0.1_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 2,
+      "true_positives": 1,
+      "precision": 0.5,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.1
+      ]
+    },
+    {
+      "name": "coupling0.1_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 1,
+      "true_positives": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.1
+      ]
+    },
+    {
+      "name": "coupling0.2_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 3,
+      "true_positives": 1,
+      "precision": 0.3333,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.2
+      ]
+    },
+    {
+      "name": "coupling0.2_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 2,
+      "true_positives": 1,
+      "precision": 0.5,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.2
+      ]
+    },
+    {
+      "name": "coupling0.4_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 5,
+      "true_positives": 1,
+      "precision": 0.2,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "coupling0.4_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 4,
+      "true_positives": 1,
+      "precision": 0.25,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "coupling0.8_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 14,
+      "true_positives": 1,
+      "precision": 0.0714,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.8
+      ]
+    },
+    {
+      "name": "coupling0.8_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 17,
+      "true_positives": 1,
+      "precision": 0.0588,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.8
+      ]
+    },
+    {
+      "name": "volume1000_s0",
+      "n_agents": 12,
+      "n_messages": 1000,
+      "edges_planted": 1,
+      "edges_found": 1,
+      "true_positives": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "volume1000_s1",
+      "n_agents": 12,
+      "n_messages": 1000,
+      "edges_planted": 1,
+      "edges_found": 1,
+      "true_positives": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "volume2000_s0",
+      "n_agents": 12,
+      "n_messages": 2000,
+      "edges_planted": 1,
+      "edges_found": 2,
+      "true_positives": 1,
+      "precision": 0.5,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "volume2000_s1",
+      "n_agents": 12,
+      "n_messages": 2000,
+      "edges_planted": 1,
+      "edges_found": 2,
+      "true_positives": 1,
+      "precision": 0.5,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "volume4000_s0",
+      "n_agents": 12,
+      "n_messages": 4000,
+      "edges_planted": 1,
+      "edges_found": 3,
+      "true_positives": 1,
+      "precision": 0.3333,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "volume4000_s1",
+      "n_agents": 12,
+      "n_messages": 4000,
+      "edges_planted": 1,
+      "edges_found": 2,
+      "true_positives": 1,
+      "precision": 0.5,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "volume8000_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 5,
+      "true_positives": 1,
+      "precision": 0.2,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "volume8000_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 4,
+      "true_positives": 1,
+      "precision": 0.25,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "volume16000_s0",
+      "n_agents": 12,
+      "n_messages": 16000,
+      "edges_planted": 1,
+      "edges_found": 14,
+      "true_positives": 1,
+      "precision": 0.0714,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "volume16000_s1",
+      "n_agents": 12,
+      "n_messages": 16000,
+      "edges_planted": 1,
+      "edges_found": 14,
+      "true_positives": 1,
+      "precision": 0.0714,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "structure_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 4,
+      "edges_found": 11,
+      "true_positives": 4,
+      "precision": 0.3636,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4,
+        0.3,
+        0.5,
+        0.4
+      ]
+    },
+    {
+      "name": "structure_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 4,
+      "edges_found": 17,
+      "true_positives": 4,
+      "precision": 0.2353,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4,
+        0.3,
+        0.5,
+        0.4
+      ]
+    },
+    {
+      "name": "burst0.4_lag1_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 6,
+      "true_positives": 1,
+      "precision": 0.1667,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "burst0.4_lag1_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 4,
+      "true_positives": 1,
+      "precision": 0.25,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "burst0.4_lag3_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 1,
+      "true_positives": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "burst0.4_lag3_s1",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 0,
+      "true_positives": 0,
+      "precision": null,
+      "recall": 0.0,
+      "is_null": false,
+      "any_certified": false,
+      "couplings": [
+        0.4
+      ]
+    },
+    {
+      "name": "burst1.0_lag1_s0",
+      "n_agents": 12,
+      "n_messages": 8000,
+      "edges_planted": 1,
+      "edges_found": 5,
+      "true_positives": 1,
+      "precision": 0.2,
+      "recall": 1.0,
+      "is_null": false,
+      "any_certified": true,
+      "couplings": [
+        0.4
+      ]
+    }
+  ]
+}
