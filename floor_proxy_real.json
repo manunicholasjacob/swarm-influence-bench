@@ -1,13 +1,24 @@
 {
-  "question": "where the two real channels the audit analysed sit relative to the symbolisation floor, judged by label-free proxies calibrated in floor_proxy_sweep.json",
-  "k": 8,
-  "window_days": 14,
-  "symboliser_seed": 0,
-  "calibrated_from": "floor_proxy_sweep.json",
-  "stated_floor_ari": 0.44,
-  "privacy": "aggregate statistics only: counts and clustering indices. No message text, no participant identifier, no room identifier. Human messages excluded by the loader. Research use only.",
-  "proxy_families": {
-    "ari_based": [
+ "RETRACTION_2026_11_07": {
+  "also_withdrawn": "The premise that a below-floor channel certifies near-zero edges. The shift surrogate recovers all four planted edges at every overlap level including 0.95, where ARI is 0.011. The collapse is specific to the permutation null.",
+  "see": [
+   "floor_contradiction.json",
+   "floor_contradiction.py"
+  ],
+  "what_is_withdrawn": "The channel-level floor verdicts in this file. They were issued as statements about a channel; they are statements about one arbitrary choice of k.",
+  "what_this_file_still_supports": "At k=8, open-chat's TF-IDF k-means clustering is not reproducible across initialisations (0.287) and not confirmed by a structurally different symboliser (0.456), while main-village's is (0.676, 0.696). That is true and useful about k=8 and nothing more.",
+  "why": "floor_contradiction.json sweeps k on these same two channels using the same loader, window and five-seed protocol, and reproduces this file's k=8 readings to the digit. At k=4 open-chat reads seed_stability_min 0.949902 and agree_lsa 0.978401, the highest stability either channel produces anywhere on the grid, clearing both published cuts. The below-floor reading at k=8 is an artifact of k, not a property of the channel."
+ },
+ "calibrated_from": "floor_proxy_sweep.json",
+ "channels": [
+  {
+   "by_family": {
+    "ari_based": {
+     "consensus": "split",
+     "n_above": 7,
+     "n_below": 1,
+     "n_voting": 8,
+     "proxies": [
       "seed_stability_mean",
       "seed_stability_min",
       "boot_stability_full_mean",
@@ -16,626 +27,663 @@
       "agree_lsa",
       "agree_counts",
       "agree_char"
-    ],
-    "geometric": [
+     ]
+    },
+    "geometric": {
+     "consensus": "split",
+     "n_above": 2,
+     "n_below": 3,
+     "n_voting": 5,
+     "proxies": [
       "silhouette_cosine",
       "calinski_harabasz",
       "davies_bouldin",
       "centroid_cosine_mean",
-      "centroid_cosine_max",
-      "size_entropy"
-    ]
-  },
-  "verdict_taken_from": "ari_based",
-  "honesty_caveat": "The family split is by construction, but the strict_reading rule was fixed after the benchmark calibration had been inspected, which is what calibration is for, and after a first pass over these two channels had already been run. It is therefore NOT a pre-registered test. Every proxy's raw value and cut is in the output so a reader can apply any other rule.",
-  "excluded_as_null": [
-    "agree_hash_null"
-  ],
-  "min_calibration_balanced_accuracy_to_vote": 0.8,
-  "channels": [
+      "centroid_cosine_max"
+     ]
+    }
+   },
+   "consensus_of_top_proxies": "split",
+   "diagnostics": {
+    "boot_naive_pad_error": -0.5497348913716329,
+    "boot_naive_pad_mean": 0.1083501260880752,
+    "boot_resample_size": 8800,
+    "boot_shared_points_mean": 3531.5333333333333,
+    "boot_stability_full_sd": 0.10331926293317321,
+    "boot_vs_base_inflation": 0.022420933547296906,
+    "boot_vs_base_mean": 0.6782823648141388,
+    "n_clustered": 8799,
+    "n_distinct_texts": 7801,
+    "n_features": 20000,
+    "n_messages": 8800,
+    "n_symbols_used": 9,
+    "seed_stability_sd": 0.07351893601675281,
+    "silent_share": 0.0001
+   },
+   "n_above": 7,
+   "n_below": 1,
+   "n_voting_proxies": 8,
+   "null_proxy_sanity_check": {
+    "agree_hash_null": 0.000568
+   },
+   "proxies": {
+    "agree_char": 0.567235,
+    "agree_counts": 0.490348,
+    "agree_hash_null": 0.000568,
+    "agree_lsa": 0.695958,
+    "boot_stability_full_mean": 0.655861,
+    "boot_stability_full_min": 0.470464,
+    "boot_stability_shared_mean": 0.658085,
+    "calinski_harabasz": 58.281944,
+    "centroid_cosine_max": 0.657446,
+    "centroid_cosine_mean": 0.261948,
+    "davies_bouldin": 7.280877,
+    "seed_stability_mean": 0.782764,
+    "seed_stability_min": 0.675886,
+    "silhouette_cosine": 0.031586,
+    "size_entropy": 0.872011
+   },
+   "reachable": true,
+   "room_name": "general",
+   "rooms_with_that_name": 1,
+   "strict_reading": {
+    "consensus": "above_floor",
+    "n_above": 2,
+    "n_below": 0,
+    "n_voting": 2,
+    "proxies": [
+     "seed_stability_min",
+     "agree_lsa"
+    ],
+    "rule": "ARI-based proxies with zero in-sample calibration errors and at most one leave-one-overlap-out error"
+   },
+   "top_proxy_verdicts": [
     {
-      "village": "main-village",
-      "room_name": "general",
-      "rooms_with_that_name": 1,
-      "window_days": 14,
-      "window_messages": 8800,
-      "window_span_hours": 336.0,
-      "village_messages_total": 215752,
-      "reachable": true,
-      "proxies": {
-        "seed_stability_mean": 0.782764,
-        "seed_stability_min": 0.675886,
-        "boot_stability_full_mean": 0.655861,
-        "boot_stability_full_min": 0.470464,
-        "boot_stability_shared_mean": 0.658085,
-        "silhouette_cosine": 0.031586,
-        "calinski_harabasz": 58.281944,
-        "davies_bouldin": 7.280877,
-        "centroid_cosine_mean": 0.261948,
-        "centroid_cosine_max": 0.657446,
-        "size_entropy": 0.872011,
-        "agree_lsa": 0.695958,
-        "agree_counts": 0.490348,
-        "agree_char": 0.567235,
-        "agree_hash_null": 0.000568
-      },
-      "diagnostics": {
-        "n_messages": 8800,
-        "n_clustered": 8799,
-        "n_features": 20000,
-        "n_distinct_texts": 7801,
-        "n_symbols_used": 9,
-        "silent_share": 0.0001,
-        "seed_stability_sd": 0.07351893601675281,
-        "boot_stability_full_sd": 0.10331926293317321,
-        "boot_shared_points_mean": 3531.5333333333333,
-        "boot_resample_size": 8800,
-        "boot_naive_pad_mean": 0.1083501260880752,
-        "boot_naive_pad_error": -0.5497348913716329,
-        "boot_vs_base_mean": 0.6782823648141388,
-        "boot_vs_base_inflation": 0.022420933547296906
-      },
-      "verdicts": [
-        {
-          "proxy": "seed_stability_mean",
-          "value": 0.782764,
-          "threshold": 0.7914760000000001,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9857,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.008712
-        },
-        {
-          "proxy": "seed_stability_min",
-          "value": 0.675886,
-          "threshold": 0.6227555,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": 0.05313
-        },
-        {
-          "proxy": "boot_stability_full_mean",
-          "value": 0.655861,
-          "threshold": 0.628824,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": 0.027037
-        },
-        {
-          "proxy": "boot_stability_full_min",
-          "value": 0.470464,
-          "threshold": 0.44352899999999995,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": 0.026935
-        },
-        {
-          "proxy": "boot_stability_shared_mean",
-          "value": 0.658085,
-          "threshold": 0.6300785,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": 0.028007
-        },
-        {
-          "proxy": "silhouette_cosine",
-          "value": 0.031586,
-          "threshold": 0.077168,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.045582
-        },
-        {
-          "proxy": "calinski_harabasz",
-          "value": 58.281944,
-          "threshold": 138.895658,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": -80.613714
-        },
-        {
-          "proxy": "davies_bouldin",
-          "value": 7.280877,
-          "threshold": 4.473668,
-          "direction": "lower_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9594,
-          "calibration_errors": 2,
-          "margin_to_threshold": -2.807209
-        },
-        {
-          "proxy": "centroid_cosine_mean",
-          "value": 0.261948,
-          "threshold": 0.487088,
-          "direction": "lower_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": 0.22514
-        },
-        {
-          "proxy": "centroid_cosine_max",
-          "value": 0.657446,
-          "threshold": 0.7771,
-          "direction": "lower_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.9451,
-          "calibration_errors": 3,
-          "margin_to_threshold": 0.119654
-        },
-        {
-          "proxy": "size_entropy",
-          "value": 0.872011,
-          "threshold": 0.9560500000000001,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.6895,
-          "calibration_errors": 15,
-          "margin_to_threshold": -0.084039
-        },
-        {
-          "proxy": "agree_lsa",
-          "value": 0.695958,
-          "threshold": 0.6461735,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": 0.049784
-        },
-        {
-          "proxy": "agree_counts",
-          "value": 0.490348,
-          "threshold": 0.1553485,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.8,
-          "calibration_errors": 14,
-          "margin_to_threshold": 0.335
-        },
-        {
-          "proxy": "agree_char",
-          "value": 0.567235,
-          "threshold": 0.443566,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.9857,
-          "calibration_errors": 1,
-          "margin_to_threshold": 0.123669
-        },
-        {
-          "proxy": "agree_hash_null",
-          "value": 0.000568,
-          "threshold": -0.0002005,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.5241,
-          "calibration_errors": 19,
-          "margin_to_threshold": 0.000769
-        }
-      ],
-      "by_family": {
-        "ari_based": {
-          "n_voting": 8,
-          "n_above": 7,
-          "n_below": 1,
-          "consensus": "split",
-          "proxies": [
-            "seed_stability_mean",
-            "seed_stability_min",
-            "boot_stability_full_mean",
-            "boot_stability_full_min",
-            "boot_stability_shared_mean",
-            "agree_lsa",
-            "agree_counts",
-            "agree_char"
-          ]
-        },
-        "geometric": {
-          "n_voting": 5,
-          "n_above": 2,
-          "n_below": 3,
-          "consensus": "split",
-          "proxies": [
-            "silhouette_cosine",
-            "calinski_harabasz",
-            "davies_bouldin",
-            "centroid_cosine_mean",
-            "centroid_cosine_max"
-          ]
-        }
-      },
-      "strict_reading": {
-        "n_voting": 2,
-        "n_above": 2,
-        "n_below": 0,
-        "consensus": "above_floor",
-        "proxies": [
-          "seed_stability_min",
-          "agree_lsa"
-        ],
-        "rule": "ARI-based proxies with zero in-sample calibration errors and at most one leave-one-overlap-out error"
-      },
-      "n_voting_proxies": 8,
-      "n_above": 7,
-      "n_below": 1,
-      "verdict": "split",
-      "top_proxy_verdicts": [
-        {
-          "proxy": "seed_stability_mean",
-          "value": 0.782764,
-          "threshold": 0.7914760000000001,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9857,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.008712
-        },
-        {
-          "proxy": "seed_stability_min",
-          "value": 0.675886,
-          "threshold": 0.6227555,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": 0.05313
-        },
-        {
-          "proxy": "agree_lsa",
-          "value": 0.695958,
-          "threshold": 0.6461735,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": 0.049784
-        }
-      ],
-      "consensus_of_top_proxies": "split",
-      "null_proxy_sanity_check": {
-        "agree_hash_null": 0.000568
-      }
+     "calibration_balanced_accuracy": 0.9857,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.008712,
+     "proxy": "seed_stability_mean",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only. See RETRACTION_2026_11_07.",
+     "threshold": 0.7914760000000001,
+     "value": 0.782764
     },
     {
-      "village": "open-chat-village",
-      "room_name": "general",
-      "rooms_with_that_name": 1,
-      "window_days": 14,
-      "window_messages": 8226,
-      "window_span_hours": 336.0,
-      "village_messages_total": 47738,
-      "reachable": true,
-      "proxies": {
-        "seed_stability_mean": 0.512924,
-        "seed_stability_min": 0.287375,
-        "boot_stability_full_mean": 0.476766,
-        "boot_stability_full_min": 0.284141,
-        "boot_stability_shared_mean": 0.47646,
-        "silhouette_cosine": 0.028153,
-        "calinski_harabasz": 53.423744,
-        "davies_bouldin": 8.363315,
-        "centroid_cosine_mean": 0.310349,
-        "centroid_cosine_max": 0.888738,
-        "size_entropy": 0.814354,
-        "agree_lsa": 0.455923,
-        "agree_counts": 0.162714,
-        "agree_char": 0.381173,
-        "agree_hash_null": 0.001376
-      },
-      "diagnostics": {
-        "n_messages": 8226,
-        "n_clustered": 8220,
-        "n_features": 18437,
-        "n_distinct_texts": 8059,
-        "n_symbols_used": 9,
-        "silent_share": 0.0007,
-        "seed_stability_sd": 0.20389445854877883,
-        "boot_stability_full_sd": 0.1344251239416302,
-        "boot_shared_points_mean": 3292.4,
-        "boot_resample_size": 8226,
-        "boot_naive_pad_mean": 0.07758349544834423,
-        "boot_naive_pad_error": -0.3988761397335665,
-        "boot_vs_base_mean": 0.3666705790135451,
-        "boot_vs_base_inflation": -0.11009507570111365
-      },
-      "verdicts": [
-        {
-          "proxy": "seed_stability_mean",
-          "value": 0.512924,
-          "threshold": 0.7914760000000001,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9857,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.278552
-        },
-        {
-          "proxy": "seed_stability_min",
-          "value": 0.287375,
-          "threshold": 0.6227555,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": -0.335381
-        },
-        {
-          "proxy": "boot_stability_full_mean",
-          "value": 0.476766,
-          "threshold": 0.628824,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.152058
-        },
-        {
-          "proxy": "boot_stability_full_min",
-          "value": 0.284141,
-          "threshold": 0.44352899999999995,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.159388
-        },
-        {
-          "proxy": "boot_stability_shared_mean",
-          "value": 0.47646,
-          "threshold": 0.6300785,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.153619
-        },
-        {
-          "proxy": "silhouette_cosine",
-          "value": 0.028153,
-          "threshold": 0.077168,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.049015
-        },
-        {
-          "proxy": "calinski_harabasz",
-          "value": 53.423744,
-          "threshold": 138.895658,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": -85.471914
-        },
-        {
-          "proxy": "davies_bouldin",
-          "value": 8.363315,
-          "threshold": 4.473668,
-          "direction": "lower_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9594,
-          "calibration_errors": 2,
-          "margin_to_threshold": -3.889647
-        },
-        {
-          "proxy": "centroid_cosine_mean",
-          "value": 0.310349,
-          "threshold": 0.487088,
-          "direction": "lower_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.9737,
-          "calibration_errors": 1,
-          "margin_to_threshold": 0.176739
-        },
-        {
-          "proxy": "centroid_cosine_max",
-          "value": 0.888738,
-          "threshold": 0.7771,
-          "direction": "lower_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9451,
-          "calibration_errors": 3,
-          "margin_to_threshold": -0.111638
-        },
-        {
-          "proxy": "size_entropy",
-          "value": 0.814354,
-          "threshold": 0.9560500000000001,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.6895,
-          "calibration_errors": 15,
-          "margin_to_threshold": -0.141696
-        },
-        {
-          "proxy": "agree_lsa",
-          "value": 0.455923,
-          "threshold": 0.6461735,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": -0.19025
-        },
-        {
-          "proxy": "agree_counts",
-          "value": 0.162714,
-          "threshold": 0.1553485,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.8,
-          "calibration_errors": 14,
-          "margin_to_threshold": 0.007365
-        },
-        {
-          "proxy": "agree_char",
-          "value": 0.381173,
-          "threshold": 0.443566,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9857,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.062393
-        },
-        {
-          "proxy": "agree_hash_null",
-          "value": 0.001376,
-          "threshold": -0.0002005,
-          "direction": "higher_is_better",
-          "says": "above_floor",
-          "calibration_balanced_accuracy": 0.5241,
-          "calibration_errors": 19,
-          "margin_to_threshold": 0.001576
-        }
-      ],
-      "by_family": {
-        "ari_based": {
-          "n_voting": 8,
-          "n_above": 1,
-          "n_below": 7,
-          "consensus": "split",
-          "proxies": [
-            "seed_stability_mean",
-            "seed_stability_min",
-            "boot_stability_full_mean",
-            "boot_stability_full_min",
-            "boot_stability_shared_mean",
-            "agree_lsa",
-            "agree_counts",
-            "agree_char"
-          ]
-        },
-        "geometric": {
-          "n_voting": 5,
-          "n_above": 1,
-          "n_below": 4,
-          "consensus": "split",
-          "proxies": [
-            "silhouette_cosine",
-            "calinski_harabasz",
-            "davies_bouldin",
-            "centroid_cosine_mean",
-            "centroid_cosine_max"
-          ]
-        }
-      },
-      "strict_reading": {
-        "n_voting": 2,
-        "n_above": 0,
-        "n_below": 2,
-        "consensus": "below_floor",
-        "proxies": [
-          "seed_stability_min",
-          "agree_lsa"
-        ],
-        "rule": "ARI-based proxies with zero in-sample calibration errors and at most one leave-one-overlap-out error"
-      },
-      "n_voting_proxies": 8,
-      "n_above": 1,
-      "n_below": 7,
-      "verdict": "split",
-      "top_proxy_verdicts": [
-        {
-          "proxy": "seed_stability_mean",
-          "value": 0.512924,
-          "threshold": 0.7914760000000001,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 0.9857,
-          "calibration_errors": 1,
-          "margin_to_threshold": -0.278552
-        },
-        {
-          "proxy": "seed_stability_min",
-          "value": 0.287375,
-          "threshold": 0.6227555,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": -0.335381
-        },
-        {
-          "proxy": "agree_lsa",
-          "value": 0.455923,
-          "threshold": 0.6461735,
-          "direction": "higher_is_better",
-          "says": "below_floor",
-          "calibration_balanced_accuracy": 1.0,
-          "calibration_errors": 0,
-          "margin_to_threshold": -0.19025
-        }
-      ],
-      "consensus_of_top_proxies": "below_floor",
-      "null_proxy_sanity_check": {
-        "agree_hash_null": 0.001376
-      }
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.05313,
+     "proxy": "seed_stability_min",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only. See RETRACTION_2026_11_07.",
+     "threshold": 0.6227555,
+     "value": 0.675886
+    },
+    {
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.049784,
+     "proxy": "agree_lsa",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only. See RETRACTION_2026_11_07.",
+     "threshold": 0.6461735,
+     "value": 0.695958
     }
-  ],
-  "summary": {
-    "channels_reachable": 2,
-    "channels_requested": 2,
-    "per_channel": [
-      {
-        "village": "main-village",
-        "window_messages": 8800,
-        "verdict": "above_floor",
-        "strict_reading": {
-          "n_voting": 2,
-          "n_above": 2,
-          "n_below": 0,
-          "consensus": "above_floor",
-          "proxies": [
-            "seed_stability_min",
-            "agree_lsa"
-          ],
-          "rule": "ARI-based proxies with zero in-sample calibration errors and at most one leave-one-overlap-out error"
-        },
-        "ari_family_consensus": "split",
-        "consensus_of_top_proxies": "split",
-        "n_above": 7,
-        "n_below": 1,
-        "n_voting_proxies": 8,
-        "geometric_family_consensus": "split"
-      },
-      {
-        "village": "open-chat-village",
-        "window_messages": 8226,
-        "verdict": "below_floor",
-        "strict_reading": {
-          "n_voting": 2,
-          "n_above": 0,
-          "n_below": 2,
-          "consensus": "below_floor",
-          "proxies": [
-            "seed_stability_min",
-            "agree_lsa"
-          ],
-          "rule": "ARI-based proxies with zero in-sample calibration errors and at most one leave-one-overlap-out error"
-        },
-        "ari_family_consensus": "split",
-        "consensus_of_top_proxies": "below_floor",
-        "n_above": 1,
-        "n_below": 7,
-        "n_voting_proxies": 8,
-        "geometric_family_consensus": "split"
-      }
-    ]
+   ],
+   "verdict": "split",
+   "verdict_scope": "k=8 only. See RETRACTION_2026_11_07. Do not read as a channel-level claim.",
+   "verdicts": [
+    {
+     "calibration_balanced_accuracy": 0.9857,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.008712,
+     "proxy": "seed_stability_mean",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.7914760000000001,
+     "value": 0.782764
+    },
+    {
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.05313,
+     "proxy": "seed_stability_min",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.6227555,
+     "value": 0.675886
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.027037,
+     "proxy": "boot_stability_full_mean",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.628824,
+     "value": 0.655861
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.026935,
+     "proxy": "boot_stability_full_min",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.44352899999999995,
+     "value": 0.470464
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.028007,
+     "proxy": "boot_stability_shared_mean",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.6300785,
+     "value": 0.658085
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.045582,
+     "proxy": "silhouette_cosine",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.077168,
+     "value": 0.031586
+    },
+    {
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -80.613714,
+     "proxy": "calinski_harabasz",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 138.895658,
+     "value": 58.281944
+    },
+    {
+     "calibration_balanced_accuracy": 0.9594,
+     "calibration_errors": 2,
+     "direction": "lower_is_better",
+     "margin_to_threshold": -2.807209,
+     "proxy": "davies_bouldin",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 4.473668,
+     "value": 7.280877
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "lower_is_better",
+     "margin_to_threshold": 0.22514,
+     "proxy": "centroid_cosine_mean",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.487088,
+     "value": 0.261948
+    },
+    {
+     "calibration_balanced_accuracy": 0.9451,
+     "calibration_errors": 3,
+     "direction": "lower_is_better",
+     "margin_to_threshold": 0.119654,
+     "proxy": "centroid_cosine_max",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.7771,
+     "value": 0.657446
+    },
+    {
+     "calibration_balanced_accuracy": 0.6895,
+     "calibration_errors": 15,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.084039,
+     "proxy": "size_entropy",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.9560500000000001,
+     "value": 0.872011
+    },
+    {
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.049784,
+     "proxy": "agree_lsa",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.6461735,
+     "value": 0.695958
+    },
+    {
+     "calibration_balanced_accuracy": 0.8,
+     "calibration_errors": 14,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.335,
+     "proxy": "agree_counts",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.1553485,
+     "value": 0.490348
+    },
+    {
+     "calibration_balanced_accuracy": 0.9857,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.123669,
+     "proxy": "agree_char",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.443566,
+     "value": 0.567235
+    },
+    {
+     "calibration_balanced_accuracy": 0.5241,
+     "calibration_errors": 19,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.000769,
+     "proxy": "agree_hash_null",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": -0.0002005,
+     "value": 0.000568
+    }
+   ],
+   "village": "main-village",
+   "village_messages_total": 215752,
+   "window_days": 14,
+   "window_messages": 8800,
+   "window_span_hours": 336.0
+  },
+  {
+   "by_family": {
+    "ari_based": {
+     "consensus": "split",
+     "n_above": 1,
+     "n_below": 7,
+     "n_voting": 8,
+     "proxies": [
+      "seed_stability_mean",
+      "seed_stability_min",
+      "boot_stability_full_mean",
+      "boot_stability_full_min",
+      "boot_stability_shared_mean",
+      "agree_lsa",
+      "agree_counts",
+      "agree_char"
+     ]
+    },
+    "geometric": {
+     "consensus": "split",
+     "n_above": 1,
+     "n_below": 4,
+     "n_voting": 5,
+     "proxies": [
+      "silhouette_cosine",
+      "calinski_harabasz",
+      "davies_bouldin",
+      "centroid_cosine_mean",
+      "centroid_cosine_max"
+     ]
+    }
+   },
+   "consensus_of_top_proxies": "below_floor",
+   "diagnostics": {
+    "boot_naive_pad_error": -0.3988761397335665,
+    "boot_naive_pad_mean": 0.07758349544834423,
+    "boot_resample_size": 8226,
+    "boot_shared_points_mean": 3292.4,
+    "boot_stability_full_sd": 0.1344251239416302,
+    "boot_vs_base_inflation": -0.11009507570111365,
+    "boot_vs_base_mean": 0.3666705790135451,
+    "n_clustered": 8220,
+    "n_distinct_texts": 8059,
+    "n_features": 18437,
+    "n_messages": 8226,
+    "n_symbols_used": 9,
+    "seed_stability_sd": 0.20389445854877883,
+    "silent_share": 0.0007
+   },
+   "n_above": 1,
+   "n_below": 7,
+   "n_voting_proxies": 8,
+   "null_proxy_sanity_check": {
+    "agree_hash_null": 0.001376
+   },
+   "proxies": {
+    "agree_char": 0.381173,
+    "agree_counts": 0.162714,
+    "agree_hash_null": 0.001376,
+    "agree_lsa": 0.455923,
+    "boot_stability_full_mean": 0.476766,
+    "boot_stability_full_min": 0.284141,
+    "boot_stability_shared_mean": 0.47646,
+    "calinski_harabasz": 53.423744,
+    "centroid_cosine_max": 0.888738,
+    "centroid_cosine_mean": 0.310349,
+    "davies_bouldin": 8.363315,
+    "seed_stability_mean": 0.512924,
+    "seed_stability_min": 0.287375,
+    "silhouette_cosine": 0.028153,
+    "size_entropy": 0.814354
+   },
+   "reachable": true,
+   "room_name": "general",
+   "rooms_with_that_name": 1,
+   "strict_reading": {
+    "consensus": "below_floor",
+    "n_above": 0,
+    "n_below": 2,
+    "n_voting": 2,
+    "proxies": [
+     "seed_stability_min",
+     "agree_lsa"
+    ],
+    "rule": "ARI-based proxies with zero in-sample calibration errors and at most one leave-one-overlap-out error"
+   },
+   "top_proxy_verdicts": [
+    {
+     "calibration_balanced_accuracy": 0.9857,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.278552,
+     "proxy": "seed_stability_mean",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only. See RETRACTION_2026_11_07.",
+     "threshold": 0.7914760000000001,
+     "value": 0.512924
+    },
+    {
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.335381,
+     "proxy": "seed_stability_min",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only. See RETRACTION_2026_11_07.",
+     "threshold": 0.6227555,
+     "value": 0.287375
+    },
+    {
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.19025,
+     "proxy": "agree_lsa",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only. See RETRACTION_2026_11_07.",
+     "threshold": 0.6461735,
+     "value": 0.455923
+    }
+   ],
+   "verdict": "split",
+   "verdict_scope": "k=8 only. See RETRACTION_2026_11_07. Do not read as a channel-level claim.",
+   "verdicts": [
+    {
+     "calibration_balanced_accuracy": 0.9857,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.278552,
+     "proxy": "seed_stability_mean",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.7914760000000001,
+     "value": 0.512924
+    },
+    {
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.335381,
+     "proxy": "seed_stability_min",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.6227555,
+     "value": 0.287375
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.152058,
+     "proxy": "boot_stability_full_mean",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.628824,
+     "value": 0.476766
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.159388,
+     "proxy": "boot_stability_full_min",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.44352899999999995,
+     "value": 0.284141
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.153619,
+     "proxy": "boot_stability_shared_mean",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.6300785,
+     "value": 0.47646
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.049015,
+     "proxy": "silhouette_cosine",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.077168,
+     "value": 0.028153
+    },
+    {
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -85.471914,
+     "proxy": "calinski_harabasz",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 138.895658,
+     "value": 53.423744
+    },
+    {
+     "calibration_balanced_accuracy": 0.9594,
+     "calibration_errors": 2,
+     "direction": "lower_is_better",
+     "margin_to_threshold": -3.889647,
+     "proxy": "davies_bouldin",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 4.473668,
+     "value": 8.363315
+    },
+    {
+     "calibration_balanced_accuracy": 0.9737,
+     "calibration_errors": 1,
+     "direction": "lower_is_better",
+     "margin_to_threshold": 0.176739,
+     "proxy": "centroid_cosine_mean",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.487088,
+     "value": 0.310349
+    },
+    {
+     "calibration_balanced_accuracy": 0.9451,
+     "calibration_errors": 3,
+     "direction": "lower_is_better",
+     "margin_to_threshold": -0.111638,
+     "proxy": "centroid_cosine_max",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.7771,
+     "value": 0.888738
+    },
+    {
+     "calibration_balanced_accuracy": 0.6895,
+     "calibration_errors": 15,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.141696,
+     "proxy": "size_entropy",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.9560500000000001,
+     "value": 0.814354
+    },
+    {
+     "calibration_balanced_accuracy": 1.0,
+     "calibration_errors": 0,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.19025,
+     "proxy": "agree_lsa",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.6461735,
+     "value": 0.455923
+    },
+    {
+     "calibration_balanced_accuracy": 0.8,
+     "calibration_errors": 14,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.007365,
+     "proxy": "agree_counts",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": 0.1553485,
+     "value": 0.162714
+    },
+    {
+     "calibration_balanced_accuracy": 0.9857,
+     "calibration_errors": 1,
+     "direction": "higher_is_better",
+     "margin_to_threshold": -0.062393,
+     "proxy": "agree_char",
+     "says_at_k8": "below_floor",
+     "scope": "k=8 only",
+     "threshold": 0.443566,
+     "value": 0.381173
+    },
+    {
+     "calibration_balanced_accuracy": 0.5241,
+     "calibration_errors": 19,
+     "direction": "higher_is_better",
+     "margin_to_threshold": 0.001576,
+     "proxy": "agree_hash_null",
+     "says_at_k8": "above_floor",
+     "scope": "k=8 only",
+     "threshold": -0.0002005,
+     "value": 0.001376
+    }
+   ],
+   "village": "open-chat-village",
+   "village_messages_total": 47738,
+   "window_days": 14,
+   "window_messages": 8226,
+   "window_span_hours": 336.0
   }
+ ],
+ "excluded_as_null": [
+  "agree_hash_null"
+ ],
+ "honesty_caveat": "The family split is by construction, but the strict_reading rule was fixed after the benchmark calibration had been inspected, which is what calibration is for, and after a first pass over these two channels had already been run. It is therefore NOT a pre-registered test. Every proxy's raw value and cut is in the output so a reader can apply any other rule.",
+ "k": 8,
+ "min_calibration_balanced_accuracy_to_vote": 0.8,
+ "privacy": "aggregate statistics only: counts and clustering indices. No message text, no participant identifier, no room identifier. Human messages excluded by the loader. Research use only.",
+ "proxy_families": {
+  "ari_based": [
+   "seed_stability_mean",
+   "seed_stability_min",
+   "boot_stability_full_mean",
+   "boot_stability_full_min",
+   "boot_stability_shared_mean",
+   "agree_lsa",
+   "agree_counts",
+   "agree_char"
+  ],
+  "geometric": [
+   "silhouette_cosine",
+   "calinski_harabasz",
+   "davies_bouldin",
+   "centroid_cosine_mean",
+   "centroid_cosine_max",
+   "size_entropy"
+  ]
+ },
+ "question": "where the two real channels the audit analysed sit relative to the symbolisation floor, judged by label-free proxies calibrated in floor_proxy_sweep.json",
+ "stated_floor_ari": 0.44,
+ "summary": {
+  "channels_reachable": 2,
+  "channels_requested": 2,
+  "per_channel": [
+   {
+    "ari_family_consensus": "split",
+    "consensus_of_top_proxies": "split",
+    "geometric_family_consensus": "split",
+    "n_above": 7,
+    "n_below": 1,
+    "n_voting_proxies": 8,
+    "strict_reading": {
+     "consensus": "above_floor",
+     "n_above": 2,
+     "n_below": 0,
+     "n_voting": 2,
+     "proxies": [
+      "seed_stability_min",
+      "agree_lsa"
+     ],
+     "rule": "ARI-based proxies with zero in-sample calibration errors and at most one leave-one-overlap-out error"
+    },
+    "verdict": "above_floor",
+    "village": "main-village",
+    "window_messages": 8800
+   },
+   {
+    "ari_family_consensus": "split",
+    "consensus_of_top_proxies": "below_floor",
+    "geometric_family_consensus": "split",
+    "n_above": 1,
+    "n_below": 7,
+    "n_voting_proxies": 8,
+    "strict_reading": {
+     "consensus": "below_floor",
+     "n_above": 0,
+     "n_below": 2,
+     "n_voting": 2,
+     "proxies": [
+      "seed_stability_min",
+      "agree_lsa"
+     ],
+     "rule": "ARI-based proxies with zero in-sample calibration errors and at most one leave-one-overlap-out error"
+    },
+    "verdict": "below_floor",
+    "village": "open-chat-village",
+    "window_messages": 8226
+   }
+  ]
+ },
+ "symboliser_seed": 0,
+ "verdict_taken_from": "ari_based",
+ "window_days": 14
 }

@@ -147,6 +147,63 @@ reporting an absence of influence, it is reporting that its own front end failed
 downstream of the symboliser can tell those apart. If you publish an influence graph over open text,
 report your symboliser's agreement with something.
 
+**But the floor is not a property of the symboliser alone, and the label-free proxies for it do not
+transfer.** `floor_contradiction.py` was written to settle a disagreement between two of this
+repository's own measurements. The label-free cuts calibrated in `floor_proxy_sweep.json` place the
+audit's open-chat channel below the floor; the audit's certified-edge counts place it above anything
+a below-floor instance of this generator produces. Both measurements turn out to be confounded, and
+the overlap sweep hid it by holding one knob fixed (`floor_contradiction.json`):
+
+| what was held fixed | what was moved | what happened |
+|---|---|---|
+| true ARI 1.00, both voting proxies 1.00 | `shared_topic` 0.30 to 0.95 | permutation count 6.0 to 72.7 |
+| `vocab_overlap` 0.80, true ARI 0.31 to 0.48 | `shared_topic` 0.00 to 0.95 | `seed_stability_min` 0.39 to 0.73, crossing its published cut |
+| `vocab_overlap` 0.00, true ARI 1.00 | `n_messages` 8000 to 2000 | permutation count 23.7 to 7.3 |
+| `vocab_overlap` 0.00 | true topic count 8 to 24, symboliser still at k=8 | true ARI 1.00 to 0.27, permutation count 23.0 to 22.3, conditional recall 1.00 throughout |
+
+Three consequences, each measured rather than argued:
+
+- **The certified-edge count is not a symboliser score.** Within the overlap sweep it tracked the
+  true ARI at Spearman 0.93, which is better than any proxy in `floor_proxy.py`, but only because
+  `shared_topic` was pinned at 0.55 at every level. Unpin it and the count varies twelvefold at
+  perfect symbolisation.
+- **The ARI floor moves with the common cause.** At `shared_topic` 0 the conditional detector keeps
+  all four planted edges at a true ARI of 0.30, below the 0.44 this section names. The floor is a
+  property of the pair (symboliser, channel), not of the symboliser.
+- **A below-floor ARI does not imply a near-zero edge count.** It does on the vocabulary mechanism
+  and not on the k mechanism, where ARI 0.27 still certifies 22.3 edges at full recall.
+
+**The published cuts fail out of mechanism.** Calibrated on shared vocabulary with the topic count
+known and correct, they scored a balanced accuracy of 1.00. Re-applied, unchanged, to instances that
+differ only in their true topic count, `seed_stability_min` scores 0.75 and `agree_lsa` 0.57. All
+seven of seed stability's errors condemn a symbolisation under which the detector in fact kept every
+planted edge; three of cross-symboliser agreement's nine call a true ARI of 0.25 to 0.29 safe.
+Message length is the other mechanism that breaks them: at four words per message, true ARI 0.65 to
+0.69, both cuts read below the floor at full recall.
+
+**On the real channels the verdict is an artifact of k.** Recomputed over a k grid of 2 to 16 with
+the same loader, the same window and the same five-seed stability protocol, which reproduces
+`floor_proxy_real.json`'s k=8 readings to the digit:
+
+| k | main-village `seed_stability_min` | `agree_lsa` | open-chat `seed_stability_min` | `agree_lsa` |
+|---|---|---|---|---|
+| 2 | 0.634 | -0.040 | 0.077 | 1.000 |
+| **4** | **0.874** | **0.878** | **0.950** | **0.978** |
+| 6 | 0.628 | 0.753 | 0.408 | 0.759 |
+| 8 | 0.676 | 0.696 | **0.287** | **0.456** |
+| 12 | 0.761 | 0.694 | 0.355 | 0.336 |
+| 16 | 0.818 | 0.780 | 0.277 | 0.478 |
+
+Open-chat is the channel the control condemned, and at k=4 it produces the highest stability reading
+either channel reaches anywhere on the grid. The published cuts of 0.6228 and 0.6462 clear it there
+by a wide margin. The rival explanation, that short messages depressed its proxies, is ruled out by
+the text itself: 27.1 percent of main-village's messages are under five tokens against 2.3 percent
+of open-chat's, so the short-message channel is the one the control cleared.
+
+**So `floor_proxy_real.json`'s two verdicts are statements about k=8 and nothing more.** The floor
+control should not be run at a single k. The defensible version reports the proxy as a curve over k
+and declines to certify a channel whose verdict changes along it, which both of these do.
+
 **Precision, not recall, is the weak point of pairwise transfer entropy.** That is what motivated the
 conditional detector.
 
@@ -255,6 +312,7 @@ The MIT licence here covers this repository's own code.
 | `floor_proxy.py` | the label-free symbolisation-quality statistics, as a library | - |
 | `floor_proxy_sweep.py` | calibrates those statistics against known ARI over 9 overlap levels, writing `floor_proxy_sweep.json` | ~42 min |
 | `floor_proxy_real.py` | applies the calibrated cuts to the two real channels, writing `floor_proxy_real.json`; needs the gated corpus in the local cache | ~3 min |
+| `floor_contradiction.py` | tests the floor proxies against the certified-edge count, which disagree with them on the real channels, writing `floor_contradiction.json`; reads the audit's committed counts and never the corpus | ~60 min |
 | `text_pool.py` | loads an LLM-rendered message corpus as the text layer | - |
 | `stationarity_big.py` | 30-replicate activity-drift sweep with Wilson intervals | ~15 min |
 | `bench_stationarity.py` | the original 8-replicate drift sweep, **superseded** by the above | ~4 min |
