@@ -3,6 +3,7 @@
 Run: python -m pytest tests -q    (needs only numpy, not scikit-learn)
 """
 import collections
+import hashlib
 import pathlib
 import re
 import sys
@@ -169,3 +170,152 @@ def test_activity_drift_makes_volumes_non_stationary():
         shares = [collections.Counter(b).get("agent00", 0) / len(b) for b in blocks]
         return float(np.std(shares) / (np.mean(shares) + 1e-9))
     assert cv(0.9) > cv(0.0)
+
+
+# ---------------------------------------------------------------------------
+# Turn-taking (p_repeat, p_return)
+# ---------------------------------------------------------------------------
+
+def _speaker_rates(**kw):
+    """Realised repeat rate, return-after-exactly-one-other rate, and median block-share CV."""
+    inst = bench_gen.generate_instance(n_agents=12, n_messages=4000, edges=(),
+                                       shared_topic=0.0, **kw)
+    a = np.asarray([x for x, _, _, _ in inst["events"]])
+    repeat = float((a[1:] == a[:-1]).mean())
+    ret = float(((a[2:] == a[:-2]) & (a[2:] != a[1:-1])).mean())
+    cvs = []
+    for who in np.unique(a):
+        share = np.array([float((b == who).mean()) for b in np.array_split(a, 10)])
+        if share.mean() > 0:
+            cvs.append(float(share.std() / share.mean()))
+    return repeat, ret, float(np.median(cvs))
+
+
+# Digests of the generator's output taken from the commit BEFORE p_repeat and p_return existed,
+# over three configurations that between them exercise planted edges, shared leaders, drift,
+# burstiness, a non-default lag, a non-default topic count and vocabulary overlap. The whole point
+# of the new knobs is that the factorial compares one generator against itself at different
+# settings rather than two different generators, and that claim is only worth as much as this test.
+_PRE_TURN_TAKING_DIGESTS = [
+    (dict(edges=((0, 5, 0.4),), n_messages=800, seed=8),
+     "a959e62b3365121b4f47f8720e5625bbfd3b86a52a13c83a4bfcfb90121c84de"),
+    (dict(edges=(), n_messages=1200, shared_topic=0.0, activity_drift=0.9, n_blocks=10, seed=14),
+     "4a74d21e144153c52e975ca243208762c91087d098d3bbdbd409967c879005e1"),
+    (dict(edges=((0, 2, 0.4), (0, 5, 0.3), (1, 6, 0.5)), n_messages=600, k_topics=5, n_agents=7,
+          burstiness=0.4, reaction_lag=3, vocab_overlap=0.5, seed=21),
+     "fc5e77d788186ce5abdfc09dc0d9d3bc2d0a404ce03e07f09c5e3cf35dadfa85"),
+]
+
+
+def _digest(inst):
+    return hashlib.sha256((repr(inst["events"]) + repr(sorted(inst["ground_truth"]))
+                           + repr(sorted(inst["realised_coupling"].items()))).encode()).hexdigest()
+
+
+@pytest.mark.parametrize("cfg,digest", _PRE_TURN_TAKING_DIGESTS)
+@pytest.mark.parametrize("knobs", [{}, dict(p_repeat=0.0, p_return=0.0)])
+def test_turn_taking_at_zero_reproduces_the_earlier_generator_bit_for_bit(cfg, digest, knobs):
+    """Zero means OFF, not a chain with zero probabilities.
+
+    If the branch drew a random number and then threw it away, the stream would still be a valid
+    null but every number measured before the knob existed would have to be remeasured, and the
+    drift sweep in bench_stationarity_big.json could not be compared with the new cells. Both the
+    default and an explicit zero have to land on the same bytes as the generator that preceded
+    them, which is what these digests pin.
+    """
+    assert _digest(bench_gen.generate_instance(**cfg, **knobs)) == digest
+
+
+def test_p_repeat_raises_the_immediate_repeat_rate():
+    base_rep, _, _ = _speaker_rates(seed=30)
+    rep, _, _ = _speaker_rates(p_repeat=0.5, seed=30)
+    assert rep > 1.5 * base_rep and rep > 0.5
+
+
+def test_p_return_raises_the_return_after_one_rate():
+    _, base_ret, _ = _speaker_rates(seed=30)
+    _, ret, _ = _speaker_rates(p_return=0.5, seed=30)
+    assert ret > 2 * base_ret and ret > 0.4
+
+
+def test_the_two_turn_taking_knobs_move_different_statistics():
+    """p_repeat must not be a slow way of writing p_return. Each one raises its own rate and
+    pushes the other DOWN, because a tick spent repeating is a tick not spent returning."""
+    rep_only, ret_at_rep, _ = _speaker_rates(p_repeat=0.5, seed=30)
+    rep_at_ret, ret_only, _ = _speaker_rates(p_return=0.5, seed=30)
+    assert rep_only > rep_at_ret
+    assert ret_only > ret_at_rep
+
+
+def test_the_return_branch_requires_a_different_intervening_speaker():
+    """Regression: the obvious version of this chain runs away.
+
+    If `p_return` can pick the speaker from two back when that is also the last speaker, then one
+    repeat makes both branches repeat, and at p_repeat 0.36 with p_return 0.38 the realised repeat
+    rate came out at 0.678 instead of anywhere near the 0.36 the knob is calibrated against. The
+    branch is conditional for that reason, and the bound here is below the runaway value, so a
+    regression to the unconditional form fails this test rather than quietly inflating the cell
+    the experiment calls real.
+    """
+    rep, _, _ = _speaker_rates(p_repeat=0.36, p_return=0.38, seed=30)
+    assert rep < 0.58
+
+
+def test_turn_taking_and_activity_drift_are_separate_knobs():
+    """The whole reason the knob exists: the real speaker sequence carries turn-taking and
+    non-stationary activity at once, and shuffling it destroys both. Turn-taking alone must raise
+    the repeat rate without making activity non-stationary, and drift alone must do the reverse."""
+    base_rep, _, base_cv = _speaker_rates(seed=30)
+    turn_rep, _, turn_cv = _speaker_rates(p_repeat=0.36, p_return=0.38, seed=30)
+    drift_rep, _, drift_cv = _speaker_rates(activity_drift=0.9, seed=30)
+    assert turn_rep > 1.5 * base_rep, "turn-taking should raise the repeat rate"
+    assert drift_cv > 2 * turn_cv, "drift should dominate the block-share CV"
+    assert turn_cv < drift_cv
+
+
+def test_activity_drift_also_raises_the_repeat_rate_so_the_statistics_are_not_separable():
+    """Documented, because it is easy to read the knob as owning the statistic.
+
+    The knobs are independent; the statistics they move are not. Concentrating activity into fewer
+    agents per block makes repeats more likely all by itself, so a measured repeat rate cannot be
+    read back as a turn-taking setting and any cell has to report what it realised.
+    """
+    base_rep, _, _ = _speaker_rates(seed=30)
+    drift_rep, _, _ = _speaker_rates(activity_drift=0.9, seed=30)
+    assert drift_rep > base_rep
+
+
+def test_turn_taking_does_not_disturb_the_planted_edge_label():
+    """Reactions are scheduled by the leader speaking and bypass the chain, so an unshared edge
+    should still realise close to its stated coupling with turn-taking switched on."""
+    inst = bench_gen.generate_instance(edges=((2, 9, 0.5),), n_messages=8000,
+                                       p_repeat=0.36, p_return=0.38, seed=40)
+    assert inst["ground_truth"] == {("agent02", "agent09")}
+    assert abs(inst["realised_coupling"]["2->9"] - 0.5) < 0.06
+
+
+def test_turn_taking_knobs_are_recorded_in_the_config():
+    cfg = bench_gen.generate_instance(edges=(), n_messages=200, p_repeat=0.1, p_return=0.2,
+                                      seed=41)["config"]
+    assert cfg["p_repeat"] == 0.1 and cfg["p_return"] == 0.2
+    assert bench_gen.generate_instance(edges=(), n_messages=200,
+                                       seed=41)["config"]["p_repeat"] == 0.0
+
+
+@pytest.mark.parametrize("bad,msg", [
+    (dict(p_repeat=1.2), "p_repeat"),
+    (dict(p_repeat=-0.1), "p_repeat"),
+    (dict(p_return=1.2), "p_return"),
+    (dict(p_return=-0.1), "p_return"),
+    (dict(p_repeat=0.6, p_return=0.6), "exceeds 1"),
+])
+def test_invalid_turn_taking_settings_are_rejected(bad, msg):
+    with pytest.raises(ValueError, match=msg):
+        bench_gen.generate_instance(edges=(), n_messages=200, seed=42, **bad)
+
+
+def test_turn_taking_still_puts_one_speaker_in_each_tick():
+    inst = bench_gen.generate_instance(edges=((0, 5, 0.4),), n_messages=1000,
+                                       p_repeat=0.36, p_return=0.38, seed=43)
+    times = [t for _, t, _, _ in inst["events"]]
+    assert times == sorted(times) and len(times) == 1000

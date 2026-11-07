@@ -107,13 +107,19 @@ Sweeping `activity_drift` on pure nulls, 30 replicates per cell, 95% Wilson inte
 | 0.6 | 0.200 [0.095, 0.373] | 0.167 [0.073, 0.336] |
 | 0.9 | **0.367** [0.219, 0.545] | **0.100** [0.035, 0.256] |
 
-The shift surrogate inflates about fivefold across the sweep. The permutation surrogate stays between
-0.033 and 0.167, and every one of its intervals covers the nominal 0.05, so it is not clearly broken
-by drift. An earlier 8-replicate version of this sweep reported 0.375 for the permutation surrogate
-at drift 0.6, which looked alarming and was noise; this is why the sweep was re-run at 30. Its
-intervals are still wide, so treat the permutation row as "not shown to fail" rather than "shown to
-be nominal", and note that the audit's headline 0.063 comes from 300 replicates on the real
-channel's own speaker sequence, not from here.
+The shift surrogate inflates about fivefold across the sweep. An earlier 8-replicate version
+reported 0.375 for the permutation surrogate at drift 0.6, which looked alarming and was noise; this
+is why the sweep was re-run at 30.
+
+**Superseded in part by `turntaking_factorial.json`, which runs 200 replicates per cell.** At that
+precision the permutation surrogate is no longer "not shown to fail": pooled over 2,400 replicates
+it sits at **0.0942, 95% Wilson [0.083, 0.107]**, which excludes the nominal 0.05, and it is flat
+across every cell of a turn-taking by drift factorial with no trend in either knob. So the honest
+statement is **stable at about 0.09, which is not 0.05**, rather than nominal. It does not degrade
+under turn-taking, which is the thing it was built to survive. The audit's headline 0.063 [0.041,
+0.097] comes from 300 replicates on the real channel's own speaker sequence rather than from this
+generator; the two intervals overlap, so they are consistent, and the generator's larger sample is
+the more precise of the two.
 
 **The conclusions survive bad symbolisation, down to a sharp floor.** The fair objection to a
 synthetic text layer is that disjoint per-topic vocabularies make symbolisation trivial, so every
@@ -246,6 +252,9 @@ The MIT licence here covers this repository's own code.
 | `revalidate.py` | **the authoritative validation**: both estimators on all three families plus the power sweep, writing `bench_validation.json` | ~3 min |
 | `bench_run.py` | scores both surrogates across the whole grid | ~5 min at `SEEDS=2, N_SUR=100` |
 | `realism_sweep.py` | sweeps `vocab_overlap` and measures symboliser ARI against the truth | ~3 min |
+| `floor_proxy.py` | the label-free symbolisation-quality statistics, as a library | - |
+| `floor_proxy_sweep.py` | calibrates those statistics against known ARI over 9 overlap levels, writing `floor_proxy_sweep.json` | ~42 min |
+| `floor_proxy_real.py` | applies the calibrated cuts to the two real channels, writing `floor_proxy_real.json`; needs the gated corpus in the local cache | ~3 min |
 | `text_pool.py` | loads an LLM-rendered message corpus as the text layer | - |
 | `stationarity_big.py` | 30-replicate activity-drift sweep with Wilson intervals | ~15 min |
 | `bench_stationarity.py` | the original 8-replicate drift sweep, **superseded** by the above | ~4 min |
@@ -275,9 +284,14 @@ Every test is a regression test for a real defect. `tests/test_bench_gen.py` nee
    not capped by construction.
 3. **Realistic text layer.** Replace the vocabulary sampler with generated agent dialogue, keeping
    the generator in charge of structure, and publish the corpus.
-4. **Turn-taking in the generator.** It currently draws speakers independently, which is why it does
-   not reproduce the real surrogate failure. Adding realistic turn-taking would make it a sharper
-   instrument and let it test surrogates properly.
+4. ~~**Turn-taking in the generator.**~~ **Done, and the stated expectation was wrong.** The
+   generator now has `p_repeat` and `p_return` knobs (a Markov speaker chain, bit-identical to the
+   old generator at zero). The guess above was that adding turn-taking would reproduce the real
+   surrogate failure. It does the opposite: turn-taking **suppresses** the shift surrogate, taking
+   it from 0.055 at no turn-taking and no drift to **0.000** at real-channel values, while drift is
+   the only inflating factor and reaches 0.400 with turn-taking off. Neither knob nor both together
+   reaches the real channel's 0.90, so the generator still does not explain that number. See
+   `turntaking_factorial.py`.
 5. **More detectors.** Net-influence scores, multivariate transfer entropy, and continuous-time
    estimators.
 

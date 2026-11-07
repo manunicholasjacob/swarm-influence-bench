@@ -1,0 +1,5882 @@
+{
+  "question": "whether a statistic computable without ground-truth labels tracks the true adjusted Rand index well enough to tell an above-floor symboliser from a below-floor one",
+  "k": 8,
+  "seeds_per_cell": 3,
+  "n_surrogates": 100,
+  "n_messages": 8000,
+  "overlaps": [
+    0.0,
+    0.3,
+    0.5,
+    0.65,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "stated_floor_ari": 0.44,
+  "proxy_direction": {
+    "seed_stability_mean": "higher_is_better",
+    "seed_stability_min": "higher_is_better",
+    "boot_stability_full_mean": "higher_is_better",
+    "boot_stability_full_min": "higher_is_better",
+    "boot_stability_shared_mean": "higher_is_better",
+    "silhouette_cosine": "higher_is_better",
+    "calinski_harabasz": "higher_is_better",
+    "davies_bouldin": "lower_is_better",
+    "centroid_cosine_mean": "lower_is_better",
+    "centroid_cosine_max": "lower_is_better",
+    "size_entropy": "higher_is_better",
+    "agree_lsa": "higher_is_better",
+    "agree_counts": "higher_is_better",
+    "agree_char": "higher_is_better",
+    "agree_hash_null": "higher_is_better"
+  },
+  "rows": [
+    {
+      "vocab_overlap": 0.0,
+      "family": "common_cause_null",
+      "instance_seed": 900,
+      "symboliser_seed": 0,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 0.93687,
+        "seed_stability_min": 0.842176,
+        "boot_stability_full_mean": 0.907566,
+        "boot_stability_full_min": 0.842124,
+        "boot_stability_shared_mean": 0.907983,
+        "silhouette_cosine": 0.239188,
+        "calinski_harabasz": 309.268881,
+        "davies_bouldin": 2.512974,
+        "centroid_cosine_mean": 0.0,
+        "centroid_cosine_max": 0.0,
+        "size_entropy": 0.959376,
+        "agree_lsa": 1.0,
+        "agree_counts": 1.0,
+        "agree_char": 1.0,
+        "agree_hash_null": 0.000127
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 320,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0814999919692832,
+        "boot_stability_full_sd": 0.07856520721030824,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.1136209518615105,
+        "boot_naive_pad_error": -0.794361629019926,
+        "boot_vs_base_mean": 0.9474217366564867,
+        "boot_vs_base_inflation": 0.03985596690064819
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 24,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.0,
+      "family": "common_cause_null",
+      "instance_seed": 901,
+      "symboliser_seed": 1,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.239716,
+        "calinski_harabasz": 311.089746,
+        "davies_bouldin": 2.519388,
+        "centroid_cosine_mean": 0.0,
+        "centroid_cosine_max": 0.0,
+        "size_entropy": 0.976454,
+        "agree_lsa": 0.870637,
+        "agree_counts": 1.0,
+        "agree_char": 1.0,
+        "agree_hash_null": 0.000229
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 320,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.125137766455438,
+        "boot_naive_pad_error": -0.8748622335445619,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 19,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.0,
+      "family": "common_cause_null",
+      "instance_seed": 902,
+      "symboliser_seed": 2,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.239305,
+        "calinski_harabasz": 312.552414,
+        "davies_bouldin": 2.520055,
+        "centroid_cosine_mean": 0.0,
+        "centroid_cosine_max": 0.0,
+        "size_entropy": 0.982401,
+        "agree_lsa": 1.0,
+        "agree_counts": 1.0,
+        "agree_char": 1.0,
+        "agree_hash_null": -0.000173
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 320,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.11993736268720699,
+        "boot_naive_pad_error": -0.880062637312793,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 25,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.0,
+      "family": "structure",
+      "instance_seed": 1900,
+      "symboliser_seed": 0,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 0.919433,
+        "seed_stability_min": 0.798582,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.240414,
+        "calinski_harabasz": 306.550029,
+        "davies_bouldin": 2.520846,
+        "centroid_cosine_mean": 0.0,
+        "centroid_cosine_max": 0.0,
+        "size_entropy": 0.958451,
+        "agree_lsa": 1.0,
+        "agree_counts": 1.0,
+        "agree_char": 1.0,
+        "agree_hash_null": 9.6e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 320,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.10401171444727948,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.1301976177560068,
+        "boot_naive_pad_error": -0.8698023822439932,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 23,
+          "true_positives": 4,
+          "precision": 0.1739,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.0,
+      "family": "structure",
+      "instance_seed": 1901,
+      "symboliser_seed": 1,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 0.933401,
+        "seed_stability_min": 0.833501,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.239156,
+        "calinski_harabasz": 309.856629,
+        "davies_bouldin": 2.519866,
+        "centroid_cosine_mean": 0.0,
+        "centroid_cosine_max": 0.0,
+        "size_entropy": 0.971735,
+        "agree_lsa": 1.0,
+        "agree_counts": 1.0,
+        "agree_char": 1.0,
+        "agree_hash_null": 0.000139
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 320,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.08597958321716456,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12683370628449714,
+        "boot_naive_pad_error": -0.8731662937155029,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 23,
+          "true_positives": 4,
+          "precision": 0.1739,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.0,
+      "family": "structure",
+      "instance_seed": 1902,
+      "symboliser_seed": 2,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.240646,
+        "calinski_harabasz": 308.756417,
+        "davies_bouldin": 2.519243,
+        "centroid_cosine_mean": 0.0,
+        "centroid_cosine_max": 0.0,
+        "size_entropy": 0.967901,
+        "agree_lsa": 1.0,
+        "agree_counts": 1.0,
+        "agree_char": 0.80948,
+        "agree_hash_null": 0.000124
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 320,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12497839353519094,
+        "boot_naive_pad_error": -0.8750216064648091,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 19,
+          "true_positives": 4,
+          "precision": 0.2105,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.3,
+      "family": "common_cause_null",
+      "instance_seed": 900,
+      "symboliser_seed": 0,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 0.936902,
+        "seed_stability_min": 0.842255,
+        "boot_stability_full_mean": 0.908939,
+        "boot_stability_full_min": 0.796424,
+        "boot_stability_shared_mean": 0.908241,
+        "silhouette_cosine": 0.213176,
+        "calinski_harabasz": 272.197445,
+        "davies_bouldin": 2.688808,
+        "centroid_cosine_mean": 0.115487,
+        "centroid_cosine_max": 0.1383,
+        "size_entropy": 0.959376,
+        "agree_lsa": 1.0,
+        "agree_counts": 1.0,
+        "agree_char": 1.0,
+        "agree_hash_null": 0.000157
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 236,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.08145918769455762,
+        "boot_stability_full_sd": 0.07919824458079622,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.11432997883327183,
+        "boot_naive_pad_error": -0.7939113903947573,
+        "boot_vs_base_mean": 0.9515690756888247,
+        "boot_vs_base_inflation": 0.04263027317960677
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 24,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.3,
+      "family": "common_cause_null",
+      "instance_seed": 901,
+      "symboliser_seed": 1,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.215143,
+        "calinski_harabasz": 273.947782,
+        "davies_bouldin": 2.689002,
+        "centroid_cosine_mean": 0.115835,
+        "centroid_cosine_max": 0.135123,
+        "size_entropy": 0.976454,
+        "agree_lsa": 1.0,
+        "agree_counts": 1.0,
+        "agree_char": 0.83774,
+        "agree_hash_null": 0.000142
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 236,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.125137766455438,
+        "boot_naive_pad_error": -0.8748622335445619,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 19,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.3,
+      "family": "common_cause_null",
+      "instance_seed": 902,
+      "symboliser_seed": 2,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.213488,
+        "calinski_harabasz": 276.167905,
+        "davies_bouldin": 2.684109,
+        "centroid_cosine_mean": 0.114878,
+        "centroid_cosine_max": 0.130229,
+        "size_entropy": 0.982401,
+        "agree_lsa": 1.0,
+        "agree_counts": 1.0,
+        "agree_char": 1.0,
+        "agree_hash_null": 0.000152
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 236,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.11993736268720699,
+        "boot_naive_pad_error": -0.880062637312793,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 25,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.3,
+      "family": "structure",
+      "instance_seed": 1900,
+      "symboliser_seed": 0,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 0.922906,
+        "seed_stability_min": 0.807266,
+        "boot_stability_full_mean": 0.935964,
+        "boot_stability_full_min": 0.807892,
+        "boot_stability_shared_mean": 0.934749,
+        "silhouette_cosine": 0.213385,
+        "calinski_harabasz": 270.318696,
+        "davies_bouldin": 2.695105,
+        "centroid_cosine_mean": 0.112808,
+        "centroid_cosine_max": 0.138301,
+        "size_entropy": 0.958451,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.796001,
+        "agree_char": 1.0,
+        "agree_hash_null": -0.000112
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 236,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.09952753114716772,
+        "boot_stability_full_sd": 0.09373923903768408,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12051529809277374,
+        "boot_naive_pad_error": -0.8142341837179526,
+        "boot_vs_base_mean": 0.9679819544247444,
+        "boot_vs_base_inflation": 0.03201804557525545
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 23,
+          "true_positives": 4,
+          "precision": 0.1739,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.3,
+      "family": "structure",
+      "instance_seed": 1901,
+      "symboliser_seed": 1,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.214359,
+        "calinski_harabasz": 273.356251,
+        "davies_bouldin": 2.693008,
+        "centroid_cosine_mean": 0.114645,
+        "centroid_cosine_max": 0.137149,
+        "size_entropy": 0.971735,
+        "agree_lsa": 1.0,
+        "agree_counts": 1.0,
+        "agree_char": 1.0,
+        "agree_hash_null": -0.000121
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 236,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12683370628449714,
+        "boot_naive_pad_error": -0.8731662937155029,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 23,
+          "true_positives": 4,
+          "precision": 0.1739,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.3,
+      "family": "structure",
+      "instance_seed": 1902,
+      "symboliser_seed": 2,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 0.928042,
+        "seed_stability_min": 0.820105,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.212722,
+        "calinski_harabasz": 273.438042,
+        "davies_bouldin": 2.698384,
+        "centroid_cosine_mean": 0.113244,
+        "centroid_cosine_max": 0.140398,
+        "size_entropy": 0.967901,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.897468,
+        "agree_char": 1.0,
+        "agree_hash_null": 0.000156
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 236,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.09289729278689948,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12497839353519094,
+        "boot_naive_pad_error": -0.8750216064648091,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 19,
+          "true_positives": 4,
+          "precision": 0.2105,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.5,
+      "family": "common_cause_null",
+      "instance_seed": 900,
+      "symboliser_seed": 0,
+      "true_ari": 0.8663,
+      "proxies": {
+        "seed_stability_mean": 0.946416,
+        "seed_stability_min": 0.86604,
+        "boot_stability_full_mean": 0.955885,
+        "boot_stability_full_min": 0.867655,
+        "boot_stability_shared_mean": 0.956857,
+        "silhouette_cosine": 0.141647,
+        "calinski_harabasz": 221.851551,
+        "davies_bouldin": 3.634776,
+        "centroid_cosine_mean": 0.265537,
+        "centroid_cosine_max": 0.773772,
+        "size_entropy": 0.97809,
+        "agree_lsa": 0.86604,
+        "agree_counts": 0.738941,
+        "agree_char": 0.865474,
+        "agree_hash_null": 0.000161
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 180,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.06917675275577272,
+        "boot_stability_full_sd": 0.06457768129420322,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12214092490523679,
+        "boot_naive_pad_error": -0.8347162435111133,
+        "boot_vs_base_mean": 0.8545603759066779,
+        "boot_vs_base_inflation": -0.10132466937322004
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 16,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.5,
+      "family": "common_cause_null",
+      "instance_seed": 901,
+      "symboliser_seed": 1,
+      "true_ari": 0.9996,
+      "proxies": {
+        "seed_stability_mean": 0.946327,
+        "seed_stability_min": 0.865817,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.18792,
+        "calinski_harabasz": 235.100357,
+        "davies_bouldin": 2.916043,
+        "centroid_cosine_mean": 0.237649,
+        "centroid_cosine_max": 0.269601,
+        "size_entropy": 0.976445,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.817931,
+        "agree_char": 0.998957,
+        "agree_hash_null": -7.3e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 180,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.06929203585864485,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12513925369118847,
+        "boot_naive_pad_error": -0.8748607463088115,
+        "boot_vs_base_mean": 1.0,
+        "boot_vs_base_inflation": 0.0
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 19,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.5,
+      "family": "common_cause_null",
+      "instance_seed": 902,
+      "symboliser_seed": 2,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 0.999876,
+        "boot_stability_full_min": 0.999628,
+        "boot_stability_shared_mean": 0.999813,
+        "silhouette_cosine": 0.186082,
+        "calinski_harabasz": 235.588433,
+        "davies_bouldin": 2.917552,
+        "centroid_cosine_mean": 0.239424,
+        "centroid_cosine_max": 0.26998,
+        "size_entropy": 0.982401,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.826241,
+        "agree_char": 0.99894,
+        "agree_hash_null": -1.5e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 180,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.0001814706357469317,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.11991255326504256,
+        "boot_naive_pad_error": -0.8799000081086044,
+        "boot_vs_base_mean": 0.9999380159776678,
+        "boot_vs_base_inflation": 6.198402233248412e-05
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 25,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.5,
+      "family": "structure",
+      "instance_seed": 1900,
+      "symboliser_seed": 0,
+      "true_ari": 1.0,
+      "proxies": {
+        "seed_stability_mean": 0.872049,
+        "seed_stability_min": 0.807317,
+        "boot_stability_full_mean": 0.846829,
+        "boot_stability_full_min": 0.73515,
+        "boot_stability_shared_mean": 0.842635,
+        "silhouette_cosine": 0.188017,
+        "calinski_harabasz": 232.246414,
+        "davies_bouldin": 2.923551,
+        "centroid_cosine_mean": 0.233399,
+        "centroid_cosine_max": 0.277735,
+        "size_entropy": 0.958451,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.664644,
+        "agree_char": 0.996132,
+        "agree_hash_null": -0.0001
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 180,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.09028243136382665,
+        "boot_stability_full_sd": 0.08592290770379082,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.10592285111433417,
+        "boot_naive_pad_error": -0.7367123988138071,
+        "boot_vs_base_mean": 0.9095324937572792,
+        "boot_vs_base_inflation": 0.0627039303972805
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 23,
+          "true_positives": 4,
+          "precision": 0.1739,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.5,
+      "family": "structure",
+      "instance_seed": 1901,
+      "symboliser_seed": 1,
+      "true_ari": 0.825,
+      "proxies": {
+        "seed_stability_mean": 0.877821,
+        "seed_stability_min": 0.756361,
+        "boot_stability_full_mean": 1.0,
+        "boot_stability_full_min": 1.0,
+        "boot_stability_shared_mean": 1.0,
+        "silhouette_cosine": 0.138354,
+        "calinski_harabasz": 214.147008,
+        "davies_bouldin": 3.985934,
+        "centroid_cosine_mean": 0.27339,
+        "centroid_cosine_max": 0.828566,
+        "size_entropy": 0.986336,
+        "agree_lsa": 0.824879,
+        "agree_counts": 0.692615,
+        "agree_char": 0.824078,
+        "agree_hash_null": -0.000154
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 180,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.08845847247077063,
+        "boot_stability_full_sd": 0.0,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12684617686944782,
+        "boot_naive_pad_error": -0.8731538231305522,
+        "boot_vs_base_mean": 0.8248788377073154,
+        "boot_vs_base_inflation": -0.1751211622926846
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 24,
+          "true_positives": 4,
+          "precision": 0.1667,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.5,
+      "family": "structure",
+      "instance_seed": 1902,
+      "symboliser_seed": 2,
+      "true_ari": 0.8438,
+      "proxies": {
+        "seed_stability_mean": 0.886768,
+        "seed_stability_min": 0.82105,
+        "boot_stability_full_mean": 0.868851,
+        "boot_stability_full_min": 0.817473,
+        "boot_stability_shared_mean": 0.869363,
+        "silhouette_cosine": 0.137299,
+        "calinski_harabasz": 218.294637,
+        "davies_bouldin": 3.746994,
+        "centroid_cosine_mean": 0.266754,
+        "centroid_cosine_max": 0.781552,
+        "size_entropy": 0.981311,
+        "agree_lsa": 0.843695,
+        "agree_counts": 0.710754,
+        "agree_char": 0.842944,
+        "agree_hash_null": -0.000246
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 180,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.07969686495446025,
+        "boot_stability_full_sd": 0.07174651244858345,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.10506606945171924,
+        "boot_naive_pad_error": -0.7642973555737431,
+        "boot_vs_base_mean": 0.8606329805653813,
+        "boot_vs_base_inflation": -0.008218484745840526
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 19,
+          "true_positives": 4,
+          "precision": 0.2105,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.65,
+      "family": "common_cause_null",
+      "instance_seed": 900,
+      "symboliser_seed": 0,
+      "true_ari": 0.9307,
+      "proxies": {
+        "seed_stability_mean": 0.888042,
+        "seed_stability_min": 0.765837,
+        "boot_stability_full_mean": 0.858217,
+        "boot_stability_full_min": 0.763522,
+        "boot_stability_shared_mean": 0.86203,
+        "silhouette_cosine": 0.137964,
+        "calinski_harabasz": 192.584184,
+        "davies_bouldin": 3.8373,
+        "centroid_cosine_mean": 0.387242,
+        "centroid_cosine_max": 0.564879,
+        "size_entropy": 0.974047,
+        "agree_lsa": 0.92796,
+        "agree_counts": 0.120401,
+        "agree_char": 0.822243,
+        "agree_hash_null": 0.000431
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 138,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0887824799774444,
+        "boot_stability_full_sd": 0.06502094238771647,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.10668723617148274,
+        "boot_naive_pad_error": -0.7553423057157203,
+        "boot_vs_base_mean": 0.9114222910464221,
+        "boot_vs_base_inflation": 0.0532049342622285
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 19,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.65,
+      "family": "common_cause_null",
+      "instance_seed": 901,
+      "symboliser_seed": 1,
+      "true_ari": 0.7349,
+      "proxies": {
+        "seed_stability_mean": 0.828157,
+        "seed_stability_min": 0.72764,
+        "boot_stability_full_mean": 0.999259,
+        "boot_stability_full_min": 0.99812,
+        "boot_stability_shared_mean": 0.999513,
+        "silhouette_cosine": 0.101049,
+        "calinski_harabasz": 181.861793,
+        "davies_bouldin": 4.271998,
+        "centroid_cosine_mean": 0.389782,
+        "centroid_cosine_max": 0.667616,
+        "size_entropy": 0.986853,
+        "agree_lsa": 0.733057,
+        "agree_counts": 0.093734,
+        "agree_char": 0.733506,
+        "agree_hash_null": -0.0002
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 138,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.12958031085335456,
+        "boot_stability_full_sd": 0.0006863081081542654,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12561632617365615,
+        "boot_naive_pad_error": -0.8738965604370041,
+        "boot_vs_base_mean": 0.7330777754967878,
+        "boot_vs_base_inflation": -0.2661810456873337
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 10,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.65,
+      "family": "common_cause_null",
+      "instance_seed": 902,
+      "symboliser_seed": 2,
+      "true_ari": 0.9905,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 0.969125,
+        "boot_stability_full_min": 0.912505,
+        "boot_stability_shared_mean": 0.967857,
+        "silhouette_cosine": 0.156133,
+        "calinski_harabasz": 195.600388,
+        "davies_bouldin": 3.239702,
+        "centroid_cosine_mean": 0.367146,
+        "centroid_cosine_max": 0.410387,
+        "size_entropy": 0.981519,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.099476,
+        "agree_char": 0.980094,
+        "agree_hash_null": -3.8e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 138,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.041275022226666326,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.11608698139834644,
+        "boot_naive_pad_error": -0.8517704571415265,
+        "boot_vs_base_mean": 0.9841415371237927,
+        "boot_vs_base_inflation": 0.015016345639145334
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 23,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.65,
+      "family": "structure",
+      "instance_seed": 1900,
+      "symboliser_seed": 0,
+      "true_ari": 0.9868,
+      "proxies": {
+        "seed_stability_mean": 0.865519,
+        "seed_stability_min": 0.744558,
+        "boot_stability_full_mean": 0.755568,
+        "boot_stability_full_min": 0.637962,
+        "boot_stability_shared_mean": 0.753122,
+        "silhouette_cosine": 0.156484,
+        "calinski_harabasz": 191.358974,
+        "davies_bouldin": 3.260689,
+        "centroid_cosine_mean": 0.361932,
+        "centroid_cosine_max": 0.419475,
+        "size_entropy": 0.956658,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.18884,
+        "agree_char": 0.977278,
+        "agree_hash_null": 0.000169
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 138,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.095560483557725,
+        "boot_stability_full_sd": 0.0921450810734804,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.09576489648452334,
+        "boot_naive_pad_error": -0.6573571957180714,
+        "boot_vs_base_mean": 0.8496580180409133,
+        "boot_vs_base_inflation": 0.09409044669093725
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 23,
+          "true_positives": 4,
+          "precision": 0.1739,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 6,
+          "true_positives": 4,
+          "precision": 0.6667,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.65,
+      "family": "structure",
+      "instance_seed": 1901,
+      "symboliser_seed": 1,
+      "true_ari": 0.9891,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 0.991049,
+        "boot_stability_full_min": 0.985637,
+        "boot_stability_shared_mean": 0.99236,
+        "silhouette_cosine": 0.152276,
+        "calinski_harabasz": 193.55837,
+        "davies_bouldin": 3.250427,
+        "centroid_cosine_mean": 0.365476,
+        "centroid_cosine_max": 0.422998,
+        "size_entropy": 0.970261,
+        "agree_lsa": 0.997574,
+        "agree_counts": 0.243445,
+        "agree_char": 0.900386,
+        "agree_hash_null": 0.000101
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 138,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.0046341555280094504,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12626784512778105,
+        "boot_naive_pad_error": -0.8660923110173164,
+        "boot_vs_base_mean": 0.993727494139025,
+        "boot_vs_base_inflation": 0.002678118833184917
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 26,
+          "true_positives": 4,
+          "precision": 0.1538,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.65,
+      "family": "structure",
+      "instance_seed": 1902,
+      "symboliser_seed": 2,
+      "true_ari": 0.9296,
+      "proxies": {
+        "seed_stability_mean": 0.84458,
+        "seed_stability_min": 0.764969,
+        "boot_stability_full_mean": 0.930041,
+        "boot_stability_full_min": 0.793774,
+        "boot_stability_shared_mean": 0.931702,
+        "silhouette_cosine": 0.140772,
+        "calinski_harabasz": 190.799809,
+        "davies_bouldin": 3.673217,
+        "centroid_cosine_mean": 0.377568,
+        "centroid_cosine_max": 0.521993,
+        "size_entropy": 0.973733,
+        "agree_lsa": 0.92548,
+        "agree_counts": 0.200507,
+        "agree_char": 0.924609,
+        "agree_hash_null": -6.5e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 138,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.08432490345499646,
+        "boot_stability_full_sd": 0.09951507354831367,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.11634047607249849,
+        "boot_naive_pad_error": -0.8153613322130908,
+        "boot_vs_base_mean": 0.9036433566629838,
+        "boot_vs_base_inflation": -0.02639806375582432
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 19,
+          "true_positives": 4,
+          "precision": 0.2105,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.75,
+      "family": "common_cause_null",
+      "instance_seed": 900,
+      "symboliser_seed": 0,
+      "true_ari": 0.694,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 0.998771,
+        "boot_stability_full_min": 0.997884,
+        "boot_stability_shared_mean": 0.998616,
+        "silhouette_cosine": 0.105143,
+        "calinski_harabasz": 164.340935,
+        "davies_bouldin": 4.279563,
+        "centroid_cosine_mean": 0.455681,
+        "centroid_cosine_max": 0.692756,
+        "size_entropy": 0.968227,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.001073,
+        "agree_char": 0.826353,
+        "agree_hash_null": -3.3e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 110,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.0008156313809003251,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12592790975794502,
+        "boot_naive_pad_error": -0.8726880125564543,
+        "boot_vs_base_mean": 0.9993238612888705,
+        "boot_vs_base_inflation": 0.0005528828626597537
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 11,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.75,
+      "family": "common_cause_null",
+      "instance_seed": 901,
+      "symboliser_seed": 1,
+      "true_ari": 0.6882,
+      "proxies": {
+        "seed_stability_mean": 0.89305,
+        "seed_stability_min": 0.820011,
+        "boot_stability_full_mean": 0.956614,
+        "boot_stability_full_min": 0.870918,
+        "boot_stability_shared_mean": 0.955196,
+        "silhouette_cosine": 0.106674,
+        "calinski_harabasz": 161.950306,
+        "davies_bouldin": 4.166144,
+        "centroid_cosine_mean": 0.446741,
+        "centroid_cosine_max": 0.660116,
+        "size_entropy": 0.961465,
+        "agree_lsa": 0.819954,
+        "agree_counts": 0.001239,
+        "agree_char": 0.905358,
+        "agree_hash_null": -0.000136
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 110,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.07680506632024311,
+        "boot_stability_full_sd": 0.06242350953810296,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12147148189621508,
+        "boot_naive_pad_error": -0.8337244940866299,
+        "boot_vs_base_mean": 0.8251769487528362,
+        "boot_vs_base_inflation": -0.13143657399462594
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 16,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.75,
+      "family": "common_cause_null",
+      "instance_seed": 902,
+      "symboliser_seed": 2,
+      "true_ari": 0.6842,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 0.932379,
+        "boot_stability_full_min": 0.797181,
+        "boot_stability_shared_mean": 0.929966,
+        "silhouette_cosine": 0.10843,
+        "calinski_harabasz": 163.422912,
+        "davies_bouldin": 4.227614,
+        "centroid_cosine_mean": 0.452898,
+        "centroid_cosine_max": 0.67112,
+        "size_entropy": 0.972356,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.001028,
+        "agree_char": 0.909316,
+        "agree_hash_null": -0.000186
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 110,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.09858760098949697,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.11537441401946863,
+        "boot_naive_pad_error": -0.8145918838631492,
+        "boot_vs_base_mean": 0.9661878206928711,
+        "boot_vs_base_inflation": 0.03380859190636931
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 12,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.75,
+      "family": "structure",
+      "instance_seed": 1900,
+      "symboliser_seed": 0,
+      "true_ari": 0.6967,
+      "proxies": {
+        "seed_stability_mean": 0.881194,
+        "seed_stability_min": 0.827418,
+        "boot_stability_full_mean": 0.848589,
+        "boot_stability_full_min": 0.642188,
+        "boot_stability_shared_mean": 0.847015,
+        "silhouette_cosine": 0.081315,
+        "calinski_harabasz": 153.476011,
+        "davies_bouldin": 4.436451,
+        "centroid_cosine_mean": 0.4739,
+        "centroid_cosine_max": 0.733107,
+        "size_entropy": 0.967059,
+        "agree_lsa": 0.867743,
+        "agree_counts": 0.001009,
+        "agree_char": 0.602149,
+        "agree_hash_null": -3.1e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 110,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.02906581071635022,
+        "boot_stability_full_sd": 0.09720660230851658,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.1105664064700039,
+        "boot_naive_pad_error": -0.7364485141385545,
+        "boot_vs_base_mean": 0.8419762699466462,
+        "boot_vs_base_inflation": -0.006613197901402579
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 17,
+          "true_positives": 4,
+          "precision": 0.2353,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.75,
+      "family": "structure",
+      "instance_seed": 1901,
+      "symboliser_seed": 1,
+      "true_ari": 0.6737,
+      "proxies": {
+        "seed_stability_mean": 0.863329,
+        "seed_stability_min": 0.801857,
+        "boot_stability_full_mean": 0.869391,
+        "boot_stability_full_min": 0.805929,
+        "boot_stability_shared_mean": 0.873043,
+        "silhouette_cosine": 0.108262,
+        "calinski_harabasz": 160.092223,
+        "davies_bouldin": 4.14649,
+        "centroid_cosine_mean": 0.444401,
+        "centroid_cosine_max": 0.659472,
+        "size_entropy": 0.953502,
+        "agree_lsa": 0.671624,
+        "agree_counts": 0.001917,
+        "agree_char": 0.678869,
+        "agree_hash_null": -1.3e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 110,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.09436496328237487,
+        "boot_stability_full_sd": 0.05704982939014285,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.1117100526599481,
+        "boot_naive_pad_error": -0.7613333732386147,
+        "boot_vs_base_mean": 0.8213613519589306,
+        "boot_vs_base_inflation": -0.048030052826532055
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 16,
+          "true_positives": 4,
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.75,
+      "family": "structure",
+      "instance_seed": 1902,
+      "symboliser_seed": 2,
+      "true_ari": 0.6627,
+      "proxies": {
+        "seed_stability_mean": 0.875252,
+        "seed_stability_min": 0.80316,
+        "boot_stability_full_mean": 0.906095,
+        "boot_stability_full_min": 0.861178,
+        "boot_stability_shared_mean": 0.904954,
+        "silhouette_cosine": 0.107146,
+        "calinski_harabasz": 158.077561,
+        "davies_bouldin": 4.145084,
+        "centroid_cosine_mean": 0.442732,
+        "centroid_cosine_max": 0.667101,
+        "size_entropy": 0.946401,
+        "agree_lsa": 0.79436,
+        "agree_counts": 0.001279,
+        "agree_char": 0.686396,
+        "agree_hash_null": 8.1e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 110,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.087648459937736,
+        "boot_stability_full_sd": 0.05616305463749261,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.1120659348672797,
+        "boot_naive_pad_error": -0.7928880387158261,
+        "boot_vs_base_mean": 0.8168419487972085,
+        "boot_vs_base_inflation": -0.08925319924146558
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 16,
+          "true_positives": 4,
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.8,
+      "family": "common_cause_null",
+      "instance_seed": 900,
+      "symboliser_seed": 0,
+      "true_ari": 0.4629,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 0.742391,
+        "boot_stability_full_min": 0.505138,
+        "boot_stability_shared_mean": 0.742779,
+        "silhouette_cosine": 0.092226,
+        "calinski_harabasz": 149.706907,
+        "davies_bouldin": 4.271552,
+        "centroid_cosine_mean": 0.464363,
+        "centroid_cosine_max": 0.712145,
+        "size_entropy": 0.924908,
+        "agree_lsa": 1.0,
+        "agree_counts": 0.001299,
+        "agree_char": 0.599759,
+        "agree_hash_null": -0.000127
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 96,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.16119827117593388,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.10559177740471368,
+        "boot_naive_pad_error": -0.6371871873073947,
+        "boot_vs_base_mean": 0.8648615511909905,
+        "boot_vs_base_inflation": 0.1224708634905457
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 9,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.8,
+      "family": "common_cause_null",
+      "instance_seed": 901,
+      "symboliser_seed": 1,
+      "true_ari": 0.4554,
+      "proxies": {
+        "seed_stability_mean": 0.94525,
+        "seed_stability_min": 0.863125,
+        "boot_stability_full_mean": 0.815334,
+        "boot_stability_full_min": 0.611231,
+        "boot_stability_shared_mean": 0.816474,
+        "silhouette_cosine": 0.091524,
+        "calinski_harabasz": 145.68482,
+        "davies_bouldin": 4.272911,
+        "centroid_cosine_mean": 0.465891,
+        "centroid_cosine_max": 0.69508,
+        "size_entropy": 0.919116,
+        "agree_lsa": 0.998297,
+        "agree_counts": 0.000925,
+        "agree_char": 0.39381,
+        "agree_hash_null": -3.9e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 96,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.07068216856802179,
+        "boot_stability_full_sd": 0.13651340462674222,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.11405582289747081,
+        "boot_naive_pad_error": -0.7024184500652473,
+        "boot_vs_base_mean": 0.8770056928869487,
+        "boot_vs_base_inflation": 0.06167122529993807
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 11,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.8,
+      "family": "common_cause_null",
+      "instance_seed": 902,
+      "symboliser_seed": 2,
+      "true_ari": 0.4725,
+      "proxies": {
+        "seed_stability_mean": 1.0,
+        "seed_stability_min": 1.0,
+        "boot_stability_full_mean": 0.921412,
+        "boot_stability_full_min": 0.764696,
+        "boot_stability_shared_mean": 0.917869,
+        "silhouette_cosine": 0.097061,
+        "calinski_harabasz": 149.074818,
+        "davies_bouldin": 4.265262,
+        "centroid_cosine_mean": 0.466199,
+        "centroid_cosine_max": 0.69236,
+        "size_entropy": 0.929304,
+        "agree_lsa": 0.99852,
+        "agree_counts": 0.00112,
+        "agree_char": 0.611493,
+        "agree_hash_null": 4.3e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 96,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0,
+        "boot_stability_full_sd": 0.11440817195919949,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12844140673889096,
+        "boot_naive_pad_error": -0.7894280534476238,
+        "boot_vs_base_mean": 0.960698884384903,
+        "boot_vs_base_inflation": 0.03928673759797219
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 12,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.8,
+      "family": "structure",
+      "instance_seed": 1900,
+      "symboliser_seed": 0,
+      "true_ari": 0.3266,
+      "proxies": {
+        "seed_stability_mean": 0.791398,
+        "seed_stability_min": 0.610661,
+        "boot_stability_full_mean": 0.879048,
+        "boot_stability_full_min": 0.764036,
+        "boot_stability_shared_mean": 0.875142,
+        "silhouette_cosine": 0.082758,
+        "calinski_harabasz": 138.436039,
+        "davies_bouldin": 4.264114,
+        "centroid_cosine_mean": 0.468299,
+        "centroid_cosine_max": 0.726285,
+        "size_entropy": 0.883232,
+        "agree_lsa": 0.592915,
+        "agree_counts": -0.000514,
+        "agree_char": 0.42646,
+        "agree_hash_null": -0.000201
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 96,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.10744356761078351,
+        "boot_stability_full_sd": 0.06400918536387802,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12311278159571551,
+        "boot_naive_pad_error": -0.7520294669063453,
+        "boot_vs_base_mean": 0.6312180171524783,
+        "boot_vs_base_inflation": -0.2478304455667819
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 12,
+          "true_positives": 4,
+          "precision": 0.3333,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.8,
+      "family": "structure",
+      "instance_seed": 1901,
+      "symboliser_seed": 1,
+      "true_ari": 0.4603,
+      "proxies": {
+        "seed_stability_mean": 0.772156,
+        "seed_stability_min": 0.641046,
+        "boot_stability_full_mean": 0.84102,
+        "boot_stability_full_min": 0.757868,
+        "boot_stability_shared_mean": 0.834077,
+        "silhouette_cosine": 0.093295,
+        "calinski_harabasz": 146.88828,
+        "davies_bouldin": 4.241855,
+        "centroid_cosine_mean": 0.458517,
+        "centroid_cosine_max": 0.699973,
+        "size_entropy": 0.913435,
+        "agree_lsa": 0.769229,
+        "agree_counts": 0.000389,
+        "agree_char": 0.460672,
+        "agree_hash_null": -0.000227
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 96,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.11581294354549676,
+        "boot_stability_full_sd": 0.07516240704098748,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.11940968631927781,
+        "boot_naive_pad_error": -0.7146671190892762,
+        "boot_vs_base_mean": 0.8741846798840617,
+        "boot_vs_base_inflation": 0.03316426195961719
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 11,
+          "true_positives": 4,
+          "precision": 0.3636,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.8,
+      "family": "structure",
+      "instance_seed": 1902,
+      "symboliser_seed": 2,
+      "true_ari": 0.4864,
+      "proxies": {
+        "seed_stability_mean": 0.791554,
+        "seed_stability_min": 0.63485,
+        "boot_stability_full_mean": 0.872147,
+        "boot_stability_full_min": 0.762811,
+        "boot_stability_shared_mean": 0.873837,
+        "silhouette_cosine": 0.078253,
+        "calinski_harabasz": 139.355277,
+        "davies_bouldin": 4.531152,
+        "centroid_cosine_mean": 0.478324,
+        "centroid_cosine_max": 0.773545,
+        "size_entropy": 0.930962,
+        "agree_lsa": 0.843367,
+        "agree_counts": 0.000869,
+        "agree_char": 0.569443,
+        "agree_hash_null": -4.7e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 96,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.09779944578210512,
+        "boot_stability_full_sd": 0.07126709039075024,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.12009783728063782,
+        "boot_naive_pad_error": -0.7537390928919715,
+        "boot_vs_base_mean": 0.8761572857683534,
+        "boot_vs_base_inflation": 0.004010365410010319
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 13,
+          "true_positives": 4,
+          "precision": 0.3077,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 5,
+          "true_positives": 4,
+          "precision": 0.8,
+          "recall": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.85,
+      "family": "common_cause_null",
+      "instance_seed": 900,
+      "symboliser_seed": 0,
+      "true_ari": 0.2331,
+      "proxies": {
+        "seed_stability_mean": 0.374547,
+        "seed_stability_min": 0.285624,
+        "boot_stability_full_mean": 0.45604,
+        "boot_stability_full_min": 0.326926,
+        "boot_stability_shared_mean": 0.458433,
+        "silhouette_cosine": 0.075741,
+        "calinski_harabasz": 128.324629,
+        "davies_bouldin": 4.521085,
+        "centroid_cosine_mean": 0.501336,
+        "centroid_cosine_max": 0.822535,
+        "size_entropy": 0.879708,
+        "agree_lsa": 0.451247,
+        "agree_counts": 0.000941,
+        "agree_char": 0.259536,
+        "agree_hash_null": 0.000121
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 82,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.06052608155804517,
+        "boot_stability_full_sd": 0.06356992523318665,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.06848074557183922,
+        "boot_naive_pad_error": -0.38995209414126464,
+        "boot_vs_base_mean": 0.4724187277891816,
+        "boot_vs_base_inflation": 0.01637860226136556
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 5,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.85,
+      "family": "common_cause_null",
+      "instance_seed": 901,
+      "symboliser_seed": 1,
+      "true_ari": 0.2303,
+      "proxies": {
+        "seed_stability_mean": 0.433719,
+        "seed_stability_min": 0.302118,
+        "boot_stability_full_mean": 0.422234,
+        "boot_stability_full_min": 0.307587,
+        "boot_stability_shared_mean": 0.422784,
+        "silhouette_cosine": 0.067419,
+        "calinski_harabasz": 122.568024,
+        "davies_bouldin": 4.633304,
+        "centroid_cosine_mean": 0.523371,
+        "centroid_cosine_max": 0.814634,
+        "size_entropy": 0.898923,
+        "agree_lsa": 0.381687,
+        "agree_counts": 0.04923,
+        "agree_char": 0.230157,
+        "agree_hash_null": 0.000259
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 82,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.11386473796932145,
+        "boot_stability_full_sd": 0.07289753092461129,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.06318484978526119,
+        "boot_naive_pad_error": -0.35959929319601514,
+        "boot_vs_base_mean": 0.4631031312020764,
+        "boot_vs_base_inflation": 0.04086891355889677
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 4,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.85,
+      "family": "common_cause_null",
+      "instance_seed": 902,
+      "symboliser_seed": 2,
+      "true_ari": 0.2136,
+      "proxies": {
+        "seed_stability_mean": 0.394611,
+        "seed_stability_min": 0.280206,
+        "boot_stability_full_mean": 0.515257,
+        "boot_stability_full_min": 0.38192,
+        "boot_stability_shared_mean": 0.517378,
+        "silhouette_cosine": 0.076083,
+        "calinski_harabasz": 126.384261,
+        "davies_bouldin": 4.510885,
+        "centroid_cosine_mean": 0.495852,
+        "centroid_cosine_max": 0.823991,
+        "size_entropy": 0.869209,
+        "agree_lsa": 0.620723,
+        "agree_counts": 4.9e-05,
+        "agree_char": 0.194635,
+        "agree_hash_null": 0.000425
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 82,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.07676721339393601,
+        "boot_stability_full_sd": 0.10473547700471493,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.08097216866356598,
+        "boot_naive_pad_error": -0.43640618564045514,
+        "boot_vs_base_mean": 0.480998672518941,
+        "boot_vs_base_inflation": -0.034258590593724714
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 5,
+          "true_positives": 0,
+          "precision": 0.0,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.85,
+      "family": "structure",
+      "instance_seed": 1900,
+      "symboliser_seed": 0,
+      "true_ari": 0.2289,
+      "proxies": {
+        "seed_stability_mean": 0.403379,
+        "seed_stability_min": 0.287696,
+        "boot_stability_full_mean": 0.339399,
+        "boot_stability_full_min": 0.286729,
+        "boot_stability_shared_mean": 0.339521,
+        "silhouette_cosine": 0.063071,
+        "calinski_harabasz": 118.238401,
+        "davies_bouldin": 4.837752,
+        "centroid_cosine_mean": 0.565758,
+        "centroid_cosine_max": 0.811809,
+        "size_entropy": 0.935979,
+        "agree_lsa": 0.318418,
+        "agree_counts": 0.025621,
+        "agree_char": 0.155633,
+        "agree_hash_null": -9e-06
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 82,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.09732769906893002,
+        "boot_stability_full_sd": 0.042711561935682825,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.04775272494234628,
+        "boot_naive_pad_error": -0.29176847914845144,
+        "boot_vs_base_mean": 0.33976737740039636,
+        "boot_vs_base_inflation": 0.00036832545016740603
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 6,
+          "true_positives": 4,
+          "precision": 0.6667,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 4,
+          "true_positives": 3,
+          "precision": 0.75,
+          "recall": 0.75
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.85,
+      "family": "structure",
+      "instance_seed": 1901,
+      "symboliser_seed": 1,
+      "true_ari": 0.2075,
+      "proxies": {
+        "seed_stability_mean": 0.460952,
+        "seed_stability_min": 0.360776,
+        "boot_stability_full_mean": 0.366818,
+        "boot_stability_full_min": 0.297335,
+        "boot_stability_shared_mean": 0.367214,
+        "silhouette_cosine": 0.070906,
+        "calinski_harabasz": 123.487687,
+        "davies_bouldin": 4.534421,
+        "centroid_cosine_mean": 0.499491,
+        "centroid_cosine_max": 0.823966,
+        "size_entropy": 0.864946,
+        "agree_lsa": 0.423743,
+        "agree_counts": -0.000169,
+        "agree_char": 0.167144,
+        "agree_hash_null": 5.3e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 82,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.05708073890294812,
+        "boot_stability_full_sd": 0.05478829685897148,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.054281792229902856,
+        "boot_naive_pad_error": -0.31293250570742354,
+        "boot_vs_base_mean": 0.411010441827393,
+        "boot_vs_base_inflation": 0.044192848473115
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 8,
+          "true_positives": 4,
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 3,
+          "true_positives": 2,
+          "precision": 0.6667,
+          "recall": 0.5
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.85,
+      "family": "structure",
+      "instance_seed": 1902,
+      "symboliser_seed": 2,
+      "true_ari": 0.2164,
+      "proxies": {
+        "seed_stability_mean": 0.531687,
+        "seed_stability_min": 0.406307,
+        "boot_stability_full_mean": 0.479991,
+        "boot_stability_full_min": 0.319628,
+        "boot_stability_shared_mean": 0.47734,
+        "silhouette_cosine": 0.063746,
+        "calinski_harabasz": 121.793919,
+        "davies_bouldin": 4.750191,
+        "centroid_cosine_mean": 0.542942,
+        "centroid_cosine_max": 0.815285,
+        "size_entropy": 0.921168,
+        "agree_lsa": 0.403392,
+        "agree_counts": 0.056642,
+        "agree_char": 0.148897,
+        "agree_hash_null": -1e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 82,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.08540176965879683,
+        "boot_stability_full_sd": 0.14449653672140203,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.06977226824494612,
+        "boot_naive_pad_error": -0.4075677182527875,
+        "boot_vs_base_mean": 0.37344838287537047,
+        "boot_vs_base_inflation": -0.10654292047627312
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 6,
+          "true_positives": 4,
+          "precision": 0.6667,
+          "recall": 1.0
+        },
+        "conditional": {
+          "edges": 3,
+          "true_positives": 2,
+          "precision": 0.6667,
+          "recall": 0.5
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.9,
+      "family": "common_cause_null",
+      "instance_seed": 900,
+      "symboliser_seed": 0,
+      "true_ari": 0.1076,
+      "proxies": {
+        "seed_stability_mean": 0.145869,
+        "seed_stability_min": 0.097921,
+        "boot_stability_full_mean": 0.185237,
+        "boot_stability_full_min": 0.101141,
+        "boot_stability_shared_mean": 0.189174,
+        "silhouette_cosine": 0.058742,
+        "calinski_harabasz": 109.257927,
+        "davies_bouldin": 4.846063,
+        "centroid_cosine_mean": 0.609787,
+        "centroid_cosine_max": 0.812506,
+        "size_entropy": 0.925314,
+        "agree_lsa": 0.152723,
+        "agree_counts": 0.039921,
+        "agree_char": 0.092488,
+        "agree_hash_null": 3e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 68,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.04534414966063103,
+        "boot_stability_full_sd": 0.07934629518345024,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.025409179294451818,
+        "boot_naive_pad_error": -0.1637651665694045,
+        "boot_vs_base_mean": 0.12359470496127756,
+        "boot_vs_base_inflation": -0.061642417833373736
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.9,
+      "family": "common_cause_null",
+      "instance_seed": 901,
+      "symboliser_seed": 1,
+      "true_ari": 0.0784,
+      "proxies": {
+        "seed_stability_mean": 0.156939,
+        "seed_stability_min": 0.091065,
+        "boot_stability_full_mean": 0.122896,
+        "boot_stability_full_min": 0.073571,
+        "boot_stability_shared_mean": 0.125328,
+        "silhouette_cosine": 0.055802,
+        "calinski_harabasz": 107.929845,
+        "davies_bouldin": 4.930558,
+        "centroid_cosine_mean": 0.634362,
+        "centroid_cosine_max": 0.801366,
+        "size_entropy": 0.955442,
+        "agree_lsa": 0.039471,
+        "agree_counts": 0.109282,
+        "agree_char": 0.080993,
+        "agree_hash_null": 0.000272
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 68,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.07742418726934108,
+        "boot_stability_full_sd": 0.06022791811519837,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.0175538959268555,
+        "boot_naive_pad_error": -0.10777406793375252,
+        "boot_vs_base_mean": 0.13388017149539644,
+        "boot_vs_base_inflation": 0.010984300259166926
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.9,
+      "family": "common_cause_null",
+      "instance_seed": 902,
+      "symboliser_seed": 2,
+      "true_ari": 0.0996,
+      "proxies": {
+        "seed_stability_mean": 0.138919,
+        "seed_stability_min": 0.070375,
+        "boot_stability_full_mean": 0.112003,
+        "boot_stability_full_min": 0.042724,
+        "boot_stability_shared_mean": 0.116218,
+        "silhouette_cosine": 0.058564,
+        "calinski_harabasz": 106.543896,
+        "davies_bouldin": 4.994481,
+        "centroid_cosine_mean": 0.643814,
+        "centroid_cosine_max": 0.802762,
+        "size_entropy": 0.960713,
+        "agree_lsa": 0.358002,
+        "agree_counts": 0.09499,
+        "agree_char": 0.132264,
+        "agree_hash_null": -0.00024
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 68,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.07500328709721726,
+        "boot_stability_full_sd": 0.04684798746729277,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.014801475520726025,
+        "boot_naive_pad_error": -0.10141668548927656,
+        "boot_vs_base_mean": 0.10247642928290246,
+        "boot_vs_base_inflation": -0.00952648730876586
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.9,
+      "family": "structure",
+      "instance_seed": 1900,
+      "symboliser_seed": 0,
+      "true_ari": 0.0598,
+      "proxies": {
+        "seed_stability_mean": 0.137941,
+        "seed_stability_min": 0.065775,
+        "boot_stability_full_mean": 0.139292,
+        "boot_stability_full_min": 0.039227,
+        "boot_stability_shared_mean": 0.140027,
+        "silhouette_cosine": 0.054865,
+        "calinski_harabasz": 106.307492,
+        "davies_bouldin": 4.993434,
+        "centroid_cosine_mean": 0.649581,
+        "centroid_cosine_max": 0.806604,
+        "size_entropy": 0.95542,
+        "agree_lsa": 0.065219,
+        "agree_counts": 0.048314,
+        "agree_char": 0.072018,
+        "agree_hash_null": -8e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 68,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.0803038679412467,
+        "boot_stability_full_sd": 0.06068687371800382,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.019071800590011782,
+        "boot_naive_pad_error": -0.12095567875139687,
+        "boot_vs_base_mean": 0.08107219222664816,
+        "boot_vs_base_inflation": -0.058219532664357615
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 4,
+          "true_positives": 2,
+          "precision": 0.5,
+          "recall": 0.5
+        },
+        "conditional": {
+          "edges": 1,
+          "true_positives": 1,
+          "precision": 1.0,
+          "recall": 0.25
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.9,
+      "family": "structure",
+      "instance_seed": 1901,
+      "symboliser_seed": 1,
+      "true_ari": 0.0549,
+      "proxies": {
+        "seed_stability_mean": 0.154106,
+        "seed_stability_min": 0.095673,
+        "boot_stability_full_mean": 0.145889,
+        "boot_stability_full_min": 0.070115,
+        "boot_stability_shared_mean": 0.146176,
+        "silhouette_cosine": 0.050676,
+        "calinski_harabasz": 104.443467,
+        "davies_bouldin": 5.051203,
+        "centroid_cosine_mean": 0.66836,
+        "centroid_cosine_max": 0.792702,
+        "size_entropy": 0.978736,
+        "agree_lsa": 0.092792,
+        "agree_counts": 0.04055,
+        "agree_char": 0.079751,
+        "agree_hash_null": 2e-06
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 68,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.05730819612503377,
+        "boot_stability_full_sd": 0.058944393072586435,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.020679935939600873,
+        "boot_naive_pad_error": -0.12549651633303613,
+        "boot_vs_base_mean": 0.13664852297863092,
+        "boot_vs_base_inflation": -0.009240371059289543
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 2,
+          "true_positives": 1,
+          "precision": 0.5,
+          "recall": 0.25
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": 0.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.9,
+      "family": "structure",
+      "instance_seed": 1902,
+      "symboliser_seed": 2,
+      "true_ari": 0.0782,
+      "proxies": {
+        "seed_stability_mean": 0.211324,
+        "seed_stability_min": 0.088338,
+        "boot_stability_full_mean": 0.137274,
+        "boot_stability_full_min": 0.056102,
+        "boot_stability_shared_mean": 0.137308,
+        "silhouette_cosine": 0.058401,
+        "calinski_harabasz": 110.372401,
+        "davies_bouldin": 4.893855,
+        "centroid_cosine_mean": 0.629705,
+        "centroid_cosine_max": 0.803742,
+        "size_entropy": 0.955214,
+        "agree_lsa": 0.237142,
+        "agree_counts": 0.043138,
+        "agree_char": 0.063917,
+        "agree_hash_null": -2.4e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 68,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.1099104561244596,
+        "boot_stability_full_sd": 0.05720365163020852,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.017075252760237337,
+        "boot_naive_pad_error": -0.12023306900403982,
+        "boot_vs_base_mean": 0.15771542478197914,
+        "boot_vs_base_inflation": 0.020441109180821343
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 3,
+          "true_positives": 2,
+          "precision": 0.6667,
+          "recall": 0.5
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": 0.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.95,
+      "family": "common_cause_null",
+      "instance_seed": 900,
+      "symboliser_seed": 0,
+      "true_ari": 0.0145,
+      "proxies": {
+        "seed_stability_mean": 0.094312,
+        "seed_stability_min": 0.004245,
+        "boot_stability_full_mean": 0.079438,
+        "boot_stability_full_min": 0.011602,
+        "boot_stability_shared_mean": 0.080001,
+        "silhouette_cosine": 0.050087,
+        "calinski_harabasz": 108.083361,
+        "davies_bouldin": 4.793956,
+        "centroid_cosine_mean": 0.706365,
+        "centroid_cosine_max": 0.782625,
+        "size_entropy": 0.984892,
+        "agree_lsa": 0.160725,
+        "agree_counts": 0.057058,
+        "agree_char": 0.079696,
+        "agree_hash_null": 8.4e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 54,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.07936173040226724,
+        "boot_stability_full_sd": 0.05384877532428012,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.009797861243838309,
+        "boot_naive_pad_error": -0.07020291726720104,
+        "boot_vs_base_mean": 0.0793820338893191,
+        "boot_vs_base_inflation": -5.633056985311635e-05
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.95,
+      "family": "common_cause_null",
+      "instance_seed": 901,
+      "symboliser_seed": 1,
+      "true_ari": 0.0007,
+      "proxies": {
+        "seed_stability_mean": 0.081679,
+        "seed_stability_min": 0.00756,
+        "boot_stability_full_mean": 0.061634,
+        "boot_stability_full_min": 0.007434,
+        "boot_stability_shared_mean": 0.065535,
+        "silhouette_cosine": 0.046024,
+        "calinski_harabasz": 105.996444,
+        "davies_bouldin": 4.955788,
+        "centroid_cosine_mean": 0.728609,
+        "centroid_cosine_max": 0.780428,
+        "size_entropy": 0.999474,
+        "agree_lsa": 0.167832,
+        "agree_counts": 0.011709,
+        "agree_char": 0.133406,
+        "agree_hash_null": 0.000105
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 54,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.054110340628078235,
+        "boot_stability_full_sd": 0.037866883050933046,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.00978880152976688,
+        "boot_naive_pad_error": -0.05574588980812391,
+        "boot_vs_base_mean": 0.093232519158379,
+        "boot_vs_base_inflation": 0.03159829245601195
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.95,
+      "family": "common_cause_null",
+      "instance_seed": 902,
+      "symboliser_seed": 2,
+      "true_ari": 0.0149,
+      "proxies": {
+        "seed_stability_mean": 0.092859,
+        "seed_stability_min": 0.031261,
+        "boot_stability_full_mean": 0.062867,
+        "boot_stability_full_min": 0.009857,
+        "boot_stability_shared_mean": 0.065026,
+        "silhouette_cosine": 0.053756,
+        "calinski_harabasz": 110.655159,
+        "davies_bouldin": 4.82895,
+        "centroid_cosine_mean": 0.70042,
+        "centroid_cosine_max": 0.784657,
+        "size_entropy": 0.984105,
+        "agree_lsa": 0.179806,
+        "agree_counts": 0.103845,
+        "agree_char": 0.022915,
+        "agree_hash_null": -2.6e-05
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 54,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.06510397924055454,
+        "boot_stability_full_sd": 0.044583449785149075,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.006493712957539915,
+        "boot_naive_pad_error": -0.05853179603417077,
+        "boot_vs_base_mean": 0.08690696829362805,
+        "boot_vs_base_inflation": 0.02403999609809844
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 0,
+        "pairwise": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.95,
+      "family": "structure",
+      "instance_seed": 1900,
+      "symboliser_seed": 0,
+      "true_ari": 0.0142,
+      "proxies": {
+        "seed_stability_mean": 0.07325,
+        "seed_stability_min": 0.034444,
+        "boot_stability_full_mean": 0.080791,
+        "boot_stability_full_min": 0.031186,
+        "boot_stability_shared_mean": 0.082893,
+        "silhouette_cosine": 0.05161,
+        "calinski_harabasz": 109.984587,
+        "davies_bouldin": 4.899789,
+        "centroid_cosine_mean": 0.706225,
+        "centroid_cosine_max": 0.797289,
+        "size_entropy": 0.988181,
+        "agree_lsa": 0.05778,
+        "agree_counts": 0.121857,
+        "agree_char": 0.039394,
+        "agree_hash_null": 0.000161
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 54,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.04195507615210989,
+        "boot_stability_full_sd": 0.04529358864374144,
+        "boot_shared_points_mean": 3200.2,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.010072080548434215,
+        "boot_naive_pad_error": -0.07282044724536896,
+        "boot_vs_base_mean": 0.12405723924101082,
+        "boot_vs_base_inflation": 0.0432666886377633
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": 0.0
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": 0.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.95,
+      "family": "structure",
+      "instance_seed": 1901,
+      "symboliser_seed": 1,
+      "true_ari": 0.0009,
+      "proxies": {
+        "seed_stability_mean": 0.076785,
+        "seed_stability_min": 0.02761,
+        "boot_stability_full_mean": 0.080122,
+        "boot_stability_full_min": 0.011445,
+        "boot_stability_shared_mean": 0.082594,
+        "silhouette_cosine": 0.041103,
+        "calinski_harabasz": 104.63835,
+        "davies_bouldin": 5.019988,
+        "centroid_cosine_mean": 0.728437,
+        "centroid_cosine_max": 0.787287,
+        "size_entropy": 0.998167,
+        "agree_lsa": 0.096533,
+        "agree_counts": 0.094609,
+        "agree_char": 0.049429,
+        "agree_hash_null": 0.000427
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 54,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.032880448372713034,
+        "boot_stability_full_sd": 0.045457299124450214,
+        "boot_shared_points_mean": 3202.4666666666667,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.011856826329977819,
+        "boot_naive_pad_error": -0.07073681196203356,
+        "boot_vs_base_mean": 0.10591628345216564,
+        "boot_vs_base_inflation": 0.025794281206774766
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": 0.0
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": 0.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.95,
+      "family": "structure",
+      "instance_seed": 1902,
+      "symboliser_seed": 2,
+      "true_ari": 0.0171,
+      "proxies": {
+        "seed_stability_mean": 0.119469,
+        "seed_stability_min": 0.057094,
+        "boot_stability_full_mean": 0.09438,
+        "boot_stability_full_min": 0.011089,
+        "boot_stability_shared_mean": 0.095942,
+        "silhouette_cosine": 0.050847,
+        "calinski_harabasz": 109.762818,
+        "davies_bouldin": 4.926078,
+        "centroid_cosine_mean": 0.703457,
+        "centroid_cosine_max": 0.797055,
+        "size_entropy": 0.98537,
+        "agree_lsa": 0.120732,
+        "agree_counts": 0.094435,
+        "agree_char": 0.002335,
+        "agree_hash_null": 0.000382
+      },
+      "diagnostics": {
+        "n_messages": 8000,
+        "n_clustered": 8000,
+        "n_features": 54,
+        "n_distinct_texts": 8000,
+        "n_symbols_used": 8,
+        "silent_share": 0.0,
+        "seed_stability_sd": 0.05674956198736321,
+        "boot_stability_full_sd": 0.06610403163840751,
+        "boot_shared_points_mean": 3191.5333333333333,
+        "boot_resample_size": 8000,
+        "boot_naive_pad_mean": 0.010221165429571348,
+        "boot_naive_pad_error": -0.0857212030407015,
+        "boot_vs_base_mean": 0.06719181693493996,
+        "boot_vs_base_inflation": -0.027188103669965297
+      },
+      "detection": {
+        "n_ticks": 8000,
+        "planted": 4,
+        "pairwise": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": 0.0
+        },
+        "conditional": {
+          "edges": 0,
+          "true_positives": 0,
+          "precision": null,
+          "recall": 0.0
+        }
+      }
+    }
+  ],
+  "per_overlap": [
+    {
+      "vocab_overlap": 0.0,
+      "true_ari": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sd": 0.0,
+        "n": 6
+      },
+      "proxies": {
+        "seed_stability_mean": {
+          "mean": 0.965,
+          "min": 0.9194,
+          "max": 1.0,
+          "sd": 0.0388,
+          "n": 6
+        },
+        "seed_stability_min": {
+          "mean": 0.9124,
+          "min": 0.7986,
+          "max": 1.0,
+          "sd": 0.0971,
+          "n": 6
+        },
+        "boot_stability_full_mean": {
+          "mean": 0.9846,
+          "min": 0.9076,
+          "max": 1.0,
+          "sd": 0.0377,
+          "n": 6
+        },
+        "boot_stability_full_min": {
+          "mean": 0.9737,
+          "min": 0.8421,
+          "max": 1.0,
+          "sd": 0.0645,
+          "n": 6
+        },
+        "boot_stability_shared_mean": {
+          "mean": 0.9847,
+          "min": 0.908,
+          "max": 1.0,
+          "sd": 0.0376,
+          "n": 6
+        },
+        "silhouette_cosine": {
+          "mean": 0.2397,
+          "min": 0.2392,
+          "max": 0.2406,
+          "sd": 0.0006,
+          "n": 6
+        },
+        "calinski_harabasz": {
+          "mean": 309.679,
+          "min": 306.55,
+          "max": 312.5524,
+          "sd": 2.0537,
+          "n": 6
+        },
+        "davies_bouldin": {
+          "mean": 2.5187,
+          "min": 2.513,
+          "max": 2.5208,
+          "sd": 0.0029,
+          "n": 6
+        },
+        "centroid_cosine_mean": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sd": 0.0,
+          "n": 6
+        },
+        "centroid_cosine_max": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sd": 0.0,
+          "n": 6
+        },
+        "size_entropy": {
+          "mean": 0.9694,
+          "min": 0.9585,
+          "max": 0.9824,
+          "sd": 0.0095,
+          "n": 6
+        },
+        "agree_lsa": {
+          "mean": 0.9784,
+          "min": 0.8706,
+          "max": 1.0,
+          "sd": 0.0528,
+          "n": 6
+        },
+        "agree_counts": {
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "sd": 0.0,
+          "n": 6
+        },
+        "agree_char": {
+          "mean": 0.9682,
+          "min": 0.8095,
+          "max": 1.0,
+          "sd": 0.0778,
+          "n": 6
+        },
+        "agree_hash_null": {
+          "mean": 0.0001,
+          "min": -0.0002,
+          "max": 0.0002,
+          "sd": 0.0001,
+          "n": 6
+        }
+      },
+      "detection": {
+        "common_cause_null": {
+          "pairwise_mean_edges": 22.67,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": null,
+          "conditional_pooled_precision": null
+        },
+        "structure": {
+          "pairwise_mean_edges": 21.67,
+          "conditional_mean_edges": 5.0,
+          "conditional_mean_recall": 1.0,
+          "conditional_pooled_precision": 0.8
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.3,
+      "true_ari": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "sd": 0.0,
+        "n": 6
+      },
+      "proxies": {
+        "seed_stability_mean": {
+          "mean": 0.9646,
+          "min": 0.9229,
+          "max": 1.0,
+          "sd": 0.039,
+          "n": 6
+        },
+        "seed_stability_min": {
+          "mean": 0.9116,
+          "min": 0.8073,
+          "max": 1.0,
+          "sd": 0.0975,
+          "n": 6
+        },
+        "boot_stability_full_mean": {
+          "mean": 0.9742,
+          "min": 0.9089,
+          "max": 1.0,
+          "sd": 0.0409,
+          "n": 6
+        },
+        "boot_stability_full_min": {
+          "mean": 0.9341,
+          "min": 0.7964,
+          "max": 1.0,
+          "sd": 0.1022,
+          "n": 6
+        },
+        "boot_stability_shared_mean": {
+          "mean": 0.9738,
+          "min": 0.9082,
+          "max": 1.0,
+          "sd": 0.0414,
+          "n": 6
+        },
+        "silhouette_cosine": {
+          "mean": 0.2137,
+          "min": 0.2127,
+          "max": 0.2151,
+          "sd": 0.0009,
+          "n": 6
+        },
+        "calinski_harabasz": {
+          "mean": 273.2377,
+          "min": 270.3187,
+          "max": 276.1679,
+          "sd": 1.9363,
+          "n": 6
+        },
+        "davies_bouldin": {
+          "mean": 2.6914,
+          "min": 2.6841,
+          "max": 2.6984,
+          "sd": 0.0051,
+          "n": 6
+        },
+        "centroid_cosine_mean": {
+          "mean": 0.1145,
+          "min": 0.1128,
+          "max": 0.1158,
+          "sd": 0.0012,
+          "n": 6
+        },
+        "centroid_cosine_max": {
+          "mean": 0.1366,
+          "min": 0.1302,
+          "max": 0.1404,
+          "sd": 0.0036,
+          "n": 6
+        },
+        "size_entropy": {
+          "mean": 0.9694,
+          "min": 0.9585,
+          "max": 0.9824,
+          "sd": 0.0095,
+          "n": 6
+        },
+        "agree_lsa": {
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "sd": 0.0,
+          "n": 6
+        },
+        "agree_counts": {
+          "mean": 0.9489,
+          "min": 0.796,
+          "max": 1.0,
+          "sd": 0.0854,
+          "n": 6
+        },
+        "agree_char": {
+          "mean": 0.973,
+          "min": 0.8377,
+          "max": 1.0,
+          "sd": 0.0662,
+          "n": 6
+        },
+        "agree_hash_null": {
+          "mean": 0.0001,
+          "min": -0.0001,
+          "max": 0.0002,
+          "sd": 0.0001,
+          "n": 6
+        }
+      },
+      "detection": {
+        "common_cause_null": {
+          "pairwise_mean_edges": 22.67,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": null,
+          "conditional_pooled_precision": null
+        },
+        "structure": {
+          "pairwise_mean_edges": 21.67,
+          "conditional_mean_edges": 5.0,
+          "conditional_mean_recall": 1.0,
+          "conditional_pooled_precision": 0.8
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.5,
+      "true_ari": {
+        "mean": 0.9224,
+        "min": 0.825,
+        "max": 1.0,
+        "sd": 0.0858,
+        "n": 6
+      },
+      "proxies": {
+        "seed_stability_mean": {
+          "mean": 0.9216,
+          "min": 0.872,
+          "max": 1.0,
+          "sd": 0.0509,
+          "n": 6
+        },
+        "seed_stability_min": {
+          "mean": 0.8528,
+          "min": 0.7564,
+          "max": 1.0,
+          "sd": 0.0829,
+          "n": 6
+        },
+        "boot_stability_full_mean": {
+          "mean": 0.9452,
+          "min": 0.8468,
+          "max": 1.0,
+          "sd": 0.0702,
+          "n": 6
+        },
+        "boot_stability_full_min": {
+          "mean": 0.9033,
+          "min": 0.7351,
+          "max": 1.0,
+          "sd": 0.1139,
+          "n": 6
+        },
+        "boot_stability_shared_mean": {
+          "mean": 0.9448,
+          "min": 0.8426,
+          "max": 1.0,
+          "sd": 0.0713,
+          "n": 6
+        },
+        "silhouette_cosine": {
+          "mean": 0.1632,
+          "min": 0.1373,
+          "max": 0.188,
+          "sd": 0.0265,
+          "n": 6
+        },
+        "calinski_harabasz": {
+          "mean": 226.2047,
+          "min": 214.147,
+          "max": 235.5884,
+          "sd": 9.28,
+          "n": 6
+        },
+        "davies_bouldin": {
+          "mean": 3.3541,
+          "min": 2.916,
+          "max": 3.9859,
+          "sd": 0.4899,
+          "n": 6
+        },
+        "centroid_cosine_mean": {
+          "mean": 0.2527,
+          "min": 0.2334,
+          "max": 0.2734,
+          "sd": 0.0177,
+          "n": 6
+        },
+        "centroid_cosine_max": {
+          "mean": 0.5335,
+          "min": 0.2696,
+          "max": 0.8286,
+          "sd": 0.2866,
+          "n": 6
+        },
+        "size_entropy": {
+          "mean": 0.9772,
+          "min": 0.9585,
+          "max": 0.9863,
+          "sd": 0.0098,
+          "n": 6
+        },
+        "agree_lsa": {
+          "mean": 0.9224,
+          "min": 0.8249,
+          "max": 1.0,
+          "sd": 0.086,
+          "n": 6
+        },
+        "agree_counts": {
+          "mean": 0.7419,
+          "min": 0.6646,
+          "max": 0.8262,
+          "sd": 0.0667,
+          "n": 6
+        },
+        "agree_char": {
+          "mean": 0.9211,
+          "min": 0.8241,
+          "max": 0.999,
+          "sd": 0.0853,
+          "n": 6
+        },
+        "agree_hash_null": {
+          "mean": -0.0001,
+          "min": -0.0002,
+          "max": 0.0002,
+          "sd": 0.0001,
+          "n": 6
+        }
+      },
+      "detection": {
+        "common_cause_null": {
+          "pairwise_mean_edges": 20.0,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": null,
+          "conditional_pooled_precision": null
+        },
+        "structure": {
+          "pairwise_mean_edges": 22.0,
+          "conditional_mean_edges": 5.0,
+          "conditional_mean_recall": 1.0,
+          "conditional_pooled_precision": 0.8
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.65,
+      "true_ari": {
+        "mean": 0.9269,
+        "min": 0.7349,
+        "max": 0.9905,
+        "sd": 0.0984,
+        "n": 6
+      },
+      "proxies": {
+        "seed_stability_mean": {
+          "mean": 0.9044,
+          "min": 0.8282,
+          "max": 1.0,
+          "sd": 0.0767,
+          "n": 6
+        },
+        "seed_stability_min": {
+          "mean": 0.8338,
+          "min": 0.7276,
+          "max": 1.0,
+          "sd": 0.1295,
+          "n": 6
+        },
+        "boot_stability_full_mean": {
+          "mean": 0.9172,
+          "min": 0.7556,
+          "max": 0.9993,
+          "sd": 0.0945,
+          "n": 6
+        },
+        "boot_stability_full_min": {
+          "mean": 0.8486,
+          "min": 0.638,
+          "max": 0.9981,
+          "sd": 0.1413,
+          "n": 6
+        },
+        "boot_stability_shared_mean": {
+          "mean": 0.9178,
+          "min": 0.7531,
+          "max": 0.9995,
+          "sd": 0.095,
+          "n": 6
+        },
+        "silhouette_cosine": {
+          "mean": 0.1408,
+          "min": 0.101,
+          "max": 0.1565,
+          "sd": 0.021,
+          "n": 6
+        },
+        "calinski_harabasz": {
+          "mean": 190.9606,
+          "min": 181.8618,
+          "max": 195.6004,
+          "sd": 4.7725,
+          "n": 6
+        },
+        "davies_bouldin": {
+          "mean": 3.5889,
+          "min": 3.2397,
+          "max": 4.272,
+          "sd": 0.4194,
+          "n": 6
+        },
+        "centroid_cosine_mean": {
+          "mean": 0.3749,
+          "min": 0.3619,
+          "max": 0.3898,
+          "sd": 0.0118,
+          "n": 6
+        },
+        "centroid_cosine_max": {
+          "mean": 0.5012,
+          "min": 0.4104,
+          "max": 0.6676,
+          "sd": 0.1032,
+          "n": 6
+        },
+        "size_entropy": {
+          "mean": 0.9738,
+          "min": 0.9567,
+          "max": 0.9869,
+          "sd": 0.0104,
+          "n": 6
+        },
+        "agree_lsa": {
+          "mean": 0.9307,
+          "min": 0.7331,
+          "max": 1.0,
+          "sd": 0.1031,
+          "n": 6
+        },
+        "agree_counts": {
+          "mean": 0.1577,
+          "min": 0.0937,
+          "max": 0.2434,
+          "sd": 0.0617,
+          "n": 6
+        },
+        "agree_char": {
+          "mean": 0.8897,
+          "min": 0.7335,
+          "max": 0.9801,
+          "sd": 0.096,
+          "n": 6
+        },
+        "agree_hash_null": {
+          "mean": 0.0001,
+          "min": -0.0002,
+          "max": 0.0004,
+          "sd": 0.0002,
+          "n": 6
+        }
+      },
+      "detection": {
+        "common_cause_null": {
+          "pairwise_mean_edges": 17.33,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": null,
+          "conditional_pooled_precision": null
+        },
+        "structure": {
+          "pairwise_mean_edges": 22.67,
+          "conditional_mean_edges": 5.33,
+          "conditional_mean_recall": 1.0,
+          "conditional_pooled_precision": 0.75
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.75,
+      "true_ari": {
+        "mean": 0.6833,
+        "min": 0.6627,
+        "max": 0.6967,
+        "sd": 0.0129,
+        "n": 6
+      },
+      "proxies": {
+        "seed_stability_mean": {
+          "mean": 0.9188,
+          "min": 0.8633,
+          "max": 1.0,
+          "sd": 0.0636,
+          "n": 6
+        },
+        "seed_stability_min": {
+          "mean": 0.8754,
+          "min": 0.8019,
+          "max": 1.0,
+          "sd": 0.097,
+          "n": 6
+        },
+        "boot_stability_full_mean": {
+          "mean": 0.9186,
+          "min": 0.8486,
+          "max": 0.9988,
+          "sd": 0.0558,
+          "n": 6
+        },
+        "boot_stability_full_min": {
+          "mean": 0.8292,
+          "min": 0.6422,
+          "max": 0.9979,
+          "sd": 0.1164,
+          "n": 6
+        },
+        "boot_stability_shared_mean": {
+          "mean": 0.9181,
+          "min": 0.847,
+          "max": 0.9986,
+          "sd": 0.0552,
+          "n": 6
+        },
+        "silhouette_cosine": {
+          "mean": 0.1028,
+          "min": 0.0813,
+          "max": 0.1084,
+          "sd": 0.0106,
+          "n": 6
+        },
+        "calinski_harabasz": {
+          "mean": 160.2267,
+          "min": 153.476,
+          "max": 164.3409,
+          "sd": 4.008,
+          "n": 6
+        },
+        "davies_bouldin": {
+          "mean": 4.2336,
+          "min": 4.1451,
+          "max": 4.4365,
+          "sd": 0.1125,
+          "n": 6
+        },
+        "centroid_cosine_mean": {
+          "mean": 0.4527,
+          "min": 0.4427,
+          "max": 0.4739,
+          "sd": 0.0115,
+          "n": 6
+        },
+        "centroid_cosine_max": {
+          "mean": 0.6806,
+          "min": 0.6595,
+          "max": 0.7331,
+          "sd": 0.0284,
+          "n": 6
+        },
+        "size_entropy": {
+          "mean": 0.9615,
+          "min": 0.9464,
+          "max": 0.9724,
+          "sd": 0.0099,
+          "n": 6
+        },
+        "agree_lsa": {
+          "mean": 0.8589,
+          "min": 0.6716,
+          "max": 1.0,
+          "sd": 0.127,
+          "n": 6
+        },
+        "agree_counts": {
+          "mean": 0.0013,
+          "min": 0.001,
+          "max": 0.0019,
+          "sd": 0.0003,
+          "n": 6
+        },
+        "agree_char": {
+          "mean": 0.7681,
+          "min": 0.6021,
+          "max": 0.9093,
+          "sd": 0.1299,
+          "n": 6
+        },
+        "agree_hash_null": {
+          "mean": -0.0001,
+          "min": -0.0002,
+          "max": 0.0001,
+          "sd": 0.0001,
+          "n": 6
+        }
+      },
+      "detection": {
+        "common_cause_null": {
+          "pairwise_mean_edges": 13.0,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": null,
+          "conditional_pooled_precision": null
+        },
+        "structure": {
+          "pairwise_mean_edges": 16.33,
+          "conditional_mean_edges": 5.0,
+          "conditional_mean_recall": 1.0,
+          "conditional_pooled_precision": 0.8
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.8,
+      "true_ari": {
+        "mean": 0.444,
+        "min": 0.3266,
+        "max": 0.4864,
+        "sd": 0.0586,
+        "n": 6
+      },
+      "proxies": {
+        "seed_stability_mean": {
+          "mean": 0.8834,
+          "min": 0.7722,
+          "max": 1.0,
+          "sd": 0.1098,
+          "n": 6
+        },
+        "seed_stability_min": {
+          "mean": 0.7916,
+          "min": 0.6107,
+          "max": 1.0,
+          "sd": 0.1854,
+          "n": 6
+        },
+        "boot_stability_full_mean": {
+          "mean": 0.8452,
+          "min": 0.7424,
+          "max": 0.9214,
+          "sd": 0.0619,
+          "n": 6
+        },
+        "boot_stability_full_min": {
+          "mean": 0.6943,
+          "min": 0.5051,
+          "max": 0.7647,
+          "sd": 0.1107,
+          "n": 6
+        },
+        "boot_stability_shared_mean": {
+          "mean": 0.8434,
+          "min": 0.7428,
+          "max": 0.9179,
+          "sd": 0.0607,
+          "n": 6
+        },
+        "silhouette_cosine": {
+          "mean": 0.0892,
+          "min": 0.0783,
+          "max": 0.0971,
+          "sd": 0.0071,
+          "n": 6
+        },
+        "calinski_harabasz": {
+          "mean": 144.8577,
+          "min": 138.436,
+          "max": 149.7069,
+          "sd": 4.8502,
+          "n": 6
+        },
+        "davies_bouldin": {
+          "mean": 4.3078,
+          "min": 4.2419,
+          "max": 4.5312,
+          "sd": 0.11,
+          "n": 6
+        },
+        "centroid_cosine_mean": {
+          "mean": 0.4669,
+          "min": 0.4585,
+          "max": 0.4783,
+          "sd": 0.0065,
+          "n": 6
+        },
+        "centroid_cosine_max": {
+          "mean": 0.7166,
+          "min": 0.6924,
+          "max": 0.7735,
+          "sd": 0.0306,
+          "n": 6
+        },
+        "size_entropy": {
+          "mean": 0.9168,
+          "min": 0.8832,
+          "max": 0.931,
+          "sd": 0.0177,
+          "n": 6
+        },
+        "agree_lsa": {
+          "mean": 0.8671,
+          "min": 0.5929,
+          "max": 1.0,
+          "sd": 0.1658,
+          "n": 6
+        },
+        "agree_counts": {
+          "mean": 0.0007,
+          "min": -0.0005,
+          "max": 0.0013,
+          "sd": 0.0007,
+          "n": 6
+        },
+        "agree_char": {
+          "mean": 0.5103,
+          "min": 0.3938,
+          "max": 0.6115,
+          "sd": 0.0947,
+          "n": 6
+        },
+        "agree_hash_null": {
+          "mean": -0.0001,
+          "min": -0.0002,
+          "max": 0.0,
+          "sd": 0.0001,
+          "n": 6
+        }
+      },
+      "detection": {
+        "common_cause_null": {
+          "pairwise_mean_edges": 10.67,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": null,
+          "conditional_pooled_precision": null
+        },
+        "structure": {
+          "pairwise_mean_edges": 12.0,
+          "conditional_mean_edges": 5.0,
+          "conditional_mean_recall": 1.0,
+          "conditional_pooled_precision": 0.8
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.85,
+      "true_ari": {
+        "mean": 0.2216,
+        "min": 0.2075,
+        "max": 0.2331,
+        "sd": 0.0105,
+        "n": 6
+      },
+      "proxies": {
+        "seed_stability_mean": {
+          "mean": 0.4331,
+          "min": 0.3745,
+          "max": 0.5317,
+          "sd": 0.0571,
+          "n": 6
+        },
+        "seed_stability_min": {
+          "mean": 0.3205,
+          "min": 0.2802,
+          "max": 0.4063,
+          "sd": 0.0515,
+          "n": 6
+        },
+        "boot_stability_full_mean": {
+          "mean": 0.43,
+          "min": 0.3394,
+          "max": 0.5153,
+          "sd": 0.0674,
+          "n": 6
+        },
+        "boot_stability_full_min": {
+          "mean": 0.32,
+          "min": 0.2867,
+          "max": 0.3819,
+          "sd": 0.0336,
+          "n": 6
+        },
+        "boot_stability_shared_mean": {
+          "mean": 0.4304,
+          "min": 0.3395,
+          "max": 0.5174,
+          "sd": 0.0676,
+          "n": 6
+        },
+        "silhouette_cosine": {
+          "mean": 0.0695,
+          "min": 0.0631,
+          "max": 0.0761,
+          "sd": 0.0057,
+          "n": 6
+        },
+        "calinski_harabasz": {
+          "mean": 123.4662,
+          "min": 118.2384,
+          "max": 128.3246,
+          "sd": 3.5511,
+          "n": 6
+        },
+        "davies_bouldin": {
+          "mean": 4.6313,
+          "min": 4.5109,
+          "max": 4.8378,
+          "sd": 0.1362,
+          "n": 6
+        },
+        "centroid_cosine_mean": {
+          "mean": 0.5215,
+          "min": 0.4959,
+          "max": 0.5658,
+          "sd": 0.0282,
+          "n": 6
+        },
+        "centroid_cosine_max": {
+          "mean": 0.8187,
+          "min": 0.8118,
+          "max": 0.824,
+          "sd": 0.0054,
+          "n": 6
+        },
+        "size_entropy": {
+          "mean": 0.895,
+          "min": 0.8649,
+          "max": 0.936,
+          "sd": 0.0289,
+          "n": 6
+        },
+        "agree_lsa": {
+          "mean": 0.4332,
+          "min": 0.3184,
+          "max": 0.6207,
+          "sd": 0.1023,
+          "n": 6
+        },
+        "agree_counts": {
+          "mean": 0.0221,
+          "min": -0.0002,
+          "max": 0.0566,
+          "sd": 0.026,
+          "n": 6
+        },
+        "agree_char": {
+          "mean": 0.1927,
+          "min": 0.1489,
+          "max": 0.2595,
+          "sd": 0.0443,
+          "n": 6
+        },
+        "agree_hash_null": {
+          "mean": 0.0001,
+          "min": -0.0,
+          "max": 0.0004,
+          "sd": 0.0002,
+          "n": 6
+        }
+      },
+      "detection": {
+        "common_cause_null": {
+          "pairwise_mean_edges": 4.67,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": null,
+          "conditional_pooled_precision": null
+        },
+        "structure": {
+          "pairwise_mean_edges": 6.67,
+          "conditional_mean_edges": 3.33,
+          "conditional_mean_recall": 0.5833,
+          "conditional_pooled_precision": 0.7
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.9,
+      "true_ari": {
+        "mean": 0.0798,
+        "min": 0.0549,
+        "max": 0.1076,
+        "sd": 0.0209,
+        "n": 6
+      },
+      "proxies": {
+        "seed_stability_mean": {
+          "mean": 0.1575,
+          "min": 0.1379,
+          "max": 0.2113,
+          "sd": 0.0275,
+          "n": 6
+        },
+        "seed_stability_min": {
+          "mean": 0.0849,
+          "min": 0.0658,
+          "max": 0.0979,
+          "sd": 0.0135,
+          "n": 6
+        },
+        "boot_stability_full_mean": {
+          "mean": 0.1404,
+          "min": 0.112,
+          "max": 0.1852,
+          "sd": 0.0252,
+          "n": 6
+        },
+        "boot_stability_full_min": {
+          "mean": 0.0638,
+          "min": 0.0392,
+          "max": 0.1011,
+          "sd": 0.023,
+          "n": 6
+        },
+        "boot_stability_shared_mean": {
+          "mean": 0.1424,
+          "min": 0.1162,
+          "max": 0.1892,
+          "sd": 0.0253,
+          "n": 6
+        },
+        "silhouette_cosine": {
+          "mean": 0.0562,
+          "min": 0.0507,
+          "max": 0.0587,
+          "sd": 0.0031,
+          "n": 6
+        },
+        "calinski_harabasz": {
+          "mean": 107.4758,
+          "min": 104.4435,
+          "max": 110.3724,
+          "sd": 2.1541,
+          "n": 6
+        },
+        "davies_bouldin": {
+          "mean": 4.9516,
+          "min": 4.8461,
+          "max": 5.0512,
+          "sd": 0.0754,
+          "n": 6
+        },
+        "centroid_cosine_mean": {
+          "mean": 0.6393,
+          "min": 0.6098,
+          "max": 0.6684,
+          "sd": 0.0198,
+          "n": 6
+        },
+        "centroid_cosine_max": {
+          "mean": 0.8033,
+          "min": 0.7927,
+          "max": 0.8125,
+          "sd": 0.0065,
+          "n": 6
+        },
+        "size_entropy": {
+          "mean": 0.9551,
+          "min": 0.9253,
+          "max": 0.9787,
+          "sd": 0.0172,
+          "n": 6
+        },
+        "agree_lsa": {
+          "mean": 0.1576,
+          "min": 0.0395,
+          "max": 0.358,
+          "sd": 0.121,
+          "n": 6
+        },
+        "agree_counts": {
+          "mean": 0.0627,
+          "min": 0.0399,
+          "max": 0.1093,
+          "sd": 0.031,
+          "n": 6
+        },
+        "agree_char": {
+          "mean": 0.0869,
+          "min": 0.0639,
+          "max": 0.1323,
+          "sd": 0.0242,
+          "n": 6
+        },
+        "agree_hash_null": {
+          "mean": -0.0,
+          "min": -0.0002,
+          "max": 0.0003,
+          "sd": 0.0002,
+          "n": 6
+        }
+      },
+      "detection": {
+        "common_cause_null": {
+          "pairwise_mean_edges": 0.0,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": null,
+          "conditional_pooled_precision": null
+        },
+        "structure": {
+          "pairwise_mean_edges": 3.0,
+          "conditional_mean_edges": 0.33,
+          "conditional_mean_recall": 0.0833,
+          "conditional_pooled_precision": 1.0
+        }
+      }
+    },
+    {
+      "vocab_overlap": 0.95,
+      "true_ari": {
+        "mean": 0.0104,
+        "min": 0.0007,
+        "max": 0.0171,
+        "sd": 0.0075,
+        "n": 6
+      },
+      "proxies": {
+        "seed_stability_mean": {
+          "mean": 0.0897,
+          "min": 0.0732,
+          "max": 0.1195,
+          "sd": 0.0168,
+          "n": 6
+        },
+        "seed_stability_min": {
+          "mean": 0.027,
+          "min": 0.0042,
+          "max": 0.0571,
+          "sd": 0.0194,
+          "n": 6
+        },
+        "boot_stability_full_mean": {
+          "mean": 0.0765,
+          "min": 0.0616,
+          "max": 0.0944,
+          "sd": 0.0124,
+          "n": 6
+        },
+        "boot_stability_full_min": {
+          "mean": 0.0138,
+          "min": 0.0074,
+          "max": 0.0312,
+          "sd": 0.0087,
+          "n": 6
+        },
+        "boot_stability_shared_mean": {
+          "mean": 0.0787,
+          "min": 0.065,
+          "max": 0.0959,
+          "sd": 0.0118,
+          "n": 6
+        },
+        "silhouette_cosine": {
+          "mean": 0.0489,
+          "min": 0.0411,
+          "max": 0.0538,
+          "sd": 0.0046,
+          "n": 6
+        },
+        "calinski_harabasz": {
+          "mean": 108.1868,
+          "min": 104.6384,
+          "max": 110.6552,
+          "sd": 2.417,
+          "n": 6
+        },
+        "davies_bouldin": {
+          "mean": 4.9041,
+          "min": 4.794,
+          "max": 5.02,
+          "sd": 0.0829,
+          "n": 6
+        },
+        "centroid_cosine_mean": {
+          "mean": 0.7123,
+          "min": 0.7004,
+          "max": 0.7286,
+          "sd": 0.0128,
+          "n": 6
+        },
+        "centroid_cosine_max": {
+          "mean": 0.7882,
+          "min": 0.7804,
+          "max": 0.7973,
+          "sd": 0.0073,
+          "n": 6
+        },
+        "size_entropy": {
+          "mean": 0.99,
+          "min": 0.9841,
+          "max": 0.9995,
+          "sd": 0.007,
+          "n": 6
+        },
+        "agree_lsa": {
+          "mean": 0.1306,
+          "min": 0.0578,
+          "max": 0.1798,
+          "sd": 0.0475,
+          "n": 6
+        },
+        "agree_counts": {
+          "mean": 0.0806,
+          "min": 0.0117,
+          "max": 0.1219,
+          "sd": 0.0398,
+          "n": 6
+        },
+        "agree_char": {
+          "mean": 0.0545,
+          "min": 0.0023,
+          "max": 0.1334,
+          "sd": 0.0465,
+          "n": 6
+        },
+        "agree_hash_null": {
+          "mean": 0.0002,
+          "min": -0.0,
+          "max": 0.0004,
+          "sd": 0.0002,
+          "n": 6
+        }
+      },
+      "detection": {
+        "common_cause_null": {
+          "pairwise_mean_edges": 0.0,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": null,
+          "conditional_pooled_precision": null
+        },
+        "structure": {
+          "pairwise_mean_edges": 0.0,
+          "conditional_mean_edges": 0.0,
+          "conditional_mean_recall": 0.0,
+          "conditional_pooled_precision": null
+        }
+      }
+    }
+  ],
+  "reproduction_check": {
+    "note": "same instance seeds, same symboliser seeds, same k. A non-zero difference would mean this harness is not measuring the configurations whose detection behaviour is already known.",
+    "max_abs_diff": 0.0,
+    "levels": [
+      {
+        "vocab_overlap": 0.0,
+        "realism_sweep_ari_mean": 1.0,
+        "here_ari_mean": 1.0,
+        "abs_diff": 0.0
+      },
+      {
+        "vocab_overlap": 0.5,
+        "realism_sweep_ari_mean": 0.9224,
+        "here_ari_mean": 0.9224,
+        "abs_diff": 0.0
+      },
+      {
+        "vocab_overlap": 0.8,
+        "realism_sweep_ari_mean": 0.444,
+        "here_ari_mean": 0.444,
+        "abs_diff": 0.0
+      },
+      {
+        "vocab_overlap": 0.9,
+        "realism_sweep_ari_mean": 0.0798,
+        "here_ari_mean": 0.0798,
+        "abs_diff": 0.0
+      }
+    ]
+  },
+  "evaluation": {
+    "seed_stability_mean": {
+      "spearman_vs_true_ari": 0.822,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.7914760000000001,
+        "higher_is_better": true,
+        "tp": 34,
+        "fp": 0,
+        "fn": 1,
+        "tn": 19,
+        "sensitivity": 0.9714,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9857,
+        "errors": 1,
+        "n": 54,
+        "margin": 0.00015599999999993397
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.6519215,
+        "higher_is_better": true,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.24046899999999993
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 35,
+        "fp": 1,
+        "fn": 0,
+        "tn": 18,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.7914760000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.7914760000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.7914760000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.7914760000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.7914760000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.679922,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.7914760000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.7914760000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.7914760000000001,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 1,
+        "accuracy": 0.9815,
+        "balanced_accuracy": 0.9737
+      }
+    },
+    "seed_stability_min": {
+      "spearman_vs_true_ari": 0.8086,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.6227555,
+        "higher_is_better": true,
+        "tp": 35,
+        "fp": 0,
+        "fn": 0,
+        "tn": 19,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 54,
+        "margin": 0.024189000000000016
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.5084839999999999,
+        "higher_is_better": true,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.20435400000000004
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 35,
+        "fp": 1,
+        "fn": 0,
+        "tn": 18,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.6227555,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.6227555,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.6227555,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.6227555,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.6227555,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.5669735,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.6227555,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.6227555,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.6227555,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 1,
+        "accuracy": 0.9815,
+        "balanced_accuracy": 0.9737
+      }
+    },
+    "boot_stability_full_mean": {
+      "spearman_vs_true_ari": 0.8864,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.628824,
+        "higher_is_better": true,
+        "tp": 35,
+        "fp": 1,
+        "fn": 0,
+        "tn": 18,
+        "sensitivity": 1.0,
+        "specificity": 0.9474,
+        "balanced_accuracy": 0.9737,
+        "errors": 1,
+        "n": 54,
+        "margin": 0.22713400000000006
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.6177795,
+        "higher_is_better": true,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.275577
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 35,
+        "fp": 3,
+        "fn": 0,
+        "tn": 16,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.628824,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.628824,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.628824,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.628824,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.628824,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.6354124999999999,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.463814,
+            "errors": 2,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.628824,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.628824,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 3,
+        "accuracy": 0.9444,
+        "balanced_accuracy": 0.9211
+      }
+    },
+    "boot_stability_full_min": {
+      "spearman_vs_true_ari": 0.8887,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.44352899999999995,
+        "higher_is_better": true,
+        "tp": 35,
+        "fp": 1,
+        "fn": 0,
+        "tn": 18,
+        "sensitivity": 1.0,
+        "specificity": 0.9474,
+        "balanced_accuracy": 0.9737,
+        "errors": 1,
+        "n": 54,
+        "margin": 0.123218
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.478795,
+        "higher_is_better": true,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.318334
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 34,
+        "fp": 5,
+        "fn": 1,
+        "tn": 14,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.44352899999999995,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.44352899999999995,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.44352899999999995,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.44352899999999995,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.44352899999999995,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.509941,
+            "errors": 2,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.3031395,
+            "errors": 4,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.44352899999999995,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.44352899999999995,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 6,
+        "accuracy": 0.8889,
+        "balanced_accuracy": 0.8541
+      }
+    },
+    "boot_stability_shared_mean": {
+      "spearman_vs_true_ari": 0.8872,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.6300785,
+        "higher_is_better": true,
+        "tp": 35,
+        "fp": 1,
+        "fn": 0,
+        "tn": 18,
+        "sensitivity": 1.0,
+        "specificity": 0.9474,
+        "balanced_accuracy": 0.9737,
+        "errors": 1,
+        "n": 54,
+        "margin": 0.22540099999999996
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.615231,
+        "higher_is_better": true,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.27578199999999997
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 35,
+        "fp": 3,
+        "fn": 0,
+        "tn": 16,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.6300785,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.6300785,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.6300785,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.6300785,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.6300785,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.63525,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.4659765,
+            "errors": 2,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.6300785,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.6300785,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 3,
+        "accuracy": 0.9444,
+        "balanced_accuracy": 0.9211
+      }
+    },
+    "silhouette_cosine": {
+      "spearman_vs_true_ari": 0.9786,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.077168,
+        "higher_is_better": true,
+        "tp": 35,
+        "fp": 1,
+        "fn": 0,
+        "tn": 18,
+        "sensitivity": 1.0,
+        "specificity": 0.9474,
+        "balanced_accuracy": 0.9737,
+        "errors": 1,
+        "n": 54,
+        "margin": 0.0021700000000000053
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.07457949999999999,
+        "higher_is_better": true,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.007347000000000006
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 33,
+        "fp": 1,
+        "fn": 2,
+        "tn": 18,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.077168,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.077168,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.077168,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.077168,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.087141,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.07869899999999999,
+            "errors": 2,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.087141,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.087141,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.087141,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 3,
+        "accuracy": 0.9444,
+        "balanced_accuracy": 0.9451
+      }
+    },
+    "calinski_harabasz": {
+      "spearman_vs_true_ari": 0.9733,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 138.895658,
+        "higher_is_better": true,
+        "tp": 35,
+        "fp": 0,
+        "fn": 0,
+        "tn": 19,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 54,
+        "margin": 0.9192380000000071
+      },
+      "floor_by_detection_held": {
+        "threshold": 130.961863,
+        "higher_is_better": true,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 14.948352
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 34,
+        "fp": 0,
+        "fn": 1,
+        "tn": 19,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 138.895658,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 138.895658,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 138.895658,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 138.895658,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 138.895658,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 140.90032,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 138.895658,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 138.895658,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 138.895658,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 1,
+        "accuracy": 0.9815,
+        "balanced_accuracy": 0.9857
+      }
+    },
+    "davies_bouldin": {
+      "spearman_vs_true_ari": -0.9588,
+      "direction": "lower_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 4.473668,
+        "higher_is_better": false,
+        "tp": 34,
+        "fp": 1,
+        "fn": 1,
+        "tn": 18,
+        "sensitivity": 0.9714,
+        "specificity": 0.9474,
+        "balanced_accuracy": 0.9594,
+        "errors": 2,
+        "n": 54,
+        "margin": 0.07443400000000011
+      },
+      "floor_by_detection_held": {
+        "threshold": 4.5327865,
+        "higher_is_better": false,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.0032690000000004105
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 33,
+        "fp": 5,
+        "fn": 2,
+        "tn": 14,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 4.473668,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 4.473668,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 4.473668,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 4.473668,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 4.391897999999999,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 4.473668,
+            "errors": 2,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 4.662554,
+            "errors": 4,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 4.473668,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 4.473668,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 7,
+        "accuracy": 0.8704,
+        "balanced_accuracy": 0.8398
+      }
+    },
+    "centroid_cosine_mean": {
+      "spearman_vs_true_ari": -0.9762,
+      "direction": "lower_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.487088,
+        "higher_is_better": false,
+        "tp": 35,
+        "fp": 1,
+        "fn": 0,
+        "tn": 18,
+        "sensitivity": 1.0,
+        "specificity": 0.9474,
+        "balanced_accuracy": 0.9737,
+        "errors": 1,
+        "n": 54,
+        "margin": 0.017527999999999988
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.48890750000000005,
+        "higher_is_better": false,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.02116699999999999
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 34,
+        "fp": 1,
+        "fn": 1,
+        "tn": 18,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.487088,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.487088,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.487088,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.487088,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.467249,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.484876,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.467249,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.467249,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.467249,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 2,
+        "accuracy": 0.963,
+        "balanced_accuracy": 0.9594
+      }
+    },
+    "centroid_cosine_max": {
+      "spearman_vs_true_ari": -0.854,
+      "direction": "lower_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.7771,
+        "higher_is_better": false,
+        "tp": 33,
+        "fp": 1,
+        "fn": 2,
+        "tn": 18,
+        "sensitivity": 0.9429,
+        "specificity": 0.9474,
+        "balanced_accuracy": 0.9451,
+        "errors": 3,
+        "n": 54,
+        "margin": 0.006655999999999995
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.7844195,
+        "higher_is_better": false,
+        "tp": 17,
+        "fp": 0,
+        "fn": 1,
+        "tn": 9,
+        "sensitivity": 0.9444,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9722,
+        "errors": 1,
+        "n": 27,
+        "margin": 0.005734999999999935
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 33,
+        "fp": 4,
+        "fn": 2,
+        "tn": 15,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.7771,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.7771,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.7769865,
+            "errors": 2,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.7771,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.7771,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.7771,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.7771,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.7771,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.787127,
+            "errors": 3,
+            "n": 6
+          }
+        ],
+        "errors": 6,
+        "accuracy": 0.8889,
+        "balanced_accuracy": 0.8662
+      }
+    },
+    "size_entropy": {
+      "spearman_vs_true_ari": 0.121,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.9560500000000001,
+        "higher_is_better": true,
+        "tp": 28,
+        "fp": 8,
+        "fn": 7,
+        "tn": 11,
+        "sensitivity": 0.8,
+        "specificity": 0.5789,
+        "balanced_accuracy": 0.6895,
+        "errors": 15,
+        "n": 54,
+        "margin": 0.0012159999999999949
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.9560390000000001,
+        "higher_is_better": true,
+        "tp": 13,
+        "fp": 4,
+        "fn": 5,
+        "tn": 5,
+        "sensitivity": 0.7222,
+        "specificity": 0.5556,
+        "balanced_accuracy": 0.6389,
+        "errors": 9,
+        "n": 27,
+        "margin": 0.0012379999999999614
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 27,
+        "fp": 12,
+        "fn": 8,
+        "tn": 7,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.9560500000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.9560500000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.9560500000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.9569465,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.9560500000000001,
+            "errors": 2,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.9560500000000001,
+            "errors": 5,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.9560500000000001,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.923038,
+            "errors": 6,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.9560500000000001,
+            "errors": 6,
+            "n": 6
+          }
+        ],
+        "errors": 20,
+        "accuracy": 0.6296,
+        "balanced_accuracy": 0.5699
+      }
+    },
+    "agree_lsa": {
+      "spearman_vs_true_ari": 0.8969,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.6461735,
+        "higher_is_better": true,
+        "tp": 35,
+        "fp": 0,
+        "fn": 0,
+        "tn": 19,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 54,
+        "margin": 0.050900999999999974
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.508329,
+        "higher_is_better": true,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.169172
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 34,
+        "fp": 0,
+        "fn": 1,
+        "tn": 19,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.6461735,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.6461735,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.6461735,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.6461735,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.67689,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.6461735,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.6322695,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.6461735,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.6461735,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 1,
+        "accuracy": 0.9815,
+        "balanced_accuracy": 0.9857
+      }
+    },
+    "agree_counts": {
+      "spearman_vs_true_ari": 0.6761,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.1553485,
+        "higher_is_better": true,
+        "tp": 21,
+        "fp": 0,
+        "fn": 14,
+        "tn": 19,
+        "sensitivity": 0.6,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.8,
+        "errors": 14,
+        "n": 54,
+        "margin": 0.06698300000000001
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.1553485,
+        "higher_is_better": true,
+        "tp": 12,
+        "fp": 0,
+        "fn": 6,
+        "tn": 9,
+        "sensitivity": 0.6667,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.8333,
+        "errors": 6,
+        "n": 27,
+        "margin": 0.06698300000000001
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 18,
+        "fp": 1,
+        "fn": 17,
+        "tn": 18,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.1553485,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.1553485,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.1553485,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.3932505,
+            "errors": 6,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.1553485,
+            "errors": 6,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.1553485,
+            "errors": 5,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.1553485,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.1553485,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.1148415,
+            "errors": 1,
+            "n": 6
+          }
+        ],
+        "errors": 18,
+        "accuracy": 0.6667,
+        "balanced_accuracy": 0.7308
+      }
+    },
+    "agree_char": {
+      "spearman_vs_true_ari": 0.9533,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": 0.443566,
+        "higher_is_better": true,
+        "tp": 34,
+        "fp": 0,
+        "fn": 1,
+        "tn": 19,
+        "sensitivity": 0.9714,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.9857,
+        "errors": 1,
+        "n": 54,
+        "margin": 0.03421200000000002
+      },
+      "floor_by_detection_held": {
+        "threshold": 0.296802,
+        "higher_is_better": true,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 1.0,
+        "errors": 0,
+        "n": 27,
+        "margin": 0.259316
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 34,
+        "fp": 0,
+        "fn": 1,
+        "tn": 19,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": 0.443566,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": 0.443566,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": 0.443566,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": 0.443566,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.443566,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.4308425,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": 0.443566,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.443566,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": 0.443566,
+            "errors": 0,
+            "n": 6
+          }
+        ],
+        "errors": 1,
+        "accuracy": 0.9815,
+        "balanced_accuracy": 0.9857
+      }
+    },
+    "agree_hash_null": {
+      "spearman_vs_true_ari": -0.0514,
+      "direction": "higher_is_better",
+      "floor_by_stated_ari": {
+        "threshold": -0.0002005,
+        "higher_is_better": true,
+        "tp": 33,
+        "fp": 17,
+        "fn": 2,
+        "tn": 2,
+        "sensitivity": 0.9429,
+        "specificity": 0.1053,
+        "balanced_accuracy": 0.5241,
+        "errors": 19,
+        "n": 54,
+        "margin": 9.999999999999972e-07
+      },
+      "floor_by_detection_held": {
+        "threshold": 6.7e-05,
+        "higher_is_better": true,
+        "tp": 7,
+        "fp": 3,
+        "fn": 11,
+        "tn": 6,
+        "sensitivity": 0.3889,
+        "specificity": 0.6667,
+        "balanced_accuracy": 0.5278,
+        "errors": 14,
+        "n": 27,
+        "margin": 2.8000000000000003e-05
+      },
+      "floor_leave_one_overlap_out": {
+        "tp": 22,
+        "fp": 12,
+        "fn": 13,
+        "tn": 7,
+        "folds": [
+          {
+            "held_out_overlap": 0.0,
+            "threshold": -0.0002005,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.3,
+            "threshold": -0.0002005,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.5,
+            "threshold": -0.0002005,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.65,
+            "threshold": -0.0001935,
+            "errors": 1,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.75,
+            "threshold": 0.0001225,
+            "errors": 6,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.8,
+            "threshold": 0.0001225,
+            "errors": 5,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.85,
+            "threshold": -0.0002005,
+            "errors": 6,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.9,
+            "threshold": 0.000429,
+            "errors": 0,
+            "n": 6
+          },
+          {
+            "held_out_overlap": 0.95,
+            "threshold": -0.0002005,
+            "errors": 6,
+            "n": 6
+          }
+        ],
+        "errors": 25,
+        "accuracy": 0.537,
+        "balanced_accuracy": 0.4985
+      }
+    }
+  },
+  "ranking_by_floor_separation": [
+    {
+      "proxy": "seed_stability_min",
+      "balanced_accuracy": 1.0,
+      "errors": 0,
+      "threshold": 0.6227555,
+      "direction": "higher_is_better",
+      "spearman": 0.8086,
+      "loo_errors": 1,
+      "loo_balanced_accuracy": 0.9737
+    },
+    {
+      "proxy": "calinski_harabasz",
+      "balanced_accuracy": 1.0,
+      "errors": 0,
+      "threshold": 138.895658,
+      "direction": "higher_is_better",
+      "spearman": 0.9733,
+      "loo_errors": 1,
+      "loo_balanced_accuracy": 0.9857
+    },
+    {
+      "proxy": "agree_lsa",
+      "balanced_accuracy": 1.0,
+      "errors": 0,
+      "threshold": 0.6461735,
+      "direction": "higher_is_better",
+      "spearman": 0.8969,
+      "loo_errors": 1,
+      "loo_balanced_accuracy": 0.9857
+    },
+    {
+      "proxy": "seed_stability_mean",
+      "balanced_accuracy": 0.9857,
+      "errors": 1,
+      "threshold": 0.7914760000000001,
+      "direction": "higher_is_better",
+      "spearman": 0.822,
+      "loo_errors": 1,
+      "loo_balanced_accuracy": 0.9737
+    },
+    {
+      "proxy": "agree_char",
+      "balanced_accuracy": 0.9857,
+      "errors": 1,
+      "threshold": 0.443566,
+      "direction": "higher_is_better",
+      "spearman": 0.9533,
+      "loo_errors": 1,
+      "loo_balanced_accuracy": 0.9857
+    },
+    {
+      "proxy": "boot_stability_full_mean",
+      "balanced_accuracy": 0.9737,
+      "errors": 1,
+      "threshold": 0.628824,
+      "direction": "higher_is_better",
+      "spearman": 0.8864,
+      "loo_errors": 3,
+      "loo_balanced_accuracy": 0.9211
+    },
+    {
+      "proxy": "boot_stability_full_min",
+      "balanced_accuracy": 0.9737,
+      "errors": 1,
+      "threshold": 0.44352899999999995,
+      "direction": "higher_is_better",
+      "spearman": 0.8887,
+      "loo_errors": 6,
+      "loo_balanced_accuracy": 0.8541
+    },
+    {
+      "proxy": "boot_stability_shared_mean",
+      "balanced_accuracy": 0.9737,
+      "errors": 1,
+      "threshold": 0.6300785,
+      "direction": "higher_is_better",
+      "spearman": 0.8872,
+      "loo_errors": 3,
+      "loo_balanced_accuracy": 0.9211
+    },
+    {
+      "proxy": "silhouette_cosine",
+      "balanced_accuracy": 0.9737,
+      "errors": 1,
+      "threshold": 0.077168,
+      "direction": "higher_is_better",
+      "spearman": 0.9786,
+      "loo_errors": 3,
+      "loo_balanced_accuracy": 0.9451
+    },
+    {
+      "proxy": "centroid_cosine_mean",
+      "balanced_accuracy": 0.9737,
+      "errors": 1,
+      "threshold": 0.487088,
+      "direction": "lower_is_better",
+      "spearman": -0.9762,
+      "loo_errors": 2,
+      "loo_balanced_accuracy": 0.9594
+    },
+    {
+      "proxy": "davies_bouldin",
+      "balanced_accuracy": 0.9594,
+      "errors": 2,
+      "threshold": 4.473668,
+      "direction": "lower_is_better",
+      "spearman": -0.9588,
+      "loo_errors": 7,
+      "loo_balanced_accuracy": 0.8398
+    },
+    {
+      "proxy": "centroid_cosine_max",
+      "balanced_accuracy": 0.9451,
+      "errors": 3,
+      "threshold": 0.7771,
+      "direction": "lower_is_better",
+      "spearman": -0.854,
+      "loo_errors": 6,
+      "loo_balanced_accuracy": 0.8662
+    },
+    {
+      "proxy": "agree_counts",
+      "balanced_accuracy": 0.8,
+      "errors": 14,
+      "threshold": 0.1553485,
+      "direction": "higher_is_better",
+      "spearman": 0.6761,
+      "loo_errors": 18,
+      "loo_balanced_accuracy": 0.7308
+    },
+    {
+      "proxy": "size_entropy",
+      "balanced_accuracy": 0.6895,
+      "errors": 15,
+      "threshold": 0.9560500000000001,
+      "direction": "higher_is_better",
+      "spearman": 0.121,
+      "loo_errors": 20,
+      "loo_balanced_accuracy": 0.5699
+    },
+    {
+      "proxy": "agree_hash_null",
+      "balanced_accuracy": 0.5241,
+      "errors": 19,
+      "threshold": -0.0002005,
+      "direction": "higher_is_better",
+      "spearman": -0.0514,
+      "loo_errors": 25,
+      "loo_balanced_accuracy": 0.4985
+    }
+  ]
+}

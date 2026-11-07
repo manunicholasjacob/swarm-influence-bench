@@ -51,11 +51,41 @@ def _vocab(k_topics, words_per_topic=40, seed=0, overlap=0.0):
 def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0,
                       burstiness=1.0, drift=0.02, reaction_lag=1, mean_gap_s=25.0,
                       volume_skew=1.4, words_per_msg=12, shared_topic=0.55,
-                      activity_drift=0.0, n_blocks=20, vocab_overlap=0.0, text_pool=None):
+                      activity_drift=0.0, n_blocks=20, vocab_overlap=0.0, text_pool=None,
+                      p_repeat=0.0, p_return=0.0):
     """One channel with a known influence graph.
 
     edges: iterable of (leader, follower, coupling). `coupling` is the probability that, when the
            leader speaks, the follower reacts `reaction_lag` ticks later copying the leader's topic.
+
+    p_repeat, p_return: TURN-TAKING, as a knob of its own. Without them the speaker at each tick is
+           an independent draw from the activity distribution, which no real channel is: in the AI
+           Village logs the same agent speaks twice in a row 36% of the time and returns after
+           exactly one other message 38% of the time. With probability `p_repeat` the previous
+           speaker speaks again, with probability `p_return` the speaker from two messages ago
+           speaks, and otherwise the speaker is drawn from the (possibly drifting) activity
+           distribution as before. This is deliberately SEPARATE from `activity_drift`, because a
+           real speaker sequence carries both turn-taking and non-stationary activity at once and
+           shuffling it destroys both; two knobs can be moved one at a time. At p_repeat =
+           p_return = 0 no extra random number is drawn and the stream is identical, bit for bit,
+           to the independent-draw generator, which is what makes a comparison across the knob
+           meaningful rather than a comparison across two generators.
+
+           The `p_return` branch fires only when the message before last came from a DIFFERENT
+           agent, because that is what the statistic it is calibrated against means: "returns
+           after exactly one other message". Without that condition the chain is sticky and runs
+           away, since one repeat makes the last two speakers identical and then both branches
+           repeat: at p_repeat 0.36 and p_return 0.38 the realised repeat rate came out at 0.678
+           instead of anything near 0.36. With the condition the two branches describe mutually
+           exclusive events, as the two measured rates do.
+
+           Neither realised rate equals its knob, and both must be measured rather than assumed.
+           The activity draw lands on the previous speaker by chance a quarter of the time at this
+           volume skew, so the realised repeat rate starts at about 0.25 with both knobs at zero,
+           and `activity_drift` raises it further on its own. That overlap is a property of the
+           channel, not a defect of the knob: concentrating activity into fewer agents per block
+           IS a way of making repeats more likely. The knobs are independent; the statistics they
+           move are not.
 
     shared_topic: probability that a message speaks to the channel's drifting current topic. This is
            the common-cause knob and it matters more than it looks. Above zero, every pair of agents
@@ -80,6 +110,17 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
             raise ValueError(f"self-edge ({a},{b}): no pairwise estimator tests i->i")
         if not 0.0 <= c <= 1.0:
             raise ValueError(f"coupling {c} for ({a},{b}) is not a probability")
+    if not 0.0 <= p_repeat <= 1.0:
+        raise ValueError(f"p_repeat {p_repeat} is not a probability")
+    if not 0.0 <= p_return <= 1.0:
+        raise ValueError(f"p_return {p_return} is not a probability")
+    if p_repeat + p_return > 1.0:
+        raise ValueError(f"p_repeat + p_return = {p_repeat + p_return} exceeds 1: "
+                         f"there is no probability left for the activity draw")
+    # Zero means OFF, not "a chain with zero probabilities". The distinction matters: the branch
+    # below consumes no random number when turn-taking is off, so the default settings reproduce
+    # the independent-draw generator exactly rather than merely in distribution.
+    turn_taking = p_repeat > 0.0 or p_return > 0.0
 
     # per-agent speaking weights: a realistic heavy head and long tail
     w0 = 1.0 / np.power(np.arange(1, n_agents + 1), volume_skew)
@@ -133,7 +174,20 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
             # made the labelled coupling wrong for any leader with two or more followers.
             pending = [(0, f, tp) for _, f, tp in due[1:]] + pending
         else:
-            speaker = int(rng.choice(n_agents, p=w))
+            # The turn-taking chain looks at the REALISED speaker sequence, reactions included,
+            # because that is what a surrogate sees. A repeat or a return skips the activity draw
+            # entirely; when turn-taking is off, or when there is no history to look back at, no
+            # extra number is drawn and the draw sequence is the original one.
+            speaker = None
+            if turn_taking and agents:
+                u = rng.random()
+                if u < p_repeat:
+                    speaker = agents[-1]
+                elif (u < p_repeat + p_return and len(agents) >= 2
+                        and agents[-2] != agents[-1]):
+                    speaker = agents[-2]
+            if speaker is None:
+                speaker = int(rng.choice(n_agents, p=w))
             r = rng.random()
             rest = shared_topic + (1.0 - shared_topic) * 0.55
             topic = (cur_topic if r < shared_topic
@@ -180,6 +234,7 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
                        "seed": seed, "burstiness": burstiness, "drift": drift,
                        "reaction_lag": reaction_lag, "mean_gap_s": mean_gap_s,
                        "shared_topic": shared_topic, "activity_drift": activity_drift,
+                       "p_repeat": p_repeat, "p_return": p_return,
                        "vocab_overlap": vocab_overlap,
                        "text_renderer": "pool" if text_pool is not None else "vocab",
                        "edges": [[a, b, c] for a, b, c in edges]}}

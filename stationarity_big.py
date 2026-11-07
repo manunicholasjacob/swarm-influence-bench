@@ -8,24 +8,16 @@ honest either way.
 
 Pure nulls only: no influence and no common cause, so any certified edge is an error by construction.
 """
-import sys, json, time, math
+import sys, json, time
 sys.path.insert(0, r"C:\dev\swarm-bench")
 import numpy as np
 import bench_gen, bench_eval
+from bench_eval import wilson   # was defined here; shared now that two sweeps report intervals
 
 DRIFTS = [0.0, 0.3, 0.6, 0.9]
 REPS, N_SUR = 30, 100
 t0 = time.time()
 def log(m): print(f"[{time.time()-t0:5.0f}s] {m}", flush=True)
-
-
-def wilson(k, n, z=1.96):
-    if n == 0:
-        return (None, None)
-    p = k / n
-    c = (p + z * z / (2 * n)) / (1 + z * z / n)
-    m = z / (1 + z * z / n) * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
-    return (round(max(0.0, c - m), 3), round(min(1.0, c + m), 3))
 
 
 out = {"drifts": DRIFTS, "reps": REPS, "n_surrogates": N_SUR, "nominal": 0.05, "rows": []}

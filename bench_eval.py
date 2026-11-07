@@ -9,7 +9,7 @@ certified directed edges. The harness returns the three numbers any influence cl
   detection floor      the coupling and channel volume at which power reaches 80%
 """
 from __future__ import annotations
-import sys, json, time, collections, warnings
+import sys, json, time, collections, math, warnings
 import numpy as np
 
 sys.path.insert(0, r"C:\dev\swarm-prep")
@@ -93,6 +93,26 @@ def evaluate(detector, instances=None, out_path=None, log=print):
         log(f"[{time.time()-t0:5.0f}s] {i+1}/{len(specs)} {name}: planted {len(gt)} "
             f"found {len(found)} tp {tp}")
     return summarise(rows, out_path)
+
+
+def wilson(k, n, z=1.96):
+    """Wilson score interval for k successes in n trials, rounded to three places.
+
+    Every error rate in this repo is a proportion from a few dozen or a few hundred replicates,
+    where the normal approximation is wrong in the direction that flatters: it gives intervals that
+    cross zero at small k and are too narrow near the ends. An 8-replicate sweep once reported a
+    permutation-surrogate error rate of 0.375 that turned out to be noise, which is why nothing
+    here reports a rate without one.
+
+    Lived in stationarity_big.py; moved here so the sweeps share one implementation rather than
+    each carrying a copy.
+    """
+    if n == 0:
+        return (None, None)
+    p = k / n
+    c = (p + z * z / (2 * n)) / (1 + z * z / n)
+    m = z / (1 + z * z / n) * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+    return (round(max(0.0, c - m), 3), round(min(1.0, c + m), 3))
 
 
 def floor_of(curve, n_seeds):

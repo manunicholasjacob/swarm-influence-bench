@@ -2,12 +2,14 @@
 
 Run: python -m pytest tests -q
 """
+import json
 import pathlib
 import sys
 
 import pytest
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+HERE = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(HERE))
 
 # bench_eval imports the private estimator modules at import time; skip cleanly if absent so the
 # generator tests still run for someone who only cloned this repo.
@@ -111,3 +113,46 @@ def test_coarse_seed_count_is_flagged_in_the_floor_status():
     rows = [row(f"c0.4_{s}", planted=1, found=1, tp=1, couplings=(0.4,)) for s in range(3)]
     s = bench_eval.summarise(rows)
     assert "3 seeds" in (s["detection_floor_coupling"]["note"] or "")
+
+
+# ---------------------------------------------------------------------------
+# Wilson intervals. The function moved here out of stationarity_big.py so the sweeps share one
+# implementation; these pin that the move was lossless.
+# ---------------------------------------------------------------------------
+
+def test_wilson_reproduces_every_published_interval_in_the_drift_sweep():
+    """Recompute bench_stationarity_big.json's intervals from its own counts.
+
+    The function used to live in the script that wrote that file. Moving it is only safe if the
+    published numbers come back unchanged, so they are recomputed here rather than trusted.
+    """
+    data = json.load(open(HERE / "bench_stationarity_big.json", encoding="utf-8"))
+    checked = 0
+    for r in data["rows"]:
+        for null in ("shift", "permute"):
+            lo, hi = bench_eval.wilson(r[null]["fired"], r[null]["of"])
+            assert [lo, hi] == r[null]["wilson95"], (r["activity_drift"], null)
+            checked += 1
+    assert checked == 8
+
+
+def test_wilson_brackets_the_point_estimate_and_stays_inside_the_unit_interval():
+    for k in range(0, 31):
+        lo, hi = bench_eval.wilson(k, 30)
+        assert 0.0 <= lo <= k / 30 <= hi <= 1.0
+
+
+def test_wilson_at_zero_successes_does_not_claim_zero_risk():
+    """A rate of 0 out of 30 is not evidence that the rate is 0, which is the whole reason an
+    interval is reported next to every error rate in this repo."""
+    lo, hi = bench_eval.wilson(0, 30)
+    assert lo == 0.0 and hi > 0.1
+
+
+def test_wilson_narrows_as_replicates_are_added():
+    width = lambda k, n: bench_eval.wilson(k, n)[1] - bench_eval.wilson(k, n)[0]
+    assert width(3, 30) > width(20, 200) > width(100, 1000)
+
+
+def test_wilson_with_no_trials_is_unknown_rather_than_zero():
+    assert bench_eval.wilson(0, 0) == (None, None)
