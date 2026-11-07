@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "SwarmInfluence-Bench"
+message: "If you use this work, please cite it as below."
+type: software
+authors:
+  - family-names: Jacob
+    given-names: Manu Nicholas
+    email: manunicholasjacob@gmail.com
+    affiliation: Independent Researcher
+abstract: >-
+  A benchmark for coordination and influence detectors on multi-agent chat, in which the true
+  influence graph is known by construction. Includes pure nulls, which measure calibration, and
+  common-cause nulls, which measure confounding.
+keywords:
+  - transfer entropy
+  - multi-agent systems
+  - AI safety
+  - surrogate data
+  - coordination detection
+license: MIT
+year: 2026
