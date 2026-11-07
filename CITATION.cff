@@ -1,3 +1,8 @@
+# NOTE FOR ANYONE ADDING ZENODO METADATA LATER.
+# Zenodo reads this file when archiving a GitHub release, BUT if a .zenodo.json is also present it
+# uses that and ignores this file silently. Do not add a .zenodo.json alongside this one unless you
+# intend it to be the single source of truth, or a minted DOI will carry whichever metadata is
+# stale. This repository deliberately keeps CITATION.cff only.
 cff-version: 1.2.0
 title: "SwarmInfluence-Bench"
 message: "If you use this work, please cite it as below."
