@@ -65,10 +65,21 @@ def _rows(path: pathlib.Path):
 
 
 def _pick(row: dict, keys) -> str:
+    """Find a field by one of several spellings, exact match first.
+
+    Exports decorate these names: Adaption's JSONL ships `enhanced_prompt` and
+    `enhanced_completion` rather than `prompt` and `completion`, so a suffix match is tried after
+    the exact ones. Exact wins, so a row carrying both `prompt` and `enhanced_prompt` is never
+    resolved by the decorated name.
+    """
+    lowered = {k.lower(): k for k in row}
     for k in keys:
-        for cand in (k, k.upper(), k.capitalize()):
-            if cand in row and row[cand]:
-                return str(row[cand]).strip()
+        if k in lowered and row[lowered[k]]:
+            return str(row[lowered[k]]).strip()
+    for k in keys:
+        for low, original in lowered.items():
+            if low.endswith("_" + k) and row[original]:
+                return str(row[original]).strip()
     return ""
 
 

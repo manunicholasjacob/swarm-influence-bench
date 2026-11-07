@@ -95,6 +95,27 @@ def test_loader_accepts_alternative_field_names(tmp_path):
     assert report["rows_unmatched"] == 0
 
 
+def test_loader_reads_the_prefixed_field_names_a_real_export_uses(tmp_path):
+    """Adaption's JSONL ships enhanced_prompt / enhanced_completion, not prompt / completion."""
+    rows = [{"enhanced_prompt": f"Write a short channel message about: {t}",
+             "enhanced_completion": f"status {k} on {t}"}
+            for t in text_pool.TOPICS for k in range(12)]
+    pool, report = text_pool.load_pool(_write(tmp_path, "c.jsonl", rows))
+    assert report["rows_unmatched"] == 0
+    assert report["rows_used"] == 96
+
+
+def test_an_exact_field_name_wins_over_a_prefixed_one(tmp_path):
+    rows = [{"prompt": f"Write a short channel message about: {t}",
+             "enhanced_prompt": "Write a short channel message about: logo design and visual branding",
+             "completion": f"right {k}", "enhanced_completion": f"wrong {k}"}
+            for t in text_pool.TOPICS for k in range(12)]
+    pool, _ = text_pool.load_pool(_write(tmp_path, "c.jsonl", rows))
+    flat = [m for v in pool.values() for m in v]
+    assert all(m.startswith("right") for m in flat)
+    assert len(pool[0]) == 12, "topic should come from `prompt`, not `enhanced_prompt`"
+
+
 def test_unmatched_rows_are_counted_and_dropped_not_guessed(tmp_path):
     rows = _rows() + [{"instruction": "Write about: quantum basket weaving", "response": "nope"}]
     pool, report = text_pool.load_pool(_write(tmp_path, "c.jsonl", rows), strict=False)

@@ -1,0 +1,64 @@
+{
+  "corpus": "agent_team_channel_messages.jsonl",
+  "corpus_rows": 222,
+  "corpus_per_topic": {
+    "web server deployment and debugging": 34,
+    "marketing copy writing and review": 2,
+    "shared budget and expense tracking": 6,
+    "logo design and visual branding": 33,
+    "meeting scheduling and availability": 133,
+    "survey spreadsheet analysis": 7,
+    "outreach email drafting": 2,
+    "file permissions and storage troubleshooting": 4
+  },
+  "topics_used": [
+    "meeting scheduling and availability",
+    "web server deployment and debugging",
+    "logo design and visual branding"
+  ],
+  "messages_per_topic": 33,
+  "distinct_messages_total": 99,
+  "seeds": 3,
+  "runs": [
+    {
+      "seed": 900,
+      "ari": 0.9376,
+      "distinct_texts": 98,
+      "n_messages": 8000
+    },
+    {
+      "seed": 901,
+      "ari": 0.9034,
+      "distinct_texts": 98,
+      "n_messages": 8000
+    },
+    {
+      "seed": 902,
+      "ari": 0.971,
+      "distinct_texts": 98,
+      "n_messages": 8000
+    }
+  ],
+  "ari_mean": 0.9373,
+  "ari_min": 0.9034,
+  "upper_bound_caveat": "A pool of 99 distinct strings is reused across 8000 ticks, so the symboliser clusters repeated text. Real chat does not repeat this way, so this ARI is an upper bound.",
+  "synthetic_curve": [
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.5,
+      0.9224
+    ],
+    [
+      0.8,
+      0.444
+    ],
+    [
+      0.9,
+      0.0798
+    ]
+  ],
+  "above_collapse_floor": true
+}
