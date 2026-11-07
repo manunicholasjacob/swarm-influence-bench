@@ -42,6 +42,32 @@ and `ground_truth` does not contain it, so **precision on this benchmark is a lo
 detector**. What the benchmark supports is the comparison between two detectors, not the absolute
 precision of either. `tests/test_bench_gen.py` measures the effect so you can see its size.
 
+## Swapping in a realistic text layer
+
+The text layer is the last thing the generator decides and the only replaceable one, so a renderer
+swap changes realism without moving a single structural label. `tests/test_text_pool.py` asserts
+exactly that: generate twice at the same seed, once with the vocabulary sampler and once with a
+message pool, and the `(agent, time, topic)` stream is identical while only the text differs.
+
+```python
+import bench_gen, text_pool
+
+pool, report = text_pool.load_pool("agent_team_channel_messages.jsonl")
+print(report["per_topic"])          # how many messages landed in each topic
+inst = bench_gen.generate_instance(n_agents=12, n_messages=8000,
+                                   edges=((0, 5, 0.4),), text_pool=pool, seed=1)
+inst["config"]["text_renderer"]     # "pool" rather than "vocab"
+```
+
+`load_pool` expects an instruction dataset whose instructions name the topic verbatim, as in
+`"Write a short channel message about: outreach email drafting"`, and accepts JSONL, a JSON array or
+CSV with the common field spellings. Rows whose topic cannot be matched are **counted and dropped,
+never guessed at**, because a misfiled message is a mislabelled one and the labels are the point.
+A topic left thinner than `min_per_topic` raises rather than quietly producing a lopsided corpus.
+
+If you have no rendered corpus, you do not need one to ask the question it answers: see the
+vocabulary-overlap sweep below, which degrades symbolisation in a controlled way instead.
+
 ## Two kinds of null, and this is the point
 
 - **Pure nulls** (`shared_topic=0`): no influence and no drifting common cause. These measure
@@ -88,6 +114,32 @@ at drift 0.6, which looked alarming and was noise; this is why the sweep was re-
 intervals are still wide, so treat the permutation row as "not shown to fail" rather than "shown to
 be nominal", and note that the audit's headline 0.063 comes from 300 replicates on the real
 channel's own speaker sequence, not from here.
+
+**The conclusions survive bad symbolisation, down to a sharp floor.** The fair objection to a
+synthetic text layer is that disjoint per-topic vocabularies make symbolisation trivial, so every
+number here assumes a symboliser that does not exist. `vocab_overlap` is the answer: it is the
+fraction of each topic's vocabulary shared with every other topic, and raising it degrades the
+symboliser the way real text does, measurably. Adjusted Rand index is computed against the true
+topic labels, so the degradation is quantified rather than asserted (`realism_sweep.json`):
+
+| `vocab_overlap` | symboliser ARI | common-cause null, pairwise | structure, pairwise precision | structure, conditional precision | conditional recall |
+|---|---|---|---|---|---|
+| 0.0 | 1.00 | 22.7 | 0.18 | **0.80** | 1.00 |
+| 0.5 | 0.92 | 20.0 | 0.18 | **0.80** | 1.00 |
+| 0.8 | 0.44 | 10.7 | 0.33 | **0.80** | 1.00 |
+| 0.9 | 0.08 | 0.0 | 0.56 | 1.00 | **0.08** |
+
+The conditional detector's advantage is not an artifact of easy text: at ARI 0.44, where the
+symboliser recovers less than half the topic structure, it still holds precision 0.80 at full recall
+while pairwise sits at 0.33. The zero row also reproduces the headline table from an independent
+seed stream.
+
+**But between ARI 0.44 and 0.08 everything collapses.** Conditional recall falls from 1.00 to 0.08,
+and the common-cause null stops producing false edges only because there is no longer any topic
+signal left to confound with. A detector that certifies nothing on a badly symbolised channel is not
+reporting an absence of influence, it is reporting that its own front end failed, and nothing
+downstream of the symboliser can tell those apart. If you publish an influence graph over open text,
+report your symboliser's agreement with something.
 
 **Precision, not recall, is the weak point of pairwise transfer entropy.** That is what motivated the
 conditional detector.
@@ -193,6 +245,8 @@ The MIT licence here covers this repository's own code.
 | `bench_eval.py` | detector harness and metrics | - |
 | `revalidate.py` | **the authoritative validation**: both estimators on all three families plus the power sweep, writing `bench_validation.json` | ~3 min |
 | `bench_run.py` | scores both surrogates across the whole grid | ~5 min at `SEEDS=2, N_SUR=100` |
+| `realism_sweep.py` | sweeps `vocab_overlap` and measures symboliser ARI against the truth | ~3 min |
+| `text_pool.py` | loads an LLM-rendered message corpus as the text layer | - |
 | `stationarity_big.py` | 30-replicate activity-drift sweep with Wilson intervals | ~15 min |
 | `bench_stationarity.py` | the original 8-replicate drift sweep, **superseded** by the above | ~4 min |
 | `cond_strong.py`, `cond_power.py`, `bench_conditional.py` | **superseded pilots**, kept for the record | - |

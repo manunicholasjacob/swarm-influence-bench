@@ -14,32 +14,44 @@ from __future__ import annotations
 import numpy as np
 
 
-def _vocab(k_topics, words_per_topic=40, seed=0):
-    """Disjoint vocabularies, so a topic model has something real to recover.
+def _vocab(k_topics, words_per_topic=40, seed=0, overlap=0.0):
+    """Per-topic vocabularies, optionally overlapping, so a topic model has something to recover.
 
     The words must NOT encode which topic they belong to. An earlier version built each word as
     three syllables followed by the topic index, which meant a one-line regex recovered the
     generator's own label from every message: the symbolisation step the benchmark claims to
-    require was solvable exactly, for free. Here one shared pool of words is built and then
-    PARTITIONED across topics, so the vocabularies stay disjoint while nothing inside a word says
-    which slice it landed in.
+    require was solvable exactly, for free. Here one pool of words is built and then PARTITIONED
+    across topics, so nothing inside a word says which slice it landed in.
+
+    `overlap` is the fraction of each topic's vocabulary drawn from a pool SHARED by every topic,
+    and it is the knob that decides how hard symbolisation is. At 0 the vocabularies are disjoint
+    and clustering the text recovers the topic almost perfectly, which is not what real text looks
+    like: in real messages most words are common to every subject and only a few are distinctive.
+    Raising it makes the symboliser lossy in the way a real one is, without any model in the loop,
+    and lets a user ask the question that matters, which is whether a detector's conclusions
+    survive imperfect symbolisation rather than whether they hold given a perfect one.
     """
     rng = np.random.default_rng(seed)
     syll = ["ka", "re", "mo", "ti", "lu", "sa", "ne", "vo", "di", "pa", "zu", "fe"]
-    need = k_topics * words_per_topic
+    if not 0.0 <= overlap < 1.0:
+        raise ValueError(f"overlap must be in [0, 1), got {overlap}")
+    n_shared = int(round(overlap * words_per_topic))
+    n_private = words_per_topic - n_shared
+    need = n_shared + k_topics * n_private
     pool = set()
     while len(pool) < need:
         pool.add("".join(rng.choice(syll, size=4)))
     words = sorted(pool)
     rng.shuffle(words)
-    return {t: sorted(words[t * words_per_topic:(t + 1) * words_per_topic])
+    shared, rest = words[:n_shared], words[n_shared:]
+    return {t: sorted(shared + rest[t * n_private:(t + 1) * n_private])
             for t in range(k_topics)}
 
 
 def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0,
                       burstiness=1.0, drift=0.02, reaction_lag=1, mean_gap_s=25.0,
                       volume_skew=1.4, words_per_msg=12, shared_topic=0.55,
-                      activity_drift=0.0, n_blocks=20):
+                      activity_drift=0.0, n_blocks=20, vocab_overlap=0.0, text_pool=None):
     """One channel with a known influence graph.
 
     edges: iterable of (leader, follower, coupling). `coupling` is the probability that, when the
@@ -56,7 +68,7 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
     Returns events [(agent, time, topic, text)] and the ground-truth edge set.
     """
     rng = np.random.default_rng(seed)
-    vocab = _vocab(k_topics, seed=seed)
+    vocab = _vocab(k_topics, seed=seed, overlap=vocab_overlap)
     edges = [(int(a), int(b), float(c)) for a, b, c in edges]
     # Validate, because every one of these used to pass silently and corrupt the labels. A
     # self-edge lands in ground_truth but no estimator tests i->i, so recall was capped below 1
@@ -132,7 +144,16 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
             if rng.random() < c:
                 pending.append((reaction_lag - 1, int(fol), int(topic)))
 
-    texts = [" ".join(rng.choice(vocab[tp], size=words_per_msg)) for tp in topics]
+    # The text layer is deliberately the LAST thing decided and the only replaceable one. Structure
+    # is already fixed above, so swapping the renderer changes realism without touching a label.
+    if text_pool is None:
+        texts = [" ".join(rng.choice(vocab[tp], size=words_per_msg)) for tp in topics]
+    else:
+        missing = sorted({tp for tp in topics if not text_pool.get(tp)})
+        if missing:
+            raise ValueError(f"text_pool has no messages for topic(s) {missing}; "
+                             f"it must cover all {k_topics} topics")
+        texts = [str(rng.choice(text_pool[tp])) for tp in topics]
     events = [(f"agent{a:02d}", float(tt), int(tp), tx)
               for a, tt, tp, tx in zip(agents, times, topics, texts)]
     gt = {(f"agent{a:02d}", f"agent{b:02d}") for a, b, c in edges if c > 0}
@@ -159,6 +180,8 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
                        "seed": seed, "burstiness": burstiness, "drift": drift,
                        "reaction_lag": reaction_lag, "mean_gap_s": mean_gap_s,
                        "shared_topic": shared_topic, "activity_drift": activity_drift,
+                       "vocab_overlap": vocab_overlap,
+                       "text_renderer": "pool" if text_pool is not None else "vocab",
                        "edges": [[a, b, c] for a, b, c in edges]}}
 
 

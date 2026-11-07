@@ -1,0 +1,161 @@
+{
+  "seeds": 3,
+  "n_surrogates": 100,
+  "k": 8,
+  "overlaps": [
+    0.0,
+    0.5,
+    0.8,
+    0.9
+  ],
+  "rows": [
+    {
+      "vocab_overlap": 0.0,
+      "families": {
+        "common_cause_null": {
+          "planted": 0,
+          "pairwise": {
+            "mean_edges": 22.67,
+            "mean_true_positives": 0.0,
+            "pooled_precision": 0.0,
+            "mean_recall": null
+          },
+          "conditional": {
+            "mean_edges": 0.0,
+            "mean_true_positives": 0.0,
+            "pooled_precision": null,
+            "mean_recall": null
+          }
+        },
+        "structure": {
+          "planted": 4,
+          "pairwise": {
+            "mean_edges": 21.67,
+            "mean_true_positives": 4.0,
+            "pooled_precision": 0.1846,
+            "mean_recall": 1.0
+          },
+          "conditional": {
+            "mean_edges": 5.0,
+            "mean_true_positives": 4.0,
+            "pooled_precision": 0.8,
+            "mean_recall": 1.0
+          }
+        }
+      },
+      "symboliser_ari_mean": 1.0,
+      "symboliser_ari_min": 1.0
+    },
+    {
+      "vocab_overlap": 0.5,
+      "families": {
+        "common_cause_null": {
+          "planted": 0,
+          "pairwise": {
+            "mean_edges": 20.0,
+            "mean_true_positives": 0.0,
+            "pooled_precision": 0.0,
+            "mean_recall": null
+          },
+          "conditional": {
+            "mean_edges": 0.0,
+            "mean_true_positives": 0.0,
+            "pooled_precision": null,
+            "mean_recall": null
+          }
+        },
+        "structure": {
+          "planted": 4,
+          "pairwise": {
+            "mean_edges": 22.0,
+            "mean_true_positives": 4.0,
+            "pooled_precision": 0.1818,
+            "mean_recall": 1.0
+          },
+          "conditional": {
+            "mean_edges": 5.0,
+            "mean_true_positives": 4.0,
+            "pooled_precision": 0.8,
+            "mean_recall": 1.0
+          }
+        }
+      },
+      "symboliser_ari_mean": 0.9224,
+      "symboliser_ari_min": 0.825
+    },
+    {
+      "vocab_overlap": 0.8,
+      "families": {
+        "common_cause_null": {
+          "planted": 0,
+          "pairwise": {
+            "mean_edges": 10.67,
+            "mean_true_positives": 0.0,
+            "pooled_precision": 0.0,
+            "mean_recall": null
+          },
+          "conditional": {
+            "mean_edges": 0.0,
+            "mean_true_positives": 0.0,
+            "pooled_precision": null,
+            "mean_recall": null
+          }
+        },
+        "structure": {
+          "planted": 4,
+          "pairwise": {
+            "mean_edges": 12.0,
+            "mean_true_positives": 4.0,
+            "pooled_precision": 0.3333,
+            "mean_recall": 1.0
+          },
+          "conditional": {
+            "mean_edges": 5.0,
+            "mean_true_positives": 4.0,
+            "pooled_precision": 0.8,
+            "mean_recall": 1.0
+          }
+        }
+      },
+      "symboliser_ari_mean": 0.444,
+      "symboliser_ari_min": 0.3266
+    },
+    {
+      "vocab_overlap": 0.9,
+      "families": {
+        "common_cause_null": {
+          "planted": 0,
+          "pairwise": {
+            "mean_edges": 0.0,
+            "mean_true_positives": 0.0,
+            "pooled_precision": null,
+            "mean_recall": null
+          },
+          "conditional": {
+            "mean_edges": 0.0,
+            "mean_true_positives": 0.0,
+            "pooled_precision": null,
+            "mean_recall": null
+          }
+        },
+        "structure": {
+          "planted": 4,
+          "pairwise": {
+            "mean_edges": 3.0,
+            "mean_true_positives": 1.67,
+            "pooled_precision": 0.5556,
+            "mean_recall": 0.4167
+          },
+          "conditional": {
+            "mean_edges": 0.33,
+            "mean_true_positives": 0.33,
+            "pooled_precision": 1.0,
+            "mean_recall": 0.0833
+          }
+        }
+      },
+      "symboliser_ari_mean": 0.0798,
+      "symboliser_ari_min": 0.0549
+    }
+  ]
+}
