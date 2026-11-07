@@ -11,24 +11,29 @@ no planted edges at all, are first class, because a benchmark where every instan
 cannot measure the failure mode that audit found.
 """
 from __future__ import annotations
-import json, hashlib
 import numpy as np
-
-SILENT = "<silent>"
 
 
 def _vocab(k_topics, words_per_topic=40, seed=0):
-    """Disjoint vocabularies, so a topic model has something real to recover."""
+    """Disjoint vocabularies, so a topic model has something real to recover.
+
+    The words must NOT encode which topic they belong to. An earlier version built each word as
+    three syllables followed by the topic index, which meant a one-line regex recovered the
+    generator's own label from every message: the symbolisation step the benchmark claims to
+    require was solvable exactly, for free. Here one shared pool of words is built and then
+    PARTITIONED across topics, so the vocabularies stay disjoint while nothing inside a word says
+    which slice it landed in.
+    """
     rng = np.random.default_rng(seed)
     syll = ["ka", "re", "mo", "ti", "lu", "sa", "ne", "vo", "di", "pa", "zu", "fe"]
-    vocab = {}
-    for t in range(k_topics):
-        words = set()
-        while len(words) < words_per_topic:
-            w = "".join(rng.choice(syll, size=3)) + str(t)
-            words.add(w)
-        vocab[t] = sorted(words)
-    return vocab
+    need = k_topics * words_per_topic
+    pool = set()
+    while len(pool) < need:
+        pool.add("".join(rng.choice(syll, size=4)))
+    words = sorted(pool)
+    rng.shuffle(words)
+    return {t: sorted(words[t * words_per_topic:(t + 1) * words_per_topic])
+            for t in range(k_topics)}
 
 
 def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0,
@@ -53,6 +58,16 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
     rng = np.random.default_rng(seed)
     vocab = _vocab(k_topics, seed=seed)
     edges = [(int(a), int(b), float(c)) for a, b, c in edges]
+    # Validate, because every one of these used to pass silently and corrupt the labels. A
+    # self-edge lands in ground_truth but no estimator tests i->i, so recall was capped below 1
+    # with no diagnostic; an out-of-range follower injected an extra speaker into the channel.
+    for a, b, c in edges:
+        if not (0 <= a < n_agents and 0 <= b < n_agents):
+            raise ValueError(f"edge ({a},{b}) outside 0..{n_agents - 1}")
+        if a == b:
+            raise ValueError(f"self-edge ({a},{b}): no pairwise estimator tests i->i")
+        if not 0.0 <= c <= 1.0:
+            raise ValueError(f"coupling {c} for ({a},{b}) is not a probability")
 
     # per-agent speaking weights: a realistic heavy head and long tail
     w0 = 1.0 / np.power(np.arange(1, n_agents + 1), volume_skew)
@@ -101,7 +116,10 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
         pending = [(n - 1, f, tp) for n, f, tp in pending if n > 0]
         if due:
             _, speaker, topic = due[0]
-            pending = [p for p in pending if p is not due[0]] + pending[:0]
+            # only one agent speaks per tick, so re-queue the rest for the next tick instead of
+            # dropping them. Dropping them silently biased every follower after the first, which
+            # made the labelled coupling wrong for any leader with two or more followers.
+            pending = [(0, f, tp) for _, f, tp in due[1:]] + pending
         else:
             speaker = int(rng.choice(n_agents, p=w))
             r = rng.random()
@@ -118,49 +136,78 @@ def generate_instance(n_agents=12, n_messages=6000, edges=(), k_topics=8, seed=0
     events = [(f"agent{a:02d}", float(tt), int(tp), tx)
               for a, tt, tp, tx in zip(agents, times, topics, texts)]
     gt = {(f"agent{a:02d}", f"agent{b:02d}") for a, b, c in edges if c > 0}
+
+    # REALISED coupling, not just the requested one. Only one agent speaks per tick, so when a
+    # leader has two or more followers whose coins both land, they cannot all reply at the same
+    # lag; the later ones are pushed back and no longer land at `reaction_lag`. The label would
+    # otherwise overstate the coupling for every follower after the first, so we measure what
+    # actually happened and report it alongside the request.
+    realised = {}
+    for a, b, c in edges:
+        la, fa = a, b
+        hits = opps = 0
+        for i in range(reaction_lag, len(agents)):
+            if agents[i - reaction_lag] == la:
+                opps += 1
+                if agents[i] == fa and topics[i] == topics[i - reaction_lag]:
+                    hits += 1
+        realised[f"{a}->{b}"] = round(hits / opps, 4) if opps else 0.0
+
     return {"events": events, "ground_truth": gt, "n_agents": n_agents,
+            "realised_coupling": realised,
             "config": {"n_agents": n_agents, "n_messages": n_messages, "k_topics": k_topics,
                        "seed": seed, "burstiness": burstiness, "drift": drift,
                        "reaction_lag": reaction_lag, "mean_gap_s": mean_gap_s,
+                       "shared_topic": shared_topic, "activity_drift": activity_drift,
                        "edges": [[a, b, c] for a, b, c in edges]}}
 
 
+def _next(cell):
+    cell[0] += 1
+    return cell[0]
+
+
 def grid(seeds=3):
-    """The benchmark's standard configuration grid, including null instances."""
+    """The benchmark's standard configuration grid, including both null families.
+
+    Every configuration cell gets its own RNG stream. An earlier version reused a base seed across
+    cells, which made a short instance an exact prefix of a longer one at the same seed and so
+    understated the variance of anything averaged over the grid."""
+    cell = [0]
     out = []
     # 1a. PURE nulls: no influence and no common cause. This is the calibration check.
     for n_ag in (5, 12, 25):
         for n_msg in (2000, 8000):
             for s in range(seeds):
                 out.append(dict(name=f"nullpure_a{n_ag}_m{n_msg}_s{s}", n_agents=n_ag,
-                                n_messages=n_msg, edges=(), shared_topic=0.0, seed=100 + s))
+                                n_messages=n_msg, edges=(), shared_topic=0.0, seed=100 + s + 1000 * _next(cell)))
     # 1b. COMMON-CAUSE nulls: no influence, but everyone tracks a shared drifting topic.
     for n_ag in (5, 12, 25):
         for s in range(seeds):
             out.append(dict(name=f"nullcommon_a{n_ag}_s{s}", n_agents=n_ag, n_messages=8000,
-                            edges=(), shared_topic=0.55, seed=150 + s))
+                            edges=(), shared_topic=0.55, seed=150 + s + 1000 * _next(cell)))
     # 2. coupling sweep, one planted edge, fixed volume
     for c in (0.05, 0.1, 0.2, 0.4, 0.8):
         for s in range(seeds):
             out.append(dict(name=f"coupling{c}_s{s}", n_agents=12, n_messages=8000,
-                            edges=((0, 5, c),), seed=200 + s))
+                            edges=((0, 5, c),), seed=200 + s + 1000 * _next(cell)))
     # 3. channel-volume sweep at fixed strong coupling
     for n_msg in (1000, 2000, 4000, 8000, 16000):
         for s in range(seeds):
             out.append(dict(name=f"volume{n_msg}_s{s}", n_agents=12, n_messages=n_msg,
-                            edges=((0, 5, 0.4),), seed=300 + s))
+                            edges=((0, 5, 0.4),), seed=300 + s + 1000 * _next(cell)))
     # 4. multi-edge structure, which is what a real claim looks like
     for s in range(seeds):
         out.append(dict(name=f"structure_s{s}", n_agents=12, n_messages=8000,
                         edges=((0, 5, 0.4), (0, 7, 0.3), (2, 9, 0.5), (9, 11, 0.4)),
-                        seed=400 + s))
+                        seed=400 + s + 1000 * _next(cell)))
     # 5. burstiness and delayed reaction, the realism challenges
     for b in (0.4, 1.0):
         for lag in (1, 3):
             for s in range(seeds):
                 out.append(dict(name=f"burst{b}_lag{lag}_s{s}", n_agents=12, n_messages=8000,
                                 edges=((0, 5, 0.4),), burstiness=b, reaction_lag=lag,
-                                seed=500 + s))
+                                seed=500 + s + 1000 * _next(cell)))
     return out
 
 

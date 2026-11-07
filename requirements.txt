@@ -1,1 +1,4 @@
 numpy>=1.26
+# TopicSymboliser (swarm_load.py) imports sklearn lazily inside fit(), so a missing install does
+# not fail until minutes into an evaluation run. Pinned here so it fails at install time instead.
+scikit-learn>=1.4

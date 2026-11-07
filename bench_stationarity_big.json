@@ -1,0 +1,105 @@
+{
+  "drifts": [
+    0.0,
+    0.3,
+    0.6,
+    0.9
+  ],
+  "reps": 30,
+  "n_surrogates": 100,
+  "nominal": 0.05,
+  "rows": [
+    {
+      "activity_drift": 0.0,
+      "shift": {
+        "fired": 2,
+        "of": 30,
+        "fwer": 0.067,
+        "wilson95": [
+          0.018,
+          0.213
+        ],
+        "mean_edges": 0.07
+      },
+      "permute": {
+        "fired": 1,
+        "of": 30,
+        "fwer": 0.033,
+        "wilson95": [
+          0.006,
+          0.167
+        ],
+        "mean_edges": 0.03
+      }
+    },
+    {
+      "activity_drift": 0.3,
+      "shift": {
+        "fired": 4,
+        "of": 30,
+        "fwer": 0.133,
+        "wilson95": [
+          0.053,
+          0.297
+        ],
+        "mean_edges": 0.13
+      },
+      "permute": {
+        "fired": 3,
+        "of": 30,
+        "fwer": 0.1,
+        "wilson95": [
+          0.035,
+          0.256
+        ],
+        "mean_edges": 0.1
+      }
+    },
+    {
+      "activity_drift": 0.6,
+      "shift": {
+        "fired": 6,
+        "of": 30,
+        "fwer": 0.2,
+        "wilson95": [
+          0.095,
+          0.373
+        ],
+        "mean_edges": 0.23
+      },
+      "permute": {
+        "fired": 5,
+        "of": 30,
+        "fwer": 0.167,
+        "wilson95": [
+          0.073,
+          0.336
+        ],
+        "mean_edges": 0.2
+      }
+    },
+    {
+      "activity_drift": 0.9,
+      "shift": {
+        "fired": 11,
+        "of": 30,
+        "fwer": 0.367,
+        "wilson95": [
+          0.219,
+          0.545
+        ],
+        "mean_edges": 0.63
+      },
+      "permute": {
+        "fired": 3,
+        "of": 30,
+        "fwer": 0.1,
+        "wilson95": [
+          0.035,
+          0.256
+        ],
+        "mean_edges": 0.1
+      }
+    }
+  ]
+}

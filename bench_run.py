@@ -25,8 +25,11 @@ for null in ("shift", "permute"):
         out_path=f"bench_results_{null}.json",
         log=lambda m: log(f"  {m.split('] ',1)[-1]}"))
     results[null] = summary
-    log(f"{null}: FWER(null)={summary['familywise_error_pure_null']} "
-        f"pure-null FWER + precision={summary['mean_precision']} recall={summary['mean_recall']}")
+    log(f"{null}: pure-null FWER={summary['familywise_error_pure_null']} "
+        f"common-cause FWER={summary['familywise_error_common_cause_null']} "
+        f"pooled precision={summary['pooled_precision']} "
+        f"precision|fired={summary['mean_precision_when_fired']} "
+        f"fired on signal={summary['fired_rate_on_signal']} recall={summary['mean_recall']}")
     log(f"{null}: power by coupling {summary['power_by_coupling']}")
     log(f"{null}: power by volume {summary['power_by_channel_volume']}")
     json.dump(results, open("bench_summary.json", "w", encoding="utf-8"), indent=2)

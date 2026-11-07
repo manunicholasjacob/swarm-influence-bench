@@ -1,0 +1,182 @@
+{
+  "seeds": 3,
+  "n_surrogates": 100,
+  "k": 8,
+  "surrogate": "symbol permutation",
+  "families": {
+    "pure_null": {
+      "planted": 0,
+      "pairwise": {
+        "mean_edges": 0.67,
+        "mean_true_positives": 0.0,
+        "fired_in": 1,
+        "of": 3,
+        "pooled_precision": 0.0,
+        "mean_recall": null
+      },
+      "conditional": {
+        "mean_edges": 0.33,
+        "mean_true_positives": 0.0,
+        "fired_in": 1,
+        "of": 3,
+        "pooled_precision": 0.0,
+        "mean_recall": null
+      }
+    },
+    "common_cause_null": {
+      "planted": 0,
+      "pairwise": {
+        "mean_edges": 22.33,
+        "mean_true_positives": 0.0,
+        "fired_in": 3,
+        "of": 3,
+        "pooled_precision": 0.0,
+        "mean_recall": null
+      },
+      "conditional": {
+        "mean_edges": 0.33,
+        "mean_true_positives": 0.0,
+        "fired_in": 1,
+        "of": 3,
+        "pooled_precision": 0.0,
+        "mean_recall": null
+      }
+    },
+    "structure": {
+      "planted": 4,
+      "pairwise": {
+        "mean_edges": 23.33,
+        "mean_true_positives": 4.0,
+        "fired_in": 3,
+        "of": 3,
+        "pooled_precision": 0.1714,
+        "mean_recall": 1.0
+      },
+      "conditional": {
+        "mean_edges": 5.0,
+        "mean_true_positives": 4.0,
+        "fired_in": 3,
+        "of": 3,
+        "pooled_precision": 0.8,
+        "mean_recall": 1.0
+      },
+      "realised_coupling": [
+        {
+          "0->5": 0.4082,
+          "0->7": 0.179,
+          "2->9": 0.5249,
+          "9->11": 0.4077
+        },
+        {
+          "0->5": 0.421,
+          "0->7": 0.18,
+          "2->9": 0.5222,
+          "9->11": 0.4378
+        },
+        {
+          "0->5": 0.403,
+          "0->7": 0.1913,
+          "2->9": 0.5209,
+          "9->11": 0.3879
+        }
+      ]
+    }
+  },
+  "power": [
+    {
+      "coupling": 0.05,
+      "realised_hit_rate_mean": 0.0624,
+      "realised_per_seed": [
+        0.0632,
+        0.06,
+        0.0641
+      ],
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 22.33
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.0
+      }
+    },
+    {
+      "coupling": 0.1,
+      "realised_hit_rate_mean": 0.1146,
+      "realised_per_seed": [
+        0.1173,
+        0.1141,
+        0.1123
+      ],
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 23.67
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.33
+      }
+    },
+    {
+      "coupling": 0.2,
+      "realised_hit_rate_mean": 0.2059,
+      "realised_per_seed": [
+        0.2039,
+        0.2074,
+        0.2063
+      ],
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 20.0
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.0
+      }
+    },
+    {
+      "coupling": 0.4,
+      "realised_hit_rate_mean": 0.4187,
+      "realised_per_seed": [
+        0.4109,
+        0.4143,
+        0.4308
+      ],
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 17.33
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.67
+      }
+    },
+    {
+      "coupling": 0.8,
+      "realised_hit_rate_mean": 0.8139,
+      "realised_per_seed": [
+        0.8162,
+        0.8103,
+        0.8151
+      ],
+      "pairwise": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 16.33
+      },
+      "conditional": {
+        "detected": 3,
+        "of": 3,
+        "mean_edges": 1.67
+      }
+    }
+  ]
+}
