@@ -23,7 +23,8 @@ keywords:
   - surrogate data
   - coordination detection
 license: MIT
+doi: "10.5281/zenodo.24064140"
 version: 0.2.0
-date-released: "2026-11-08"
+date-released: "2026-11-09"
 repository-code: "https://github.com/manunicholasjacob/swarm-influence-bench"
 url: "https://github.com/manunicholasjacob/swarm-influence-bench"

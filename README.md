@@ -1,5 +1,7 @@
 # SwarmInfluence-Bench
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24064140.svg)](https://doi.org/10.5281/zenodo.24064140)
+
 A benchmark for **coordination and influence detectors** on multi-agent chat, where the true
 influence graph is known by construction.
 
