@@ -64,8 +64,14 @@ def environment() -> dict:
     return env
 
 
-def one_replicate(rep: int) -> dict:
-    """One pure-null instance, symbolised once, then tested under each surrogate."""
+def one_replicate(job) -> dict:
+    """One pure-null instance, symbolised once, then tested under each surrogate.
+
+    Takes (rep, n_surrogates) as a tuple rather than reading a module constant: on Windows the
+    pool spawns fresh interpreters that re-import this module, so a constant mutated in the parent
+    would silently not reach the workers and the run would quietly use the default.
+    """
+    rep, n_sur = job
     for var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
         os.environ[var] = "1"
     import numpy as np                                  # noqa: F401
@@ -95,15 +101,15 @@ def one_replicate(rep: int) -> dict:
     for name in VARIANTS:
         t0 = time.time()
         if name == "shift":
-            tests = fastte.directed_tests_fast(coded, A, n_shifts=N_SURROGATES, seed=rep)
+            tests = fastte.directed_tests_fast(coded, A, n_shifts=n_sur, seed=rep)
         elif name == "permute":
-            tests = fastte.directed_tests_permute(coded, A, silent, n_perm=N_SURROGATES, seed=rep)
+            tests = fastte.directed_tests_permute(coded, A, silent, n_perm=n_sur, seed=rep)
         elif name == "blockpermute":
-            tests = fastte.directed_tests_permute_block(coded, A, silent, n_perm=N_SURROGATES,
+            tests = fastte.directed_tests_permute_block(coded, A, silent, n_perm=n_sur,
                                                         seed=rep, block_size=BLOCK_SIZE)
         else:
             tests = fastte.directed_tests_permute_local(coded, A, silent,
-                                                        n_perm=N_SURROGATES, seed=rep)
+                                                        n_perm=n_sur, seed=rep)
         edges = [k for k, v in tests.items() if v["p"] < ALPHA]
         zs = [v["z"] for v in tests.values()]
         row[name] = {"fired": bool(edges), "n_edges": len(edges),
@@ -116,6 +122,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--reps", type=int, default=300)
     ap.add_argument("--workers", type=int, default=10)
+    ap.add_argument("--n-surrogates", type=int, default=N_SURROGATES,
+                    help="draws per test. The report's headline used 200; this defaults to 100.")
     ap.add_argument("--out", default=str(HERE / "surrogate_variants.json"))
     args = ap.parse_args()
 
@@ -147,7 +155,7 @@ def main() -> int:
             "what": ("Four surrogates on identical pure-null symbol grids. No influence and no "
                      "common cause is planted, so any certified edge is a false positive."),
             "nominal_alpha": ALPHA,
-            "n_surrogates_per_test": N_SURROGATES,
+            "n_surrogates_per_test": args.n_surrogates,
             "block_size": BLOCK_SIZE,
             "config": {"n_agents": N_AGENTS, "n_messages": N_MESSAGES, "symboliser_k": 8,
                        "min_msgs": 20, "top_k": 15},
@@ -163,7 +171,7 @@ def main() -> int:
 
     from concurrent.futures import ProcessPoolExecutor, as_completed
     with ProcessPoolExecutor(max_workers=args.workers) as ex:
-        futs = {ex.submit(one_replicate, r): r for r in range(args.reps)}
+        futs = {ex.submit(one_replicate, (r, args.n_surrogates)): r for r in range(args.reps)}
         for i, fut in enumerate(as_completed(futs), 1):
             rows.append(fut.result())
             if i % 10 == 0 or i == args.reps:
