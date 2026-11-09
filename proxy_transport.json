@@ -1,0 +1,462 @@
+{
+  "question": "whether a floor proxy's cut, fitted on the vocabulary-overlap mechanism, still separates above-floor from below-floor when the channel differs in corpus size, message length, agent count, volume skew, turn-taking or drift instead",
+  "stated_floor_ari": 0.44,
+  "fitting_mechanism": "vocabulary overlap, 9 levels x 6 cells, floor_proxy_sweep.json",
+  "nuisance_set": {
+    "source": "floor_contradiction.json :: e3_cuts_out_of_mechanism",
+    "n_cells": 30,
+    "n_cells_at_true_ari_1": 27,
+    "variants": [
+      "activity_drift",
+      "agents25",
+      "agents5",
+      "baseline",
+      "long_messages",
+      "messages2000",
+      "short_messages",
+      "turntaking_aiv",
+      "turntaking_and_drift",
+      "volume_skew2.5"
+    ]
+  },
+  "caution": "a proxy that classifies badly where it was fitted can score zero nuisance errors by calling nearly everything above floor; only the proxies with zero fitting errors are comparable here",
+  "proxies": {
+    "seed_stability_mean": {
+      "cut": 0.7914760000000001,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 1,
+      "errors_on_nuisance_set": 2,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": false,
+      "cut_is_corpus_bound": false,
+      "error_cells": [
+        {
+          "cell": "short_messages_s0",
+          "true_ari": 0.6861,
+          "value": 0.662081,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "short_messages_s2",
+          "true_ari": 0.6515,
+          "value": 0.709456,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        }
+      ]
+    },
+    "seed_stability_min": {
+      "cut": 0.6227555,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 0,
+      "errors_on_nuisance_set": 2,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": false,
+      "cut_is_corpus_bound": false,
+      "error_cells": [
+        {
+          "cell": "short_messages_s0",
+          "true_ari": 0.6861,
+          "value": 0.601302,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "short_messages_s2",
+          "true_ari": 0.6515,
+          "value": 0.604239,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        }
+      ]
+    },
+    "boot_stability_full_mean": {
+      "cut": 0.628824,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 1,
+      "errors_on_nuisance_set": 0,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": true,
+      "cut_is_corpus_bound": false,
+      "error_cells": []
+    },
+    "boot_stability_full_min": {
+      "cut": 0.44352899999999995,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 1,
+      "errors_on_nuisance_set": 0,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": true,
+      "cut_is_corpus_bound": false,
+      "error_cells": []
+    },
+    "boot_stability_shared_mean": {
+      "cut": 0.6300785,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 1,
+      "errors_on_nuisance_set": 0,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": true,
+      "cut_is_corpus_bound": false,
+      "error_cells": []
+    },
+    "silhouette_cosine": {
+      "cut": 0.077168,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 1,
+      "errors_on_nuisance_set": 3,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": false,
+      "cut_is_corpus_bound": false,
+      "error_cells": [
+        {
+          "cell": "short_messages_s0",
+          "true_ari": 0.6861,
+          "value": 0.069393,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "short_messages_s1",
+          "true_ari": 0.8476,
+          "value": 0.075226,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "short_messages_s2",
+          "true_ari": 0.6515,
+          "value": 0.067123,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        }
+      ]
+    },
+    "calinski_harabasz": {
+      "cut": 138.895658,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 0,
+      "errors_on_nuisance_set": 6,
+      "errors_at_true_ari_1": 3,
+      "cut_transports": false,
+      "cut_is_corpus_bound": true,
+      "error_cells": [
+        {
+          "cell": "short_messages_s0",
+          "true_ari": 0.6861,
+          "value": 93.719746,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "short_messages_s1",
+          "true_ari": 0.8476,
+          "value": 96.441482,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "short_messages_s2",
+          "true_ari": 0.6515,
+          "value": 94.897126,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "messages2000_s0",
+          "true_ari": 1.0,
+          "value": 77.36156,
+          "n_messages": 2000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "messages2000_s1",
+          "true_ari": 1.0,
+          "value": 76.057928,
+          "n_messages": 2000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "messages2000_s2",
+          "true_ari": 1.0,
+          "value": 76.278253,
+          "n_messages": 2000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        }
+      ]
+    },
+    "davies_bouldin": {
+      "cut": 4.473668,
+      "higher_is_better": false,
+      "errors_on_fitting_mechanism": 2,
+      "errors_on_nuisance_set": 3,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": false,
+      "cut_is_corpus_bound": false,
+      "error_cells": [
+        {
+          "cell": "short_messages_s0",
+          "true_ari": 0.6861,
+          "value": 5.326994,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "short_messages_s1",
+          "true_ari": 0.8476,
+          "value": 5.239867,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "short_messages_s2",
+          "true_ari": 0.6515,
+          "value": 5.61761,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        }
+      ]
+    },
+    "centroid_cosine_mean": {
+      "cut": 0.487088,
+      "higher_is_better": false,
+      "errors_on_fitting_mechanism": 1,
+      "errors_on_nuisance_set": 0,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": true,
+      "cut_is_corpus_bound": false,
+      "error_cells": []
+    },
+    "centroid_cosine_max": {
+      "cut": 0.7771,
+      "higher_is_better": false,
+      "errors_on_fitting_mechanism": 3,
+      "errors_on_nuisance_set": 0,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": true,
+      "cut_is_corpus_bound": false,
+      "error_cells": []
+    },
+    "size_entropy": {
+      "cut": 0.9560500000000001,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 15,
+      "errors_on_nuisance_set": 9,
+      "errors_at_true_ari_1": 8,
+      "cut_transports": false,
+      "cut_is_corpus_bound": true,
+      "error_cells": [
+        {
+          "cell": "agents5_s0",
+          "true_ari": 1.0,
+          "value": 0.947914,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "agents5_s1",
+          "true_ari": 1.0,
+          "value": 0.956017,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "agents25_s1",
+          "true_ari": 1.0,
+          "value": 0.954172,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "volume_skew2.5_s0",
+          "true_ari": 1.0,
+          "value": 0.933955,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "volume_skew2.5_s1",
+          "true_ari": 1.0,
+          "value": 0.940169,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "volume_skew2.5_s2",
+          "true_ari": 1.0,
+          "value": 0.952127,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "short_messages_s0",
+          "true_ari": 0.6861,
+          "value": 0.938849,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "messages2000_s1",
+          "true_ari": 1.0,
+          "value": 0.948713,
+          "n_messages": 2000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "messages2000_s2",
+          "true_ari": 1.0,
+          "value": 0.940041,
+          "n_messages": 2000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        }
+      ]
+    },
+    "agree_lsa": {
+      "cut": 0.6461735,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 0,
+      "errors_on_nuisance_set": 2,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": false,
+      "cut_is_corpus_bound": false,
+      "error_cells": [
+        {
+          "cell": "short_messages_s0",
+          "true_ari": 0.6861,
+          "value": 0.643604,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        },
+        {
+          "cell": "short_messages_s2",
+          "true_ari": 0.6515,
+          "value": 0.604543,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": false
+        }
+      ]
+    },
+    "agree_counts": {
+      "cut": 0.1553485,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 14,
+      "errors_on_nuisance_set": 0,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": true,
+      "cut_is_corpus_bound": false,
+      "error_cells": []
+    },
+    "agree_char": {
+      "cut": 0.443566,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 1,
+      "errors_on_nuisance_set": 0,
+      "errors_at_true_ari_1": 0,
+      "cut_transports": true,
+      "cut_is_corpus_bound": false,
+      "error_cells": []
+    },
+    "agree_hash_null": {
+      "cut": -0.0002005,
+      "higher_is_better": true,
+      "errors_on_fitting_mechanism": 19,
+      "errors_on_nuisance_set": 6,
+      "errors_at_true_ari_1": 6,
+      "cut_transports": false,
+      "cut_is_corpus_bound": true,
+      "error_cells": [
+        {
+          "cell": "turntaking_aiv_s1",
+          "true_ari": 1.0,
+          "value": -0.000226,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "turntaking_aiv_s2",
+          "true_ari": 1.0,
+          "value": -0.000241,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "activity_drift_s0",
+          "true_ari": 1.0,
+          "value": -0.000302,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "agents25_s2",
+          "true_ari": 1.0,
+          "value": -0.000236,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "volume_skew2.5_s0",
+          "true_ari": 1.0,
+          "value": -0.000226,
+          "n_messages": 8000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        },
+        {
+          "cell": "messages2000_s0",
+          "true_ari": 1.0,
+          "value": -0.000471,
+          "n_messages": 2000,
+          "says": "below_floor",
+          "symbolisation_was_perfect": true
+        }
+      ]
+    }
+  },
+  "verdict": {
+    "zero_error_on_fitting_mechanism": [
+      "agree_lsa",
+      "calinski_harabasz",
+      "seed_stability_min"
+    ],
+    "of_those_corpus_bound": [
+      "calinski_harabasz"
+    ],
+    "of_those_usable": [
+      "agree_lsa",
+      "seed_stability_min"
+    ],
+    "statement": "3 proxies reach zero errors where they were fitted: agree_lsa, calinski_harabasz, seed_stability_min. Error count therefore cannot choose between them. Applying each cut unchanged to the nuisance set separates them: agree_lsa, seed_stability_min make errors only where the symbolisation genuinely degraded, while calinski_harabasz also condemns cells whose true ARI is exactly 1.000, on corpus size alone. A cut that moves with the corpus is not a floor cut."
+  }
+}
