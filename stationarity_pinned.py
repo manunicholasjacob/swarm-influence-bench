@@ -81,8 +81,12 @@ def reproduction_cell(job) -> dict:
 
 
 def precision_cell(job) -> dict:
-    """One (drift, replicate) with all four surrogates on one shared symbol grid."""
-    drift, s = job
+    """One (drift, replicate) with all four surrogates on one shared symbol grid.
+
+    Takes the draw count in the job rather than from the module constant: the pool spawns fresh
+    interpreters, so a constant mutated in the parent would not reach the workers.
+    """
+    drift, s, n_sur = job
     _pin_threads()
     import bench_gen, swarm_te, fastte
     from swarm_load import TopicSymboliser
@@ -107,14 +111,14 @@ def precision_cell(job) -> dict:
     row = {"activity_drift": drift, "rep": s, "skipped": False, "n_agents_tested": len(agents)}
     for name in VARIANTS:
         if name == "shift":
-            tests = fastte.directed_tests_fast(coded, A, n_shifts=N_SUR, seed=s)
+            tests = fastte.directed_tests_fast(coded, A, n_shifts=n_sur, seed=s)
         elif name == "permute":
-            tests = fastte.directed_tests_permute(coded, A, silent, n_perm=N_SUR, seed=s)
+            tests = fastte.directed_tests_permute(coded, A, silent, n_perm=n_sur, seed=s)
         elif name == "blockpermute":
-            tests = fastte.directed_tests_permute_block(coded, A, silent, n_perm=N_SUR,
+            tests = fastte.directed_tests_permute_block(coded, A, silent, n_perm=n_sur,
                                                         seed=s, block_size=BLOCK_SIZE)
         else:
-            tests = fastte.directed_tests_permute_local(coded, A, silent, n_perm=N_SUR, seed=s)
+            tests = fastte.directed_tests_permute_local(coded, A, silent, n_perm=n_sur, seed=s)
         edges = [k for k, v in tests.items() if v["p"] < ALPHA]
         row[name] = {"fired": bool(edges), "n_edges": len(edges)}
     return row
@@ -124,6 +128,10 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--reps-precision", type=int, default=150)
     ap.add_argument("--workers", type=int, default=12)
+    ap.add_argument("--precision-draws", type=int, default=N_SUR,
+                    help="surrogate draws for the precision arm. The reproduction arm stays at "
+                         "100 because that is what the published sweep used.")
+    ap.add_argument("--skip-reproduction", action="store_true")
     ap.add_argument("--out", default=str(HERE / "stationarity_pinned.json"))
     args = ap.parse_args()
     from bench_eval import wilson
@@ -141,8 +149,8 @@ def main() -> int:
         "block_size": BLOCK_SIZE, "environment": environment(),
     }
 
-    # ---- arm 1: reproduction -------------------------------------------------------------
-    jobs = [(d, s) for d in DRIFTS for s in range(PUBLISHED_REPS)]
+    # ---- arm 1: reproduction (skippable; it is fixed at 100 draws by definition) -------------------------------------------------------------
+    jobs = [] if args.skip_reproduction else [(d, s) for d in DRIFTS for s in range(PUBLISHED_REPS)]
     rows = []
     with ProcessPoolExecutor(max_workers=args.workers) as ex:
         for r in ex.map(reproduction_cell, jobs):
@@ -162,6 +170,7 @@ def main() -> int:
                           "wilson95": [lo, hi],
                           "published_fwer_inside_interval": lo <= was / PUBLISHED_REPS <= hi}
         repro["cells"].append(cell)
+    repro["skipped"] = args.skip_reproduction
     repro["cells_identical"] = agree
     repro["cells_total"] = len(DRIFTS) * 2
     repro["all_identical"] = agree == len(DRIFTS) * 2
@@ -171,7 +180,7 @@ def main() -> int:
     pathlib.Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
 
     # ---- arm 2: precision ----------------------------------------------------------------
-    jobs = [(d, s) for d in DRIFTS for s in range(args.reps_precision)]
+    jobs = [(d, s, args.precision_draws) for d in DRIFTS for s in range(args.reps_precision)]
     prows = []
     with ProcessPoolExecutor(max_workers=args.workers) as ex:
         for i, r in enumerate(ex.map(precision_cell, jobs), 1):
@@ -190,6 +199,7 @@ def main() -> int:
                           "excludes_nominal": not (lo <= ALPHA <= hi)}
         cells.append(cell)
     result["precision"] = {"reps": args.reps_precision, "generator_seed_base": 9000,
+                           "n_surrogates_per_test": args.precision_draws,
                            "shared_symbol_grid": True, "cells": cells, "rows": prows}
     pathlib.Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
 
