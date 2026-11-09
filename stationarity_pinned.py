@@ -153,7 +153,10 @@ def main() -> int:
     result = {
         "what": ("The non-stationarity sweep re-run with the environment recorded. Pure nulls "
                  "only, so any certified edge is a false positive by construction."),
-        "nominal_alpha": ALPHA, "n_surrogates_per_test": N_SUR, "drifts": DRIFTS,
+        # NOT a property of the whole file: the reproduction arm is fixed at the published 100
+        # draws while the precision arm takes --precision-draws, so a single top-level draw count
+        # would read as 100 on a file whose precision arm ran at 200. Each arm carries its own.
+        "nominal_alpha": ALPHA, "n_surrogates_reproduction_arm": N_SUR, "drifts": DRIFTS,
         "block_size": BLOCK_SIZE, "environment": environment(),
     }
 
