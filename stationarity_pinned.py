@@ -58,6 +58,14 @@ def environment() -> dict:
                        for d in threadpool_info()]
     except Exception:                                  # noqa: BLE001
         env["blas"] = "threadpoolctl unavailable"
+    # The block above is read in the PARENT, which never pins its own pools, so the num_threads it
+    # reports is the library default and NOT what the measurements ran under. Every worker calls
+    # _pin_threads() before importing anything that builds a pool, so each measurement ran
+    # single-threaded. Say so rather than leaving the reader to infer it from a misleading 20.
+    env["blas_num_threads_reported_from"] = "parent process, pools unpinned"
+    env["blas_num_threads_in_workers"] = 1
+    env["thread_env_vars_set_in_workers"] = ["OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS",
+                                             "MKL_NUM_THREADS"]
     return env
 
 
