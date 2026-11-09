@@ -316,7 +316,10 @@ The MIT licence here covers this repository's own code.
 | `floor_proxy_real.py` | applies the calibrated cuts to the two real channels, writing `floor_proxy_real.json`; needs the gated corpus in the local cache | ~3 min |
 | `floor_contradiction.py` | tests the floor proxies against the certified-edge count, which disagree with them on the real channels, writing `floor_contradiction.json`; reads the audit's committed counts and never the corpus | ~60 min |
 | `text_pool.py` | loads an LLM-rendered message corpus as the text layer | - |
-| `stationarity_big.py` | 30-replicate activity-drift sweep with Wilson intervals | ~15 min |
+| `turntaking_factorial.py` | separates turn-taking from non-stationary activity, which the real speaker sequence carries at once, writing `turntaking_factorial.json` | ~2 h |
+| `surrogate_variants.py` | all four surrogates on **identical** pure-null symbol grids, writing `surrogate_variants.json`. Records the environment | ~12 min at 300 replicates, 12 workers |
+| `stationarity_pinned.py` | the drift sweep re-run with the environment recorded: one arm reproducing the published configuration exactly and reporting agreement, one arm running all four surrogates at higher precision. Writes `stationarity_pinned.json` | ~20 min |
+| `stationarity_big.py` | 30-replicate activity-drift sweep with Wilson intervals. **Its counts are not reproducible across environments**; use `stationarity_pinned.py` | ~15 min |
 | `bench_stationarity.py` | the original 8-replicate drift sweep, **superseded** by the above | ~4 min |
 | `cond_strong.py`, `cond_power.py`, `bench_conditional.py` | **superseded pilots**, kept for the record | - |
 
@@ -333,8 +336,10 @@ files.
 python -m pytest tests -q
 ```
 
-Every test is a regression test for a real defect. `tests/test_bench_gen.py` needs only numpy;
-`tests/test_bench_eval.py` skips cleanly if the private estimator is not on the path.
+150 tests across the generator, the detector harness, the text layer, the symbolisation-floor
+analysis and the turn-taking factorial. Many began as regression tests for a defect that was
+actually found. `tests/test_bench_gen.py` needs only numpy; `tests/test_bench_eval.py` skips
+cleanly if the private estimator is not on the path.
 
 ## Roadmap
 
