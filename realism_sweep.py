@@ -23,8 +23,12 @@ import numpy as np
 from sklearn.metrics import adjusted_rand_score
 
 HERE = pathlib.Path(__file__).resolve().parent
-sys.path.insert(0, r"C:\dev\swarm-prep")
-sys.path.insert(0, r"C:\dev\swarm-sprint")
+# Paths resolved from this file, never hardcoded. These were absolute C:\dev paths, so the
+# script could only ever run on one machine. The README already requires the three
+# repositories to sit side by side, which is what this assumes.
+_HERE = pathlib.Path(__file__).resolve().parent
+for _p in (_HERE, _HERE.parent / "swarm-prep", _HERE.parent / "swarm-sprint"):
+    sys.path.insert(0, str(_p))
 sys.path.insert(0, str(HERE))
 import swarm_te
 from swarm_load import TopicSymboliser

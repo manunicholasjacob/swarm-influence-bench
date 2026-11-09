@@ -9,11 +9,14 @@ certified directed edges. The harness returns the three numbers any influence cl
   detection floor      the coupling and channel volume at which power reaches 80%
 """
 from __future__ import annotations
-import sys, json, time, collections, math, warnings
+import sys, json, time, collections, math, warnings, pathlib
 import numpy as np
 
-sys.path.insert(0, r"C:\dev\swarm-prep")
-sys.path.insert(0, r"C:\dev\swarm-sprint")
+# Resolved from this file, not hardcoded. These were absolute C:\dev paths, so the harness ran on
+# exactly one machine; the README already requires the three repositories to sit side by side.
+_HERE = pathlib.Path(__file__).resolve().parent
+for _p in (_HERE.parent / "swarm-prep", _HERE.parent / "swarm-sprint"):
+    sys.path.insert(0, str(_p))
 import swarm_te
 from swarm_load import TopicSymboliser
 import fastte

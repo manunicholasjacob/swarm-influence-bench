@@ -11,10 +11,13 @@ This compares plain pairwise TE against conditional TE, both with the permutatio
 (b) pure nulls, to check conditioning does not break calibration,
 (c) multi-edge structure instances, to check it does not destroy power.
 """
-import sys, json, time, collections
-sys.path.insert(0, r"C:\dev\swarm-prep")
-sys.path.insert(0, r"C:\dev\swarm-sprint")
-sys.path.insert(0, r"C:\dev\swarm-bench")
+import sys, json, time, collections, pathlib
+# Paths resolved from this file, never hardcoded. These were absolute C:\dev paths, so the
+# script could only ever run on one machine. The README already requires the three
+# repositories to sit side by side, which is what this assumes.
+_HERE = pathlib.Path(__file__).resolve().parent
+for _p in (_HERE, _HERE.parent / "swarm-prep", _HERE.parent / "swarm-sprint"):
+    sys.path.insert(0, str(_p))
 import numpy as np
 import swarm_te
 from swarm_load import TopicSymboliser

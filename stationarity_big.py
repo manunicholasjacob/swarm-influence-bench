@@ -8,8 +8,8 @@ honest either way.
 
 Pure nulls only: no influence and no common cause, so any certified edge is an error by construction.
 """
-import sys, json, time
-sys.path.insert(0, r"C:\dev\swarm-bench")
+import sys, json, time, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))   # was a hardcoded C:\dev path
 import numpy as np
 import bench_gen, bench_eval
 from bench_eval import wilson   # was defined here; shared now that two sweeps report intervals

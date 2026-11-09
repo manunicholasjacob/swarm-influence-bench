@@ -4,8 +4,13 @@ If SwarmInfluence-Bench is a useful instrument, it should independently reproduc
 audit's central finding on data where the truth is known by construction: the circular-shift
 surrogate should fail the null instances badly, and the permutation repair should not.
 """
-import sys, json, time, functools
-sys.path.insert(0, r"C:\dev\swarm-bench")
+import sys, json, time, functools, pathlib
+# Paths resolved from this file, never hardcoded. These were absolute C:\dev paths, so the
+# script could only ever run on one machine. The README already requires the three
+# repositories to sit side by side, which is what this assumes.
+_HERE = pathlib.Path(__file__).resolve().parent
+for _p in (_HERE, _HERE.parent / "swarm-prep", _HERE.parent / "swarm-sprint"):
+    sys.path.insert(0, str(_p))
 import bench_gen, bench_eval
 
 SEEDS = 2

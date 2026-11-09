@@ -12,8 +12,13 @@ different joint activity pattern. With stationary speaking weights there is no e
 This sweeps activity_drift from stationary to strongly non-stationary on PURE nulls (no influence,
 no common cause) and measures each surrogate's family-wise error rate.
 """
-import sys, json, time, functools
-sys.path.insert(0, r"C:\dev\swarm-bench")
+import sys, json, time, functools, pathlib
+# Paths resolved from this file, never hardcoded. These were absolute C:\dev paths, so the
+# script could only ever run on one machine. The README already requires the three
+# repositories to sit side by side, which is what this assumes.
+_HERE = pathlib.Path(__file__).resolve().parent
+for _p in (_HERE, _HERE.parent / "swarm-prep", _HERE.parent / "swarm-sprint"):
+    sys.path.insert(0, str(_p))
 import numpy as np
 import bench_gen, bench_eval
 
